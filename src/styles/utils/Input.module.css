@@ -1,0 +1,17 @@
+.inputDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.inputDiv input{
+  padding: 1vh;
+  font-size: 1em;
+  margin-bottom: 1.5vh;
+  color: #737373;
+}
+
+.inputDiv label{
+  margin-bottom: 1.5vh;
+  color: #252B42;
+  font-weight: 600;
+}

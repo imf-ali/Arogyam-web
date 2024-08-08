@@ -1,0 +1,24 @@
+.navBar{
+  height: 8vh;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+}
+
+.imgDiv{
+  padding: 2vw;
+}
+
+.itemDiv{
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 1vw;
+}
+
+.navBar span{
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #003D6F;
+  cursor: pointer;
+}

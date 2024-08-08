@@ -4,19 +4,19 @@ const web = createSlice({
   name: 'webdata',
   initialState: {
     whyUsData: [
-      'Lorem ipsum dolor sit amet',
-      'Consectetur adipiscing elit',
-      'Sed vel libero id diam consequat faucibus',
-      'Vestibulum fermentum, nunc sit amet consectetur consectetur',
-      'Etiam justo malesuada lectus',
-      'At placerat mauris metus id velit',
-      'Donec dignissim, est non fringilla commodo, arcu lectus sagittis neque',
-      'Nulla facilisi'
+      'Expertise in Homeopathy',
+      'Natural and Holistic Treatments',
+      'Personalized Care',
+      'Comprehensive Health Solutions',
+      'Modern Facilities and Technology',
+      'Educational Resources',
+      'Positive Patient Experiences',
+      'Accessibility and Convenience'
     ],
     testimonials: [
       {
         name: "John Doe",
-        testimonial: "I've been using their services for over a year now, and I can confidently say they never disappoint. The team is incredibly professional and always goes the extra mile to ensure I'm satisfied. Their attention to detail and commitment to quality is unmatched. I highly recommend them to anyone looking for top-tier service.",
+        testimonial: "I've been using their services for over a year now, and I can confidently say they never disappoint. The team is incredibly professional and always goes the extra mile to ensure I'm satisfied. I highly recommend them to anyone looking for top-tier service.",
         image_url: "https://pyxis.nymag.com/v1/imgs/4e5/1f7/a917c50e70a4c16bc35b9f0d8ce0352635-14-tom-cruise.rsquare.w400.jpg"
       },
       {
