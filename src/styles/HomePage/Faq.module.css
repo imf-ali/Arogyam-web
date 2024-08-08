@@ -1,0 +1,57 @@
+.headingDiv{
+  margin-top: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.headingDiv h2{
+  color: #003D6F;
+  font-size: 2em;
+}
+
+.faqList{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.faqItem{
+  width: 70%;
+}
+
+.answer{
+  display: none;
+}
+
+.questionDiv{
+  display: flex;
+  width: 100%;
+}
+
+.imageDiv{
+  /* width: 10%; */
+  display: flex;
+  align-items: center;
+  background-color: #F6F8EA;
+}
+
+.imageDiv img{
+  height: 70%;
+  margin-right: 1vw;
+}
+
+.question{
+  background-color: #F6F8EA;
+  color: #003D6F;
+  font-weight: bold;
+  padding: 1vh;
+  width: 90%;
+}
+
+.evenItem{
+  background-color: #003D6F;
+  color: #F6F8EA;
+}
