@@ -1,0 +1,30 @@
+.adminPage{
+  display: flex;
+  height: 100vh;
+}
+
+.panel{
+  padding-top: 2vh;
+  background-color: #082945;
+  width: 17%;
+  color: #fff;
+}
+
+.panel div{
+  margin: 1vh 0.5vw;
+  padding: 1vw;
+  text-align: left;
+  border: 1px solid #1c588c;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.panel div:hover{
+  background-color: #1c588c;
+  color: #fff;
+}
+
+.dashboard{
+  padding: 1vh;
+  width: 83%;
+}

@@ -1,0 +1,13 @@
+.editDiv{
+  background-color: rgba(244, 200, 172, 0.722);
+  width: 50%;
+  margin: 1vh 0;
+  padding: 1vh;
+  border-radius: 5px;
+  display: flex;
+}
+
+.dotsDiv{
+  margin-left: auto;
+  cursor: pointer;
+}

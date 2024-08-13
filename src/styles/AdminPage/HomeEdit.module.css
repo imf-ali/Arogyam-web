@@ -1,0 +1,26 @@
+.imgDiv{
+  margin: 1vh;
+}
+
+.btnDiv{
+  display: flex;
+  gap: 1vw
+}
+
+.inputDiv{
+  width: 52%;
+}
+
+.editHomeData{
+  margin-top: 1vh;
+  display: flex;
+}
+
+.editHeader{
+  margin-right: 3vw;
+  width: 35%;
+}
+
+.editHeaderList{
+  width: 65%;
+}
