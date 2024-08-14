@@ -1,0 +1,31 @@
+.parentDiv{
+  margin: auto;
+  width: 95%;
+}
+
+table{
+  width: 100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #666666;
+  color: white;
+}
+th, td {
+  /* background-color: #96D4D4; */
+  padding: 1vh;
+}
+
+.imageDiv{
+  width: 50%;
+  background-color: #666666;
+}
+
+.imageDiv img{
+  width: 100%;
+  height: 100%;
+}

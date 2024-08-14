@@ -1,8 +1,11 @@
 .navBar{
-  height: 8vh;
+  height: 8%;
   border-bottom: 1px solid #000;
   display: flex;
   align-items: center;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
 }
 
 .imgDiv{

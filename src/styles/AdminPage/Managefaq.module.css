@@ -1,0 +1,41 @@
+.faqDiv{
+  display: flex;
+  width: 90%;
+  background-color: bisque;
+  padding: 1vh;
+  margin: 2vh auto;
+}
+
+.heading{
+  width: 90%;
+  margin: 2vh auto;
+}
+.threeDots{
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.dataDiv{
+  width: 97%;
+}
+
+.question{
+  background-color: #F6F8EA;
+  color: #003D6F;
+  font-weight: bold;
+  padding: 1vh;
+  width: 100%;
+}
+
+.answer{
+  background-color: #F6F8EA;
+  color: #003D6F;
+  padding: 1vh;
+  width: 100%;
+  margin-top: 1vh;
+}
+
+.inputData{
+  width: 90%;
+  margin: auto;
+}

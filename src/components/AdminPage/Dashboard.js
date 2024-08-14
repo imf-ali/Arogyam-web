@@ -1,10 +1,14 @@
 import styles from '../../styles/AdminPage/Admin.module.css';
 import HomePageData from './HomePageData';
+import ManageFAQ from './ManageFAQ';
+import ManageTestimonial from './ManageTestimonial';
 
 const Dashboard = () => {
   return (
     <div className={styles.dashboard}>
-      <HomePageData />
+      {/* <HomePageData /> */}
+      {/* <ManageFAQ /> */}
+      <ManageTestimonial />
     </div>
   )
 }

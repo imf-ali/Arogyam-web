@@ -15,29 +15,26 @@ const web = createSlice({
     ],
     testimonials: [
       {
-        name: "John Doe",
-        testimonial: "I've been using their services for over a year now, and I can confidently say they never disappoint. The team is incredibly professional and always goes the extra mile to ensure I'm satisfied. I highly recommend them to anyone looking for top-tier service.",
-        image_url: "https://pyxis.nymag.com/v1/imgs/4e5/1f7/a917c50e70a4c16bc35b9f0d8ce0352635-14-tom-cruise.rsquare.w400.jpg"
+        "_id": "66b7547d7867c8ea5ba8afa7",
+        "name": "John Doe",
+        "imageUrl": "https://marketplace.canva.com/EAFJZNEDZts/1/0/1600w/canva-before-after-minimal-skincare-instagram-post-rqntQbLvNgI.jpg",
+        "desc": "This is a testimonial description.",
+        "isTestimonial": true,
+        "videoUrls": [
+          "https://www.youtube.com/watch?v=TO-_3tck2tg",
+          "https://www.youtube.com/watch?v=syFZfO_wfMQ"
+        ]
       },
       {
-        name: "Jane Smith",
-        testimonial: "My experience with this company has been nothing short of exceptional. From the moment I reached out, they were responsive and attentive to my needs. The level of expertise they bring to the table is impressive, and they consistently deliver results that exceed my expectations. I appreciate their dedication to customer satisfaction and look forward to continuing our partnership.",
-        image_url: "https://pyxis.nymag.com/v1/imgs/4e5/1f7/a917c50e70a4c16bc35b9f0d8ce0352635-14-tom-cruise.rsquare.w400.jpgg"
-      },
-      {
-        name: "Alex Johnson",
-        testimonial: "Working with this team has been a game-changer for my business. They have a keen understanding of the market and always provide valuable insights that help me stay ahead of the competition. Their innovative approach and commitment to excellence have significantly improved my operations. I'm grateful for their support and highly recommend their services.",
-        image_url: "https://pyxis.nymag.com/v1/imgs/4e5/1f7/a917c50e70a4c16bc35b9f0d8ce0352635-14-tom-cruise.rsquare.w400.jpg"
-      },
-      {
-        name: "Maria Garcia",
-        testimonial: "I had the pleasure of collaborating with this company on several projects, and each time, they have exceeded my expectations. Their creative solutions and strategic thinking have been instrumental in driving our success. The team is always professional, approachable, and willing to go above and beyond to ensure we achieve our goals. It's been a fantastic experience, and I highly recommend them.",
-        image_url: "https://pyxis.nymag.com/v1/imgs/4e5/1f7/a917c50e70a4c16bc35b9f0d8ce0352635-14-tom-cruise.rsquare.w400.jpg"
-      },
-      {
-        name: "Michael Brown",
-        testimonial: "The level of service I received from this company is unparalleled. They took the time to understand my specific needs and delivered tailored solutions that perfectly addressed my challenges. Their expertise and dedication to quality are evident in everything they do. I couldn't be happier with the results and look forward to working with them again in the future.",
-        image_url: "https://pyxis.nymag.com/v1/imgs/4e5/1f7/a917c50e70a4c16bc35b9f0d8ce0352635-14-tom-cruise.rsquare.w400.jpg"
+        "_id": "66b754e07867c8ea5ba8afa9",
+        "name": "Jack Danielle",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4dkjCCekjrJhumHJL4g76mVzDIgkKDg-bhQ&s",
+        "desc": "This is another testimonial description.",
+        "isTestimonial": false,
+        "videoUrls": [
+          "https://www.youtube.com/watch?v=I-QfPUz1es8",
+          "https://www.youtube.com/watch?v=syFZfO_wfMQ"
+        ]
       }
     ],
     faqs: [

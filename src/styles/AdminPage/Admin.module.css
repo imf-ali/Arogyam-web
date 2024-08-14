@@ -1,6 +1,7 @@
 .adminPage{
   display: flex;
   height: 100vh;
+  padding-top: 8vh;
 }
 
 .panel{

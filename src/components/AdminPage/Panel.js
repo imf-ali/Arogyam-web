@@ -5,6 +5,7 @@ const Panel = () => {
     <div className={styles.panel}>
       <div>Home page data</div>
       <div>Manage FAQs</div>
+      <div>Manage Testimonials</div>
     </div>
   )
 }
