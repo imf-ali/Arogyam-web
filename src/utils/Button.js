@@ -1,6 +1,6 @@
 import styles from '../styles/utils/Button.module.css';
 
-const Button = ({ text, backgroundColor, width }) => {
+const Button = ({ text, backgroundColor, width, handleClick }) => {
   return (
     <button 
       className={styles.submitBtn} 
@@ -10,6 +10,7 @@ const Button = ({ text, backgroundColor, width }) => {
           width, 
         }
       }
+      onClick={handleClick}
     >
       {text}
     </button>

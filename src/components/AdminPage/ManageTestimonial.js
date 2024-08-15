@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
-import { webState } from "../../store/WebDataContext";
+import { webState } from "../../store/WebDataStore/WebDataContext";
 import styles from '../../styles/AdminPage/ManageTestimonial.module.css';
+import testingPic from '../../assets/testingPic.png';
 
 const ManageTestimonial = () => {
   const { testimonials } = useSelector(webState);
@@ -14,7 +15,7 @@ const ManageTestimonial = () => {
             <th>Name</th>
             <th>Image</th>
             <th>Description</th>
-            <th>Is Testimonial</th>
+            <th>Show on Home</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -23,10 +24,16 @@ const ManageTestimonial = () => {
             <tr key={index}>
               <td>{index + 1}</td>
               <td>{testimonial.name}</td>
-              <td><div className={styles.imageDiv}><img src={testimonial.imageUrl} /></div></td>
+              <td><div className={styles.imageDiv}><img src={testingPic} /></div></td>
               <td>{testimonial.desc}</td>
               <td>{testimonial.isTestimonial? 'Yes' : 'No'}</td>
-              <td>Options</td>
+              <td>
+                <select>
+                  <option>Show to home</option>
+                  <option>Remove from home</option>
+                  <option>Delete testimonial</option>
+                </select>
+              </td>
             </tr>
           ))}
         </tbody>

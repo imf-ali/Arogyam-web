@@ -5,13 +5,13 @@ import EditHomeHeaderList from './EditHomeHeaderList';
 
 const HomePageData = () => {
   return (
-    <>
+    <div className={styles.homeEditDiv}>
       <EditHomeBanner />
       <div className={styles.editHomeData}>
         <EditHomeHeader />
         <EditHomeHeaderList />
       </div>
-    </>
+    </div>
   )
 }
 

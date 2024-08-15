@@ -1,5 +1,10 @@
 .imgDiv{
-  margin: 1vh;
+  margin: 1vh 0;
+  width: 100%;
+}
+
+.imgDiv img{
+  width: 100%;
 }
 
 .btnDiv{
@@ -23,4 +28,13 @@
 
 .editHeaderList{
   width: 65%;
+}
+
+.homeEditDiv{
+  width: 90%;
+  margin: auto;
+}
+
+h3{
+  color: #003D6F;
 }

@@ -3,12 +3,23 @@ import HomePageData from './HomePageData';
 import ManageFAQ from './ManageFAQ';
 import ManageTestimonial from './ManageTestimonial';
 
-const Dashboard = () => {
+const Dashboard = ({ visibleComponent }) => {
+
+  const selectComponent = () => {
+    switch (visibleComponent) {
+      case 0:
+        return <HomePageData />;
+      case 1:
+        return <ManageFAQ />;
+      case 2:
+        return <ManageTestimonial />;
+      default:
+        return <HomePageData />;
+    }
+  }
   return (
     <div className={styles.dashboard}>
-      {/* <HomePageData /> */}
-      {/* <ManageFAQ /> */}
-      <ManageTestimonial />
+      {selectComponent()}
     </div>
   )
 }

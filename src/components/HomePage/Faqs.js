@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { webState } from "../../store/WebDataContext";
+import { webState } from "../../store/WebDataStore/WebDataContext";
 import FaqItem from "./FaqItem";
 import styles from '../../styles/HomePage/Faq.module.css';
 

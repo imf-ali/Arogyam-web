@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { webReducer } from "./WebDataContext";
+import { webReducer } from "./WebDataStore/WebDataContext";
 
 const store = configureStore({
   reducer: {

@@ -1,18 +1,18 @@
 import { useSelector } from "react-redux";
-import { webState } from "../../store/WebDataContext";
+import { webState } from "../../store/WebDataStore/WebDataContext";
 import styles from '../../styles/HomePage/HomeBody.module.css';
 import { IoIosArrowDropright } from "react-icons/io";
 
 const WhyUs = () => {
-  const { whyUsData } = useSelector(webState);
+  const { descHeading, descBody } = useSelector(webState);
 
   return (
     <div className={styles.whyUs}>
-      <div className={styles.title}>Why Arogyam</div>
-      {whyUsData.map((data, ind) => (
-        <div className={styles.whyUsItem}>
+      <div className={styles.title}>{descHeading}</div>
+      {descBody.map((data, ind) => (
+        <div key={ind} className={styles.whyUsItem}>
           <IoIosArrowDropright />
-          <div key={ind}>{data}</div>
+          <div>{data}</div>
         </div>
       ))}
     </div>

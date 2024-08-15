@@ -1,5 +1,6 @@
 import styles from '../styles/Navbar.module.css';
 import icon from '../assets/icon.png';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
@@ -8,12 +9,12 @@ const NavBar = () => {
         <img src={icon} alt='icon' />
       </div>
       <div className={styles.itemDiv}>
-        <span>HOME</span>
-        <span>ABOUT</span>
-        <span>TREATMENTS</span>
-        <span>DOCTORS</span>
-        <span>PATIENT PORTAL</span>
-        <span>CONTACT US</span>
+        <Link to="/" className={styles.linkItem}>HOME</Link>
+        <Link className={styles.linkItem}>ABOUT</Link>
+        <Link className={styles.linkItem}>TREATMENTS</Link>
+        <Link className={styles.linkItem}>DOCTORS</Link>
+        <Link className={styles.linkItem}>PATIENT PORTAL</Link>
+        <Link className={styles.linkItem}>CONTACT US</Link>
       </div>
     </nav>
   );

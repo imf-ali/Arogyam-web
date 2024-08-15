@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { webState } from "../../store/WebDataContext";
+import { webState } from "../../store/WebDataStore/WebDataContext";
 import Testimonial from "./Testimonial";
 import { useState } from "react";
 import styles from '../../styles/HomePage/Testimonial.module.css';
