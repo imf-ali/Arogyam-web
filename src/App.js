@@ -4,7 +4,7 @@ import Admin from "./pages/Admin";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import { getClinicData } from "./store/WebDataStore/WebDataApi";
+import { getClinicData, getFeedbackData } from "./store/WebDataStore/WebDataApi";
 
 function App() {
 
@@ -12,6 +12,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getClinicData()); 
+    dispatch(getFeedbackData());
   })
 
   return (
