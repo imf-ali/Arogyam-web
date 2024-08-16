@@ -10,8 +10,22 @@
   color: #737373;
 }
 
-.inputDiv label{
+.labelDiv{
   margin-bottom: 1.5vh;
   color: #252B42;
   font-weight: 600;
+}
+
+input[type="file"]{
+  display: none;
+}
+
+.customFileUpload {
+  color: #fff;
+  background-color: #003D6F;
+  border: 0px;
+  padding: 2vh;
+  border-radius: 1vh;
+  font-size: 1em;
+  cursor: pointer;
 }

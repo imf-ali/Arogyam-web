@@ -38,3 +38,39 @@
 h3{
   color: #003D6F;
 }
+
+.backdrop{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cropper{
+  padding: 2vh;
+  border-radius: 10px;
+  top: 25%;
+  left: 5.5%;
+  position: fixed;
+  width: 89%;
+  height: 53%;
+  background-color: gray;
+  border: 1px solid black;
+  z-index: 20;
+}
+
+.otherBtnDiv{
+  margin-top: 1vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  gap: 5vh;
+}
+
+.slider{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -5,7 +5,7 @@ import leftArrow from '../../assets/leftArrow.png';
 import rightArrow from '../../assets/rightArrow.png';
 import profilePic from '../../assets/testingPic.png';
 
-const Testimonial = ({ name, testimonial, image_url }) => {
+const Testimonial = ({ name, desc, image_url }) => {
   return (
     <div className={styles.testimonialDiv}>
       <div className={styles.leftArrow}>
@@ -17,7 +17,7 @@ const Testimonial = ({ name, testimonial, image_url }) => {
             <img src={leftQuote} alt='left quote' />
           </div>
           <div className={styles.textContainer}>
-            <div className={styles.text}>{testimonial}</div>
+            <div className={styles.text}>{desc}</div>
             <div className={styles.name}>{name}</div>
           </div>
           <div className={styles.rightQuote}>
