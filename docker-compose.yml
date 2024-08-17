@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  arogyam:
+    image: ali2722f/arogyam-backend:latest
+    container_name: arogyam-server
+    ports:
+      - "8080:8080"  
+    environment:
+      - PORT=8080 
+      - DB_URI=mongodb+srv://sawansloka:arogyam@arogyam.pzo06.mongodb.net/local-test-service
