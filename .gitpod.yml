@@ -1,5 +1,24 @@
+image: gitpod/workspace-arogyam
+
 tasks:
-  - name: Initialize project
-    init: |
-      echo "REACT_APP_BACKEND_URL=$(gp url 8080)" > .env
-      docker-compose up
+  - name: run arogyam-server
+    openMode: split-left
+    command: |
+      docker-compose up arogyam-server
+  
+  - name: run arogyam-web
+    openMode: split-right
+    command: |
+      npm install
+      echo "REACT_APP_API_URL=$(gp url 8080)" > .env
+      npm run start
+
+ports:
+  - name: arogyam-web
+    port: 3000
+    onOpen: open-browser
+
+  - name: arogyam-server
+    port: 8080
+    onOpen: ignore
+    visibility: public
