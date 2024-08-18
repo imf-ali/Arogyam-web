@@ -19,6 +19,7 @@ services:
     environment:
       - REACT_APP_BACKEND_URL=http://localhost:8080
     volumes:
+      - /app/node_modules
       - ".:/app"
     depends_on:
       - arogyam-server
