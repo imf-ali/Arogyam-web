@@ -17,7 +17,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_BACKEND_URL=http://arogyam-server:8080
+      - REACT_APP_BACKEND_URL=http://localhost:8080
     volumes:
       - /app/node_modules
       - ".:/app"

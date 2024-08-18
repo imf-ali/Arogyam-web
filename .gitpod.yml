@@ -1,4 +1,5 @@
 tasks:
   - name: Initialize project
     init: |
+      echo "REACT_APP_BACKEND_URL=$(gp url 8080)" > .env
       docker-compose up
