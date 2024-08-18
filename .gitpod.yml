@@ -1,11 +1,9 @@
 tasks:
   - name: run arogyam-server
-    openMode: split-left
     command: |
       docker-compose up arogyam-server
   
   - name: run arogyam-web
-    openMode: split-right
     command: |
       npm install
       echo "REACT_APP_API_URL=$(gp url 8080)" > .env
