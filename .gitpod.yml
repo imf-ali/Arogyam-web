@@ -1,8 +1,4 @@
 tasks:
-  - name: Initialize server
+  - name: Initialize project
     init: |
       docker-compose up
-  - name: Initialize web
-    init: |
-      npm install
-    command: npm run start
