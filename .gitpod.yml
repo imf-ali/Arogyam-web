@@ -1,6 +1,8 @@
 tasks:
   - name: run arogyam-server
     command: |
+      echo "export DB_URI=${{ secrets.DB_URI }}" >> ~/.bashrc
+      echo "export PORT=${{ secrets.PORT }}" >> ~/.bashrc
       docker-compose up arogyam-server
   
   - name: run arogyam-web
