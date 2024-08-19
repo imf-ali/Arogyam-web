@@ -1,8 +1,6 @@
 tasks:
   - name: run arogyam-server
     command: |
-      echo "DB_URI=${DB_URI}" > .env
-      echo "PORT=${PORT}" >> .env
       docker-compose up arogyam-server
   
   - name: run arogyam-web
