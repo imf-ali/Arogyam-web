@@ -1,14 +1,14 @@
 tasks:
   - name: run arogyam-server
     command: |
-      echo "DB_URI=${GITHUB_SECRET_DB_URI}" > .env
-      echo "PORT=${GITHUB_SECRET_PORT}" >> .env
+      echo "DB_URI=${DB_URI}" > .env
+      echo "PORT=${PORT}" >> .env
       docker-compose up arogyam-server
   
   - name: run arogyam-web
     command: |
       npm install
-      echo "REACT_APP_BACKEND_URL=$(gp url 8080)" > .env
+      echo "REACT_APP_BACKEND_URL=$(gp url 8080)" >> .env
       npm run start
 
 ports:
