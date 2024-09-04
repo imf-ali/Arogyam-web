@@ -3,7 +3,7 @@ import { webReducer } from "./WebDataStore/WebDataContext";
 
 const store = configureStore({
   reducer: {
-    webReducer,
+    webReducer
   }
 })
 
