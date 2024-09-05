@@ -6,7 +6,7 @@ const backendBaseUrl = process.env.REACT_APP_BACKEND_URL;
 
 export const getClinicData = createAsyncThunk('api/getClinicData', async (arg, thunkApi) => {
   try {
-    const res = await axios.get(`${backendBaseUrl}/v1/admin/clinic-meta`);
+    const res = await axios.get(`${backendBaseUrl}/v1/clinic-meta`);
     thunkApi.dispatch(setData(res.data));
   } catch (err) {
     console.log('Something went wrong', err);

@@ -4,16 +4,34 @@ import rightQuote from '../../assets/rightQuote.png';
 import leftArrow from '../../assets/leftArrow.png';
 import rightArrow from '../../assets/rightArrow.png';
 import profilePic from '../../assets/testingPic.png';
+import { useEffect, useState } from 'react';
 
 const Testimonial = ({ name, desc, image_url }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [leftImageSrc, setLeftImageSrc] = useState(leftArrow);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    if (windowWidth < 900) {
+      setLeftImageSrc(rightArrow);
+    } else {
+      setLeftImageSrc(leftArrow);
+    }
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [windowWidth]);
+
   return (
     <div className={styles.testimonialDiv}>
-      <div className={styles.leftArrow}>
-        <img src={leftArrow} alt='left arrow' />
-      </div>
       <div className={styles.dataContainer}>
         <div className={styles.data}>
-          <div>
+          <div className={styles.leftQuote}>
             <img src={leftQuote} alt='left quote' />
           </div>
           <div className={styles.textContainer}>
@@ -28,8 +46,13 @@ const Testimonial = ({ name, desc, image_url }) => {
       <div className={styles.imageDiv}>
         <img src={profilePic} alt='testimonial' />
       </div>
-      <div className={styles.rightArrow}>
-        <img src={rightArrow} alt='right arrow' />
+      <div className={styles.arrowDiv}>
+        <div className={styles.leftArrow}>
+          <img src={leftImageSrc} alt='left arrow' />
+        </div>
+        <div className={styles.rightArrow}>
+          <img src={rightArrow} alt='right arrow' />
+        </div>
       </div>
     </div>
   );

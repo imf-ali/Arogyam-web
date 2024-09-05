@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+.barNav{
+  display: none;
+}
+
 .imgDiv{
   padding: 2vw;
 }
@@ -25,4 +29,41 @@
   color: #003D6F;
   cursor: pointer;
   text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .itemDiv{
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 11%;
+    background-color: white;
+    width: 100%;
+    left: 0%;
+    padding: 2vh;
+    background-color: #003D6F;
+    z-index: 50;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  .itemDiv.show {
+    max-height: fit-content; 
+    opacity: 1;
+  }
+  .linkItem{
+    color: white;
+    padding: 2vh 0;
+  }
+  .barNav{
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    right: 4%;
+  }
+  .navBar{
+    height: 11%;
+  }
 }

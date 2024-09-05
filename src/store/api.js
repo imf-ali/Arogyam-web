@@ -27,3 +27,19 @@ export const confirmSlotData = async (name, phone, appointmentTime) => {
     return err.response;
   }
 }
+
+export const trackStatus = async (name, phone) => {
+  try {
+    const res = await axios({
+      method: 'GET',
+      url: `${backendBaseUrl}/v1/track-status`,
+      params: {
+        name,
+        phone,
+      }
+    });
+    return res.data;
+  } catch (err) {
+    return err.response;
+  }
+}
