@@ -1,0 +1,17 @@
+.messageCard{
+  border: 1px solid rgb(33, 74, 225);
+  border-radius: 10px;
+  margin-bottom: 4vh;
+  width: 25vw;
+  background-color: rgb(77, 77, 219);
+}
+
+.messageCard div{
+  padding: 2vh;
+  color: white;
+}
+
+.error{
+  border-color: red;
+  background-color: rgb(196, 109, 109);
+}

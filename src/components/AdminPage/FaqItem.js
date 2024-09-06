@@ -2,7 +2,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import styles from '../../styles/AdminPage/Managefaq.module.css';
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { deleteClinicData } from "../../store/WebDataStore/WebDataApi";
+import { deleteClinicData } from "../../store/AdminDataStore/AdminDataApi";
 
 const FaqItem = ({ question, answer, _id }) => {
   const dispatch = useDispatch();

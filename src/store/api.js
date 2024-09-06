@@ -43,3 +43,53 @@ export const trackStatus = async (name, phone) => {
     return err.response;
   }
 }
+
+export const signUp = async (name, email, phone, password, key) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${backendBaseUrl}/v1/admin/signup`,
+      data: {
+        name,
+        email,
+        phone,
+        password,
+        key,
+      }
+    });
+    return res;
+  } catch (err) {
+    return err.response;
+  }
+}
+
+export const login = async (email, password) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${backendBaseUrl}/v1/admin/login`,
+      data: {
+        email,
+        password,
+      }
+    });
+    return res;
+  } catch (err) {
+    return err.response;
+  }
+}
+
+export const logout = async (token) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${backendBaseUrl}/v1/admin/logout`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    });
+    return res;
+  } catch (err) {
+    return err.response;
+  }
+}

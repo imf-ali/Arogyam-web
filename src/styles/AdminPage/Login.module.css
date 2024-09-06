@@ -1,0 +1,29 @@
+.parentDiv{
+  padding-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.parentDiv input{
+  width: 25vw;
+}
+
+.parentDiv label{
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.heading{
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 3vh;
+}
+
+.textContent{
+  margin-top: 2vh;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -5,7 +5,7 @@ import EditableDiv from '../../utils/EditableDiv';
 import InputField from '../../utils/InputField';
 import Button from '../../utils/Button';
 import { useState } from 'react';
-import { updateClinicData } from '../../store/WebDataStore/WebDataApi';
+import { updateClinicData } from '../../store/AdminDataStore/AdminDataApi';
 
 const EditHomeHeaderList = () => {
   const { descBody } = useSelector(webState);

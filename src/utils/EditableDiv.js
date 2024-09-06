@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from '../styles/utils/EditableDiv.module.css';
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useDispatch } from 'react-redux';
-import { deleteClinicData } from '../store/WebDataStore/WebDataApi';
+import { deleteClinicData } from '../store/AdminDataStore/AdminDataApi';
 
 const EditableDiv = ({ text }) => {
   const dispatch = useDispatch();

@@ -5,7 +5,7 @@ import styles from '../../styles/AdminPage/Managefaq.module.css';
 import InputField from "../../utils/InputField";
 import Button from "../../utils/Button";
 import { useState } from "react";
-import { updateClinicData } from "../../store/WebDataStore/WebDataApi";
+import { updateClinicData } from "../../store/AdminDataStore/AdminDataApi";
 
 const ManageFAQ = () => {
   const { faqs } = useSelector(webState);

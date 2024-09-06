@@ -4,7 +4,7 @@ import Button from '../../utils/Button';
 import InputField from '../../utils/InputField';
 import { useDispatch, useSelector } from 'react-redux';
 import { webState } from '../../store/WebDataStore/WebDataContext';
-import { updateClinicData } from '../../store/WebDataStore/WebDataApi';
+import { updateClinicData } from '../../store/AdminDataStore/AdminDataApi';
 
 const EditHomeHeader = () => {
   const { descHeading } = useSelector(webState);
@@ -30,7 +30,7 @@ const EditHomeHeader = () => {
         text="Save header"
         backgroundColor='#3c6b3d'
         width='40%'
-        handleSave={handleSave}
+        handleClick={handleSave}
       />
     </div>
   )

@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { getClinicData, getFeedbackData } from "./store/WebDataStore/WebDataApi";
+import { setLogin } from "./store/AdminDataStore/AdminDataContext";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
   useEffect(() => {
     dispatch(getClinicData()); 
     dispatch(getFeedbackData());
+    dispatch(setLogin(localStorage.getItem('adminToken')))
   })
 
   return (

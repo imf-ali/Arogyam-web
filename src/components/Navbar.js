@@ -3,15 +3,26 @@ import icon from '../assets/icon.png';
 import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { adminState, logoutAdmin } from '../store/AdminDataStore/AdminDataContext';
+import { logout } from '../store/api';
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+  const { isLoggedIn, token } = useSelector(adminState);
   const [showNavbar, setShowNavbar] = useState(false);
+
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const closeNavbar = () => {
-    setShowNavbar(false);
+  const handleLogout = async () => {
+    const res = await logout(token);
+    console.log(res);
+    if(res.status === 200){
+      dispatch(logoutAdmin());
+      window.location.href = '/';
+    }
   };
 
   return (
@@ -29,6 +40,7 @@ const NavBar = () => {
         <Link className={styles.linkItem}>DOCTORS</Link>
         <Link className={styles.linkItem}>PATIENT PORTAL</Link>
         <Link className={styles.linkItem}>CONTACT US</Link>
+        {isLoggedIn && <Link className={styles.linkItem} onClick={handleLogout}>LOGOUT</Link>}
       </div>
     </nav>
   );

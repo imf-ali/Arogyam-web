@@ -9,6 +9,8 @@ services:
     environment:
       - PORT=${SERVER_PORT} 
       - DB_URI=${DB_URI}
+      - ADMIN_SECRET_KEY=${ADMIN_SECRET_KEY}
+      - JWT_SECRET=${JWT_SECRET}
   arogyam-web:
     build: 
       dockerfile: Dockerfile.dev

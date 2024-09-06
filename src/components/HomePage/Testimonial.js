@@ -6,7 +6,7 @@ import rightArrow from '../../assets/rightArrow.png';
 import profilePic from '../../assets/testingPic.png';
 import { useEffect, useState } from 'react';
 
-const Testimonial = ({ name, desc, image_url }) => {
+const Testimonial = ({ name, desc, imageUrl }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [leftImageSrc, setLeftImageSrc] = useState(leftArrow);
 
@@ -44,7 +44,7 @@ const Testimonial = ({ name, desc, image_url }) => {
         </div>
       </div>
       <div className={styles.imageDiv}>
-        <img src={profilePic} alt='testimonial' />
+        <img src={imageUrl} alt='testimonial' />
       </div>
       <div className={styles.arrowDiv}>
         <div className={styles.leftArrow}>

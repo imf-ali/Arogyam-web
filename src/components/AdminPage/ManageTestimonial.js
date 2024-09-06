@@ -4,7 +4,7 @@ import styles from '../../styles/AdminPage/ManageTestimonial.module.css';
 import testingPic from '../../assets/testingPic.png';
 import { useState } from "react";
 import Button from "../../utils/Button";
-import { deleteFeedbackData, updateFeedbackData } from "../../store/WebDataStore/WebDataApi";
+import { deleteFeedbackData, updateFeedbackData } from "../../store/AdminDataStore/AdminDataApi";
 
 const ManageTestimonial = () => {
   const { feedbacks } = useSelector(webState);
