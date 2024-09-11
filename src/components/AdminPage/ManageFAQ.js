@@ -20,7 +20,7 @@ const ManageFAQ = () => {
   }
 
   return (
-    <div>
+    <div className={styles.managefaq}>
       <h2 className={styles.heading}>Manage FAQs</h2>
       {faqs.map((data, ind) => <FaqItem key={ind} {...data} />)}
       <div className={styles.inputData}>

@@ -1,3 +1,9 @@
+.managefaq{
+  height: 92vh;
+  overflow-y: scroll;
+  width: 100%;
+}
+
 .faqDiv{
   display: flex;
   width: 90%;

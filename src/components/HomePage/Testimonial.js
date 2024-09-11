@@ -3,7 +3,6 @@ import leftQuote from '../../assets/leftQuote.png';
 import rightQuote from '../../assets/rightQuote.png';
 import leftArrow from '../../assets/leftArrow.png';
 import rightArrow from '../../assets/rightArrow.png';
-import profilePic from '../../assets/testingPic.png';
 import { useEffect, useState } from 'react';
 
 const Testimonial = ({ name, desc, imageUrl }) => {

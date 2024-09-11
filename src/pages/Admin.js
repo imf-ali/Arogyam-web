@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import Dashboard from '../components/AdminPage/Dashboard';
 import Panel from '../components/AdminPage/Panel';
 import styles from '../styles/AdminPage/Admin.module.css';
 import LoginSignup from '../components/AdminPage/LoginSignup';
 import { useSelector } from 'react-redux';
 import { adminState } from '../store/AdminDataStore/AdminDataContext';
+import { Outlet } from 'react-router-dom';
 
 const Admin = () => {
 
@@ -19,7 +19,7 @@ const Admin = () => {
             visibleComponent={visibleComponent}
             setVisibleComponent={setVisibleComponent}
           />
-          <Dashboard visibleComponent={visibleComponent} />
+          <Outlet />
         </div>
       )}
     </>

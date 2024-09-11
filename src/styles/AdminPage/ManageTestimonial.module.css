@@ -1,6 +1,6 @@
 .parentDiv{
-  margin: auto;
-  width: 95%;
+  width: 80%;
+  margin: 0 4vw;
 }
 
 table{
@@ -42,8 +42,8 @@ th, td {
 .modalDiv{
   border: 1px solid black;
   margin: auto 20%;
-  top: 10vh;
-  bottom: 10vh;
+  top: 30vh;
+  left: 40vh;
   width: 30%;
   height: 20%;
   border-radius: 10px;
