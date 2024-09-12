@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setData, setDeleteFeedbackData, setUpdateFeedbackData } from "../WebDataStore/WebDataContext";
 import axios from "axios";
+import { setFeedbacks } from "./AdminDataContext";
 
 const backendBaseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -45,6 +46,21 @@ export const deleteClinicData = createAsyncThunk('api/deleteClinicData', async (
       }
     });
     thunkApi.dispatch(setData(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
+export const getFeedbackData = createAsyncThunk('api/getFeedbackData', async (arg, thunkApi) => {
+  try {
+    const res = await axios({
+      method: 'GET',
+      url: `${backendBaseUrl}/v1/admin/feedbacks`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      }
+    });
+    thunkApi.dispatch(setFeedbacks(res.data));
   } catch (err) {
     console.log('Something went wrong', err);
   }

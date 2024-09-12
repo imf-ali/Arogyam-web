@@ -5,6 +5,7 @@ const admin = createSlice({
   initialState: {
     isLoggedIn: false,
     token: '',
+    feedbacks: [],
   },
   reducers: {
     loginAdmin: (state, action) => {
@@ -23,10 +24,14 @@ const admin = createSlice({
       if(payload)
         state.isLoggedIn = true;
       state.token = payload;
-    }
+    },
+    setFeedbacks: (state, action) => {
+      const { payload } = action;
+      state.feedbacks = payload.data;
+    },
   },
 });
 
 export const adminReducer = admin.reducer;
-export const { loginAdmin, logoutAdmin, setLogin } = admin.actions;
+export const { loginAdmin, logoutAdmin, setLogin, setFeedbacks } = admin.actions;
 export const adminState = state => state.adminReducer;
