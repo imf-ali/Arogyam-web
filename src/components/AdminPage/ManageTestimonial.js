@@ -1,17 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
-import { webState } from "../../store/WebDataStore/WebDataContext";
 import styles from '../../styles/AdminPage/ManageTestimonial.module.css';
-import testingPic from '../../assets/testingPic.png';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../utils/Button";
-import { deleteFeedbackData, updateFeedbackData } from "../../store/AdminDataStore/AdminDataApi";
+import { deleteFeedbackData, getFeedbackData, updateFeedbackData } from "../../store/AdminDataStore/AdminDataApi";
+import { adminState } from "../../store/AdminDataStore/AdminDataContext";
 
 const ManageTestimonial = () => {
-  const { feedbacks } = useSelector(webState);
+  const { feedbacks } = useSelector(adminState);
   const dispatch = useDispatch();
 
   const [selectedValue, setSelectedValue] = useState('0');
   const [confirmText, setConfirmText] = useState('');
+
+
+  useEffect(() => {
+    dispatch(getFeedbackData());
+  }, [dispatch])
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -62,7 +66,7 @@ const ManageTestimonial = () => {
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{feedback.name}</td>
-                <td><div className={styles.imageDiv}><img src={testingPic} alt="user-image" /></div></td>
+                <td><div className={styles.imageDiv}><img src={feedback.imageUrl} alt="user-image" /></div></td>
                 <td>{feedback.desc}</td>
                 <td>{feedback.isTestimonial ? 'Yes' : 'No'}</td>
                 <td>
