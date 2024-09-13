@@ -6,6 +6,8 @@ const admin = createSlice({
     isLoggedIn: false,
     token: '',
     feedbacks: [],
+    appointments: [],
+    currentPatient: null,
   },
   reducers: {
     loginAdmin: (state, action) => {
@@ -29,9 +31,17 @@ const admin = createSlice({
       const { payload } = action;
       state.feedbacks = payload.data;
     },
+    setAppointments: (state, action) => {
+      const { payload } = action;
+      state.appointments = payload.data;
+    },
+    setCurrentPatient: (state, action) => {
+      const { payload } = action;
+      state.currentPatient = payload.patient;
+    },
   },
 });
 
 export const adminReducer = admin.reducer;
-export const { loginAdmin, logoutAdmin, setLogin, setFeedbacks } = admin.actions;
+export const { loginAdmin, logoutAdmin, setLogin, setFeedbacks, setAppointments, setCurrentPatient } = admin.actions;
 export const adminState = state => state.adminReducer;

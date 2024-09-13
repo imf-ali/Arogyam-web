@@ -1,0 +1,43 @@
+.captureData{
+  width: 83%;
+}
+
+.patientDetails{
+  padding: 1.5vh 0;
+  border-bottom: 1px solid rgb(167, 158, 158);
+  text-align: center;
+}
+
+.patientIdText{
+  color: #1c588c;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.patientId{
+  color: rgb(105, 99, 99);
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.diagnosis{
+  display: flex;
+}
+
+.diagnosisItem{
+  padding: 1vh 0;
+  width: 50%;
+  text-align: center;
+  font-weight: bolder;
+  color: rgb(105, 99, 99);
+  border-bottom: 1px solid rgb(179, 175, 175);
+}
+
+.diagnosisItem:hover{
+  cursor: pointer;
+}
+
+.activeTab{
+  color: #1c588c;
+  border-bottom: 4px solid #1c588c;
+}

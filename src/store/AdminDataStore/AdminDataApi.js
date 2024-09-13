@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setData, setDeleteFeedbackData, setUpdateFeedbackData } from "../WebDataStore/WebDataContext";
 import axios from "axios";
-import { setFeedbacks } from "./AdminDataContext";
+import { setAppointments, setCurrentPatient, setFeedbacks } from "./AdminDataContext";
 
 const backendBaseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -101,3 +101,60 @@ export const deleteFeedbackData = createAsyncThunk('api/updateFeedbackData', asy
     console.log('Something went wrong', err);
   }
 });
+
+export const getAllAppointments = createAsyncThunk('api/getAllAppointments', async (arg, thunkApi) => {
+  try {
+    const { date, page } = arg;
+    const res = await axios({
+      method: 'GET',
+      url: `${backendBaseUrl}/v1/admin/appointments`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      params: {
+        date,
+        page,
+      },
+    });
+    thunkApi.dispatch(setAppointments(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
+export const updateAppointment = createAsyncThunk('api/updateAppointment', async (arg, thunkApi) => {
+  try {
+    const { appointmentId, status } = arg;
+    await axios({
+      method: 'PUT',
+      url: `${backendBaseUrl}/v1/admin/appointments/${appointmentId}`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      data: {
+        status,
+      },
+    });
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
+export const getPatientData = createAsyncThunk('api/getPatientData', async (arg, thunkApi) => {
+  try {
+    const { patientId } = arg;
+    const res = await axios({
+      method: 'GET',
+      url: `${backendBaseUrl}/v1/admin/get-patient-data/${patientId}`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      }
+    });
+    thunkApi.dispatch(setCurrentPatient(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
+
+

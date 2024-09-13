@@ -1,0 +1,68 @@
+.appointments{
+  width: 80%;
+}
+
+.appointmentHead{
+  display: flex;
+  margin-right: 2vh;
+  margin-left: 2vh;
+}
+
+.date{
+  margin-top: 2vh;
+}
+
+.statusTab{
+  display: flex;
+  width: 82vw;
+  justify-content: end;
+  gap: 1vh;
+}
+
+.statusTab span{
+  border: 1px solid #082945;
+  margin-top: 2vh;
+  padding: 0.6vh 1vh;
+  border-radius: 17px;
+  margin-bottom: 2vh;
+}
+
+.statusTab span:hover{
+  cursor: pointer;
+}
+
+.active{
+  color: white;
+  background-color: #1c588c;
+}
+
+.appointmentHeader{
+  display: flex;
+  justify-content: space-between;
+  margin: 2vh 1vw;
+  padding: 0 2vh;
+  font-weight: 600;
+}
+
+.appointmentItem{
+  border: 1px solid #1c588c;
+  display: flex;
+  justify-content: space-between;
+  margin: 1vh 1vw;
+  border-radius: 10px;
+  padding: 3.5vh 2vh;
+}
+
+.appointmentItem:hover{
+  cursor: pointer;
+  background-color: #1c588c;
+  color: white;
+}
+
+.appointmentHeader div{
+  width: 20%;
+}
+
+.appointmentItem div{
+  width: 20%;
+}

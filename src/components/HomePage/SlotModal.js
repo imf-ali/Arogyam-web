@@ -77,6 +77,7 @@ const SlotModal = ({ name, email, phone, setShowModal }) => {
           <div className={styles.modalText}>Select the date of booking within the next 7 days</div>
           <div className={styles.dateSelectDiv}>
             <input
+              className={styles.inputDate}
               type='date'
               min={new Date().toISOString().split('T')[0]}
               max={new Date(new Date().setDate(new Date().getDate() + 7)).toISOString().split('T')[0]}
