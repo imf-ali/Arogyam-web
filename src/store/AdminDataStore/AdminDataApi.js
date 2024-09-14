@@ -5,7 +5,6 @@ import { setAppointments, setCurrentPatient, setFeedbacks, setLogin } from "./Ad
 
 const backendBaseUrl = process.env.REACT_APP_BACKEND_URL;
 
-
 export const validateUser = createAsyncThunk('api/valiidateUser', async (arg, thunkApi) => {
   try {
     const { token } = arg;
@@ -169,6 +168,24 @@ export const getPatientData = createAsyncThunk('api/getPatientData', async (arg,
       }
     });
     thunkApi.dispatch(setCurrentPatient(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
+export const savePrescriptionData = createAsyncThunk('api/savePrescriptionData', async (arg, thunkApi) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${backendBaseUrl}/v1/admin/prescriptions`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      data: {
+        ...arg
+      }
+    });
+    thunkApi.dispatch(setCurrentPatient(res.data.patient));
   } catch (err) {
     console.log('Something went wrong', err);
   }

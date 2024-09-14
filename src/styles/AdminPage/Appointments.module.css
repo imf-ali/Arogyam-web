@@ -2,6 +2,12 @@
   width: 83%;
 }
 
+.noAppointments{
+  margin-top: 20vh;
+  text-align: center;
+  font-size: 1.3em;
+}
+
 .appointmentHead{
   display: flex;
   margin-right: 2vh;
@@ -39,7 +45,7 @@
 .appointmentHeader{
   display: flex;
   justify-content: space-between;
-  margin: 2vh 1vw;
+  margin: 3vh 1vw;
   padding: 0 2vh;
   font-weight: 600;
 }
