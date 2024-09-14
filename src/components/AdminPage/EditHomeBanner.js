@@ -34,7 +34,7 @@ const EditHomeBanner = () => {
   }
 
   return (
-    <div>
+    <div className={styles.editBanner}>
       <h2>Edit Banner</h2>
       <div className={styles.imgDiv}>
         <img src={bannerImg} alt='banner' />

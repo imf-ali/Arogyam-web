@@ -1,9 +1,27 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setData, setDeleteFeedbackData, setUpdateFeedbackData } from "../WebDataStore/WebDataContext";
 import axios from "axios";
-import { setAppointments, setCurrentPatient, setFeedbacks } from "./AdminDataContext";
+import { setAppointments, setCurrentPatient, setFeedbacks, setLogin } from "./AdminDataContext";
 
 const backendBaseUrl = process.env.REACT_APP_BACKEND_URL;
+
+
+export const validateUser = createAsyncThunk('api/valiidateUser', async (arg, thunkApi) => {
+  try {
+    const { token } = arg;
+    const res = await axios({
+      method: 'POST',
+      url: `${backendBaseUrl}/v1/admin/jwtValidate`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    });
+    thunkApi.dispatch(setLogin({ status: res.status, token }));
+  } catch (err) {
+    console.log('Something went wrong', err);
+    thunkApi.dispatch(setLogin({ status: err.response.status}));
+  }
+});
 
 export const updateClinicData = createAsyncThunk('api/updateClinicData', async (arg, thunkApi) => {
   try {

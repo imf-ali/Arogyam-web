@@ -23,9 +23,12 @@ const admin = createSlice({
     },
     setLogin: (state, action) => {
       const { payload } = action;
-      if(payload)
+      if(payload.status === 200){
         state.isLoggedIn = true;
-      state.token = payload;
+        state.token = payload.token;
+      } else {
+        localStorage.removeItem('adminToken');
+      }
     },
     setFeedbacks: (state, action) => {
       const { payload } = action;

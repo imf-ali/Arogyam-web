@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     dispatch(getClinicData());
     dispatch(getFeedbackData());
-    dispatch(setLogin(localStorage.getItem('adminToken')))
+    // dispatch(setLogin(localStorage.getItem('adminToken')))
   })
 
   return (
