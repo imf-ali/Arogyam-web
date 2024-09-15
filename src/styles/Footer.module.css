@@ -1,0 +1,30 @@
+.footer{
+  background-color: #071731;
+  color: #dadee3;
+  padding: 2vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.content{
+  width: 80%;
+  display: flex;
+  gap: 2vh;
+  margin: 2vh 0 4vh 0;
+}
+
+.logoDiv img{
+  width: 8%;
+}
+
+.logoDiv{
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.logoDiv div{
+  margin-left: 2vw;
+}

@@ -1,5 +1,7 @@
 .parentDiv{
   width: 83%;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .parentDiv h2{

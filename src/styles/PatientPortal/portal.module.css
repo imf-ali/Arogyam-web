@@ -2,6 +2,7 @@
   padding-top: 25vh;
   width: 30%;
   margin: auto;
+  flex: 1;
 }
 
 .header{

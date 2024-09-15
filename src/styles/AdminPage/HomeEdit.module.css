@@ -37,6 +37,8 @@
 
 .homeEditDiv{
   width: 83%;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 h3{

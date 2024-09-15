@@ -1,5 +1,5 @@
 .managefaq{
-  height: 92vh;
+  height: 100%;
   overflow-y: scroll;
   width: 83%;
 }
@@ -10,7 +10,6 @@
   background-color: bisque;
   padding: 1vh;
   margin: 2vh auto;
-  position: relative;
 }
 
 .heading{
