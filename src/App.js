@@ -10,6 +10,7 @@ import ManageFAQ from "./components/AdminPage/ManageFAQ";
 import ManageTestimonial from "./components/AdminPage/ManageTestimonial";
 import Appointments from "./components/AdminPage/Appointments";
 import Patient from "./components/AdminPage/Patient";
+import PatientPortal from "./pages/PatientPortal";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/patient-portal" element={<PatientPortal />} />
           <Route path="/admin" element={<Admin />}>
             <Route path="appointments" element={<Appointments />} />
             <Route path="homedata" element={<HomePageData />} />

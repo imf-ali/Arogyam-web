@@ -191,5 +191,24 @@ export const savePrescriptionData = createAsyncThunk('api/savePrescriptionData',
   }
 });
 
+export const updatePrescriptionData = createAsyncThunk('api/updatePrescriptionData', async (arg, thunkApi) => {
+  try {
+    const { id, ...otherArg } = arg;
+    const res = await axios({
+      method: 'PUT',
+      url: `${backendBaseUrl}/v1/admin/prescriptions/${id}`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      data: {
+        ...otherArg,
+      }
+    });
+    thunkApi.dispatch(setCurrentPatient(res.data.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
 
 

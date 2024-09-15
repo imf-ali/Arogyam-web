@@ -38,7 +38,7 @@ const NavBar = () => {
         <Link className={styles.linkItem}>ABOUT</Link>
         <Link className={styles.linkItem}>TREATMENTS</Link>
         <Link className={styles.linkItem}>DOCTORS</Link>
-        <Link className={styles.linkItem}>PATIENT PORTAL</Link>
+        <Link to="/patient-portal" className={styles.linkItem}>PATIENT PORTAL</Link>
         <Link className={styles.linkItem}>CONTACT US</Link>
         {isLoggedIn && <Link className={styles.linkItem} onClick={handleLogout}>LOGOUT</Link>}
       </div>

@@ -2,6 +2,25 @@ import React, { useEffect, useMemo, useReducer } from "react";
 import InputFieldNew from "../../utils/InputFieldNew";
 import styles from '../../styles/AdminPage/PatientDetails.module.css';
 import Button from "../../utils/Button";
+import { useDispatch } from "react-redux";
+import { savePrescriptionData, updatePrescriptionData } from "../../store/AdminDataStore/AdminDataApi";
+
+const calculateBMI = (action, weight, heightInCm) => {
+  let bmi;
+  let heightInMeters;
+  if(action.field === 'height') {
+    heightInMeters = action.value / 100;
+    bmi = weight / (heightInMeters * heightInMeters)
+  } else {
+    heightInMeters= heightInCm /100;
+    bmi = action.value / (heightInMeters * heightInMeters)
+  }
+  return bmi.toFixed(2);
+}
+
+const precheckForBMI = (field, state) => {
+  return (field === 'height' && state.weight) || (field === 'weight' && state.height);
+}
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -9,15 +28,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         [action.field]: action.value,
+        ...(precheckForBMI(action.field, state) && { bmi: calculateBMI(action, state.weight, state.height) })
       };
     case 'RESET':
-      return action.payload; 
+      return action.payload;
     default:
       return state;
   }
 };
 
 const BasicDetails = ({ patient }) => {
+
+  const dispatch = useDispatch();
 
   const initialState = useMemo(() => ({
     name: '',
@@ -32,18 +54,22 @@ const BasicDetails = ({ patient }) => {
     address: '',
   }), []);
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatchReducer] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: 'RESET', payload: patient || initialState });
-  },[patient, initialState]); 
+    dispatchReducer({ type: 'RESET', payload: patient || initialState });
+  }, [patient, initialState]);
 
   const handleInputChange = (field, value) => {
-    dispatch({ type: 'SET_FIELD', field, value });
+    dispatchReducer({ type: 'SET_FIELD', field, value });
   };
 
   const handleSaveDetails = () => {
-    console.log("Saved details:", state);
+    if (!patient || patient.diagnosis.length) {
+      dispatch(savePrescriptionData({ patient: state }));
+    } else {
+      dispatch(updatePrescriptionData({ id: patient.id, patient: state }));
+    }
   };
 
   return (
@@ -111,7 +137,7 @@ const BasicDetails = ({ patient }) => {
         </div>
       </div>
       <div className={styles.btnDiv}>
-        <Button width='15%' text='Save details' onClick={handleSaveDetails} />
+        <Button width='15%' text='Save details' handleClick={handleSaveDetails} />
       </div>
     </div>
   );
