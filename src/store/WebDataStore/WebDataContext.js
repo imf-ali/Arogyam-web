@@ -4,6 +4,7 @@ const web = createSlice({
   name: 'webdata',
   initialState: {
     dataId: '',
+    bannerUrl: '',
     descHeading: '',
     descBody: [],
     feedbacks: [],
@@ -13,6 +14,7 @@ const web = createSlice({
     setData: (state, action) => {
       const { payload } = action;
       state.dataId = payload.data._id;
+      state.bannerUrl = payload.data.bannerUrl;
       state.descHeading = payload.data.desc.title;
       state.descBody = payload.data.desc.body;
       state.faqs = payload.data.faqs;

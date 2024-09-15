@@ -1,15 +1,19 @@
-import banner from '../../assets/banner.png';
 import Button from '../../utils/Button';
 import styles from '../../styles/AdminPage/HomeEdit.module.css';
 import { useRef, useState } from 'react';
 import AvatarEditor from 'react-avatar-editor';
 import Slider from '@mui/material/Slider';
 import FileInput from '../../utils/FileInput';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateClinicData } from '../../store/AdminDataStore/AdminDataApi';
+import { webState } from '../../store/WebDataStore/WebDataContext';
 
 const EditHomeBanner = () => {
   const editorRef = useRef(null);
+  const dispath = useDispatch();
+  const { bannerUrl } = useSelector(webState);
   const [image, setImage] = useState(undefined);
-  const [bannerImg, setBannerImg] = useState(banner);
+  const [bannerImg, setBannerImg] = useState(bannerUrl);
   const [showModal, setShowModal] = useState(false);
   const [zoom, setZoom] = useState(5);
 
@@ -33,6 +37,10 @@ const EditHomeBanner = () => {
     setShowModal(false);
   }
 
+  const handleSave = () => {
+    dispath(updateClinicData({ bannerUrl: bannerImg }));
+  }
+
   return (
     <div className={styles.editBanner}>
       <h2>Edit Banner</h2>
@@ -48,6 +56,7 @@ const EditHomeBanner = () => {
           text="Save Image"
           backgroundColor='#3c6b3d'
           width='15%'
+          handleClick={handleSave}
         />
       </div>
       {showModal && (
