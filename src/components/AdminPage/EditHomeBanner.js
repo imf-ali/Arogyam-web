@@ -38,7 +38,9 @@ const EditHomeBanner = () => {
   }
 
   const handleSave = () => {
-    dispath(updateClinicData({ bannerUrl: bannerImg }));
+    const formData = new FormData();
+    formData.append("bannerUrl", image);
+    dispath(updateClinicData({ formData }));
   }
 
   return (

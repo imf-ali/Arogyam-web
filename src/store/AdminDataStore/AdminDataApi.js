@@ -24,21 +24,12 @@ export const validateUser = createAsyncThunk('api/valiidateUser', async (arg, th
 
 export const updateClinicData = createAsyncThunk('api/updateClinicData', async (arg, thunkApi) => {
   try {
-    const { bannerUrl, title, body, faqs } = arg;
+    const { formData } = arg;
     const id = thunkApi.getState().webReducer.dataId;
-    const res = await axios({
-      method: 'PUT',
-      url: `${backendBaseUrl}/v1/admin/clinic-meta/${id}`,
+    const res = await axios.put(`${backendBaseUrl}/v1/admin/clinic-meta/${id}`, formData, {
       headers: {
         Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
-      },
-      data: {
-        bannerUrl,
-        desc: {
-          title,
-          body
-        },
-        faqs,
+        'Content-Type': 'multipart/form-data', 
       },
     });
     thunkApi.dispatch(setData(res.data));
