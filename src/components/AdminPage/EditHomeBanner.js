@@ -1,6 +1,6 @@
 import Button from '../../utils/Button';
 import styles from '../../styles/AdminPage/HomeEdit.module.css';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import AvatarEditor from 'react-avatar-editor';
 import Slider from '@mui/material/Slider';
 import FileInput from '../../utils/FileInput';
@@ -10,12 +10,16 @@ import { webState } from '../../store/WebDataStore/WebDataContext';
 
 const EditHomeBanner = () => {
   const editorRef = useRef(null);
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
   const { bannerUrl } = useSelector(webState);
   const [image, setImage] = useState(undefined);
   const [bannerImg, setBannerImg] = useState(bannerUrl);
   const [showModal, setShowModal] = useState(false);
   const [zoom, setZoom] = useState(5);
+
+  useEffect(() => {
+    setBannerImg(bannerUrl);
+  }, [bannerUrl])
 
   const handleSlider = (event, value) => {
     setZoom(value);
@@ -37,10 +41,28 @@ const EditHomeBanner = () => {
     setShowModal(false);
   }
 
+  const convertBase64ToFile = (base64) => {
+    const base64String = base64.replace(/^data:image\/\w+;base64,/, "");
+    const byteCharacters = atob(base64String);
+
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+
+    const byteArray = new Uint8Array(byteNumbers);
+    const blob = new Blob([byteArray], { type: 'image/png' });
+    const file = new File([blob], 'bannerUrl.png', { type: 'image/png' });
+
+    return file;
+  }
+
   const handleSave = () => {
+    const file = convertBase64ToFile(bannerImg)
     const formData = new FormData();
-    formData.append("bannerUrl", image);
-    dispath(updateClinicData({ formData }));
+    formData.append("bannerUrl", file);
+    formData.append("filename", 'bannerUrl.png');
+    dispatch(updateClinicData({ formData }));
   }
 
   return (
