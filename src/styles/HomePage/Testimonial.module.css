@@ -14,6 +14,7 @@
   width: 70%;
   margin: auto;
   position: relative;
+  z-index: 2;
 }
 
 .dataContainer {
@@ -94,6 +95,11 @@
   .testimonialDiv{
     display: flex;
     flex-direction: column;
+    z-index: 2;
+  }
+  .text{
+    font-size: 0.9em;
+    line-height: 1.5em;
   }
   .dataContainer {
     width: 100%;
@@ -106,7 +112,7 @@
     align-items: center;
     position: absolute;
     left: auto;
-    bottom: -20%;
+    bottom: -45%;
   }
 
   .arrowDiv{
@@ -142,6 +148,5 @@
 
   .testimonialDiv{
     width: 85%;
-    z-index: 10;
   }
 }

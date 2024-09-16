@@ -2,6 +2,7 @@ import styles from '../../styles/HomePage/HomeBody.module.css';
 import { useEffect, useState } from 'react';
 import Button from '../../utils/Button';
 import { confirmSlotData, fetchSlotsData } from '../../store/api';
+import moment from 'moment';
 
 const generateTimeSlotsWithDisplay = (startHour, endHour, selectedTimes) => {
   const times = [];
@@ -28,13 +29,14 @@ const convertToISO = (date, time) => {
   return isoString;
 }
 
-const SlotModal = ({ name, email, phone, setShowModal }) => {
+const SlotModal = ({ name, email, phone, setName, setEmail, setPhone, setShowModal }) => {
 
   const [slots, setSlots] = useState([]);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState([]);
   const [selectedSlotInd, setSelectedSlotInd] = useState(-1);
   const [errorMessage, setErrorMessage] = useState('');
+  const [success, setSuccess] = useState('');
 
   useEffect(() => {
     setSelectedTime(generateTimeSlotsWithDisplay(9, 20, slots))
@@ -53,11 +55,11 @@ const SlotModal = ({ name, email, phone, setShowModal }) => {
     }
     const appointmentTime = convertToISO(selectedDate, selectedTime[selectedSlotInd].time);
     const res = await confirmSlotData(name, phone, appointmentTime);
-    if(res.status === 400)
+    if (res.status === 400)
       setErrorMessage(res.data.message);
-    else if(res.status === 201){
-      alert('Slot booked successfully');
-      backDropClick();
+    else if (res.status === 201) {
+      setSuccess(`Slot booked successfully on ${moment(appointmentTime).format('MMMM Do YYYY, h:mm:ss a')}`);
+      // backDropClick();
     }
   }
 
@@ -66,56 +68,72 @@ const SlotModal = ({ name, email, phone, setShowModal }) => {
     setSelectedDate('');
     setSelectedTime([]);
     setSelectedSlotInd(-1);
+    setEmail('');
+    setName('');
+    setPhone('');
   }
 
   return (
     <>
       <div className={styles.backdrop} onClick={backDropClick} />
       <div className={styles.modal}>
-        <div className={styles.modalHeading}>AVAILABLE SLOTS</div>
-        <div className={styles.dateDiv}>
-          <div className={styles.modalText}>Select the date of booking within the next 7 days</div>
-          <div className={styles.dateSelectDiv}>
-            <input
-              className={styles.inputDate}
-              type='date'
-              min={new Date().toISOString().split('T')[0]}
-              max={new Date(new Date().setDate(new Date().getDate() + 7)).toISOString().split('T')[0]}
-              value={selectedDate}
-              onChange={(e) => setSelectedDate(e.target.value)}
-            />
-            <Button
-              text='Select Date'
-              handleClick={handleDate}
-              width='20%'
-            />
-          </div>
-        </div>
-        {slots.length !== 0 && (
-          <div className={styles.timeDiv}>
-            <div className={styles.modalText}>Select the time of booking</div>
-            <div className={styles.timeSlotDiv}>
-              {selectedTime.map((slot, ind) => (
-                <div
-                  key={ind}
-                  className={`${styles.slotTime} ${slot.display && styles.available} ${selectedSlotInd === ind && styles.selectedSlot}`}
-                  onClick={() => {
-                    if (slot.display) setSelectedSlotInd(ind)
-                  }}
-                >
-                  {slot.time}
+        {success !== '' ? (
+          <>
+            <div className={styles.success}>
+              {success}
+            </div>
+            <div className={styles.closeBtn}>
+              <Button text='Close' width='30%' handleClick={backDropClick} />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className={styles.modalHeading}>AVAILABLE SLOTS</div>
+            <div className={styles.dateDiv}>
+              <div className={styles.modalText}>Select the date of booking within the next 7 days</div>
+              <div className={styles.dateSelectDiv}>
+                <input
+                  className={styles.inputDate}
+                  type='date'
+                  min={new Date().toISOString().split('T')[0]}
+                  max={new Date(new Date().setDate(new Date().getDate() + 7)).toISOString().split('T')[0]}
+                  value={selectedDate}
+                  onChange={(e) => setSelectedDate(e.target.value)}
+                />
+                <Button
+                  text='Select Date'
+                  handleClick={handleDate}
+                  width='20%'
+                />
+              </div>
+            </div>
+            {slots.length !== 0 && (
+              <div className={styles.timeDiv}>
+                <div className={styles.modalText}>Select the time of booking</div>
+                <div className={styles.timeSlotDiv}>
+                  {selectedTime.map((slot, ind) => (
+                    <div
+                      key={ind}
+                      className={`${styles.slotTime} ${slot.display && styles.available} ${selectedSlotInd === ind && styles.selectedSlot}`}
+                      onClick={() => {
+                        if (slot.display) setSelectedSlotInd(ind)
+                      }}
+                    >
+                      {slot.time}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            {errorMessage !== '' && <div className={styles.errorMessage}>{errorMessage}</div>}
-            <div className={styles.confirmBtn}>            
-              <Button 
-                text='Confirm Slot' 
-                width='30%' 
-                handleClick={handleConfirm}
-              />
-            </div>
-          </div>
+                {errorMessage !== '' && <div className={styles.errorMessage}>{errorMessage}</div>}
+                <div className={styles.confirmBtn}>
+                  <Button
+                    text='Confirm Slot'
+                    width='30%'
+                    handleClick={handleConfirm}
+                  />
+                </div>
+              </div>
+            )}
+          </>
         )}
       </div>
     </>

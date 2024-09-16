@@ -27,15 +27,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 8vh;
 }
 
 .rowItem {
-  width: 20%;
+  width: 30%;
   display: flex;
 }
 
 .rowItem2{
-  width: 20%;
+  width: 30%;
 }
 
 .rowItem div{
@@ -48,4 +49,13 @@
   font-weight: bold;
   text-align: left;
   margin-right: 1vh;
+}
+
+@media screen and (max-width: 900px) {
+  .patientPortal{
+    width: 50%;
+  }
+  .rowItem, .rowItem2{
+    width: 70%;
+  }
 }

@@ -18,7 +18,6 @@ const NavBar = () => {
 
   const handleLogout = async () => {
     const res = await logout(token);
-    console.log(res);
     if(res.status === 200){
       dispatch(logoutAdmin());
       window.location.href = '/';
@@ -34,12 +33,12 @@ const NavBar = () => {
         <FaBars style={{ fontSize: "2em" }} />
       </div>
       <div className={`${styles.itemDiv} ${showNavbar && styles.show}`}>
-        <Link to="/" className={styles.linkItem}>HOME</Link>
-        <Link className={styles.linkItem}>ABOUT</Link>
-        <Link className={styles.linkItem}>TREATMENTS</Link>
-        <Link className={styles.linkItem}>DOCTORS</Link>
-        <Link to="/patient-portal" className={styles.linkItem}>PATIENT PORTAL</Link>
-        <Link className={styles.linkItem}>CONTACT US</Link>
+        <Link to="/" className={styles.linkItem} onClick={handleShowNavbar}>HOME</Link>
+        <Link className={styles.linkItem} onClick={handleShowNavbar}>ABOUT</Link>
+        <Link className={styles.linkItem} onClick={handleShowNavbar}>TREATMENTS</Link>
+        <Link className={styles.linkItem} onClick={handleShowNavbar}>DOCTORS</Link>
+        <Link to="/patient-portal" className={styles.linkItem} onClick={handleShowNavbar}>PATIENT PORTAL</Link>
+        <Link className={styles.linkItem} onClick={handleShowNavbar}>CONTACT US</Link>
         {isLoggedIn && <Link className={styles.linkItem} onClick={handleLogout}>LOGOUT</Link>}
       </div>
     </nav>
