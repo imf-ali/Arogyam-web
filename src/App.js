@@ -4,7 +4,7 @@ import Admin from "./pages/Admin";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import { getClinicData, getClinicDataBanner, getFeedbackData } from "./store/WebDataStore/WebDataApi";
+import { getClinicData, getFeedbackData } from "./store/WebDataStore/WebDataApi";
 import HomePageData from "./components/AdminPage/HomePageData";
 import ManageFAQ from "./components/AdminPage/ManageFAQ";
 import ManageTestimonial from "./components/AdminPage/ManageTestimonial";
@@ -20,7 +20,6 @@ function App() {
 
   useEffect(() => {
     dispatch(getClinicData());
-    dispatch(getClinicDataBanner({ filename: 'bannerUrl.png' }));
     dispatch(getFeedbackData());
   })
 
