@@ -93,3 +93,19 @@ export const logout = async (token) => {
     return err.response;
   }
 }
+
+export const loginPatientPortal = async (patientId, phone) => {
+  try {
+    const res = await axios({
+      method: 'GET',
+      url: `${backendBaseUrl}/v1/patient-portal`,
+      params: {
+        patientId,
+        phone,
+      }
+    });
+    return res;
+  } catch (err) {
+    return err.response;
+  }
+}

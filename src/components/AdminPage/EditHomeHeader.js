@@ -13,7 +13,9 @@ const EditHomeHeader = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    dispatch(updateClinicData({ title: text }));
+    const formData = new FormData();
+    formData.append("title", text);
+    dispatch(updateClinicData({ formData }));
     setText('');
   }
   return (

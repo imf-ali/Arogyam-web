@@ -14,7 +14,10 @@ const ManageFAQ = () => {
   const [answer, setAnswer] = useState('');
 
   const handleClick = () => {
-    dispatch(updateClinicData({ faqs: [{ question, answer }] }));
+    const formData = new FormData();
+    formData.append("question", question);
+    formData.append("answer", answer);
+    dispatch(updateClinicData({ formData  }));
     setAnswer('');
     setQuestion('');
   }

@@ -1,0 +1,61 @@
+.patientPortal {
+  padding-top: 25vh;
+  width: 30%;
+  margin: auto;
+  flex: 1;
+}
+
+.header{
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-bottom: 4vh;
+}
+
+.btnDiv{
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+.patientDetails{
+  padding-top: 15vh;
+}
+
+.patient{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8vh;
+}
+
+.rowItem {
+  width: 30%;
+  display: flex;
+}
+
+.rowItem2{
+  width: 30%;
+}
+
+.rowItem div{
+  width: 60%;
+}
+
+.rowName{
+  margin-bottom: 1vh;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  margin-right: 1vh;
+}
+
+@media screen and (max-width: 900px) {
+  .patientPortal{
+    width: 50%;
+  }
+  .rowItem, .rowItem2{
+    width: 70%;
+  }
+}

@@ -14,7 +14,9 @@ const EditHomeHeaderList = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    dispatch(updateClinicData({ body: [ text ] }))
+    const formData = new FormData();
+    formData.append("body", text);
+    dispatch(updateClinicData({ formData }))
     setText('');
   }
   return (

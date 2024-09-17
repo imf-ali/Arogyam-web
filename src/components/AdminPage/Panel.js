@@ -7,21 +7,27 @@ const Panel = ({ visibleComponent, setVisibleComponent }) => {
   }
   return (
     <div className={styles.panel}>
-      <Link to="/admin/homedata"
+      <Link to="/admin/appointments"
         onClick={() => handleClick(0)}
         style={{ backgroundColor: visibleComponent === 0 && '#1c588c' }}
+      >
+        Appointments
+      </Link>
+      <Link to="/admin/homedata"
+        onClick={() => handleClick(1)}
+        style={{ backgroundColor: visibleComponent === 1 && '#1c588c' }}
       >
         Home page data
       </Link>
       <Link to="/admin/managefaq"
-        onClick={() => handleClick(1)}
-        style={{ backgroundColor: visibleComponent === 1 && '#1c588c' }}
+        onClick={() => handleClick(2)}
+        style={{ backgroundColor: visibleComponent === 2 && '#1c588c' }}
       >
         Manage FAQs
       </Link>
       <Link to="/admin/testimonials"
-        onClick={() => handleClick(2)}
-        style={{ backgroundColor: visibleComponent === 2 && '#1c588c' }}
+        onClick={() => handleClick(3)}
+        style={{ backgroundColor: visibleComponent === 3 && '#1c588c' }}
       >
         Manage Testimonials
       </Link>

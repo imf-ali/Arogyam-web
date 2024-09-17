@@ -19,6 +19,8 @@ const PatientTracking = () => {
     }
     const res = await trackStatus(name, phone);
     if(res.status === 'Success'){
+      setName('');
+      setPhone('');
       setModalData(res.data);
       setShowModal(true);
     }

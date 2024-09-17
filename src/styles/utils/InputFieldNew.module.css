@@ -1,0 +1,23 @@
+.inputDiv{
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+}
+
+.inputDiv input{
+  border: 0;
+  border-bottom: 1px solid #000;
+  font-size: 1.1em;
+  margin-top: 1.5vh;
+  margin-left: 1vh;
+}
+
+.inputDiv label{
+  margin-left: 1vh;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.inputDiv input:focus{
+  outline: none;
+}

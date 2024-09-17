@@ -52,6 +52,9 @@ const BookAppointment = () => {
       </div>
       {showModal && (
         <SlotModal
+          setName={setName}
+          setEmail={setEmail}
+          setPhone={setPhone}
           name={name}
           phone={phone}
           email={email}
