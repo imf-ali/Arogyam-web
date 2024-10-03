@@ -13,6 +13,10 @@ import Patient from "./components/AdminPage/Patient";
 import PatientPortal from "./pages/PatientPortal";
 import Footer from "./components/Footer";
 import styles from './App.module.css';
+import Treatment from "./pages/Treatment";
+import TreatmentItem from "./components/TreatmentPage/TreatmentItem";
+import NotFound from "./components/NotFound";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
 
@@ -31,6 +35,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/patient-portal" element={<PatientPortal />} />
+            <Route path="/treatments" element={<Treatment />} />
+            <Route path="/treatments/:name" element={<TreatmentItem />} />
             <Route path="/admin" element={<Admin />}>
               <Route path="appointments" element={<Appointments />} />
               <Route path="homedata" element={<HomePageData />} />
@@ -38,6 +44,8 @@ function App() {
               <Route path="testimonials" element={<ManageTestimonial />} />
               <Route path="patient/:patientId" element={<Patient />} />
             </Route>
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
