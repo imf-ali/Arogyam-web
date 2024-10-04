@@ -22,5 +22,11 @@
 .treatmentItem{
   margin: auto;
   margin-top: 12vh;
-  width: 80vw;
+  width: 75vw;
+  font-size: 1.1em;
+  margin-bottom: 5vh;
+}
+
+.treatmentItem h2 {
+  color: #003D6F;
 }

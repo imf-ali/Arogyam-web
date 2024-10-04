@@ -9,10 +9,30 @@ const TreatmentItem = () => {
   return (
     <div className={styles.treatmentItem}>
       {treatment ? (
-        <div>
-          <h3>{treatment.name}</h3>
-          <p>{treatment.description}</p>
-        </div>
+        <>
+         {Object.keys(treatment.data).map(key => (
+           <div key={key}>
+            <h2>{key}</h2>
+            {Array.isArray(treatment.data[key]) ? (
+              <ul>
+                {treatment.data[key].map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              ) : typeof treatment.data[key] === 'object' ? (
+                <div>
+                  {Object.keys(treatment.data[key]).map(subKey => (
+                    <div key={subKey}>
+                      <strong>{subKey}: </strong> {treatment.data[key][subKey]}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p>{treatment.data[key]}</p>
+              )}
+          </div>
+        ))}
+        </>
       ) : (
         <NotFound />
       )}
