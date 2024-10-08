@@ -1,16 +1,16 @@
 import styles from '../styles/utils/Input.module.css';
 
-const FileInput = ({ labelName, value, setFileInput }) => {
+const FileInput = ({ labelName, id, setFileInput }) => {
   return (
     <div className={styles.inputDiv}>
       <label
-        htmlFor="file-upload"
+        htmlFor={id}
         className={styles.customFileUpload}
       >
         {labelName}
       </label>
       <input
-        id="file-upload"
+        id={id}
         type="file"
         accept='image/*'
         onChange={setFileInput}

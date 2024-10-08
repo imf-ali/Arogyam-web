@@ -73,6 +73,7 @@ const EditHomeBanner = () => {
       </div>
       <div className={styles.btnDiv}>
         <FileInput
+          id="banner-upload"
           labelName="Change Image"
           setFileInput={setFileInput}
         />

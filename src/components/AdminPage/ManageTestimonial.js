@@ -66,7 +66,7 @@ const ManageTestimonial = () => {
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{feedback.name}</td>
-                <td><div className={styles.imageDiv}><img src={feedback.imageUrl} alt="user-image" /></div></td>
+                <td><div className={styles.imageDiv}><img src={feedback.beforeImage} alt="user-image" /><img src={feedback.afterImage} alt="user-image" /></div></td>
                 <td>{feedback.desc}</td>
                 <td>{feedback.isTestimonial ? 'Yes' : 'No'}</td>
                 <td>

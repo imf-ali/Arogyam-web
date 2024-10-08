@@ -64,13 +64,13 @@
 }
 
 .imageDiv{
-  width: 55%;
+  width: 33%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 45%;
-  bottom: 25%;
+  left: 50%;
+  bottom: 20%;
 }
 
 .imageDiv img{
