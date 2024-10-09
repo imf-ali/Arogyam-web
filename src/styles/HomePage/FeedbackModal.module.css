@@ -76,3 +76,17 @@
   justify-content: center;
   gap: 1vh;
 }
+
+@media screen and (max-width: 1000px) {
+  .modal{
+    left: 20%;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal{
+    left: 8%;
+    width: 70%;
+  }
+}

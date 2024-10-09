@@ -16,16 +16,27 @@ const FeedbackModal = ({ setShowModal }) => {
   const [zoom, setZoom] = useState(5);
   const [image, setImage] = useState(undefined);
   const editorRef = useRef(null);
+  const divRef = useRef(null);
   const [beforeImage, setBeforeImage] = useState('');
   const [afterImage, setAfterImage] = useState('');
   const [activeImage, setActiveImage] = useState(0);
-
-  console.log(activeImage)
+  const [editorHeight, setEditorHeight] = useState(350);
+  const [editorWidth, setEditorWidth] = useState(350);
 
   const setFileInput = (e, currentImage) =>{
-    console.log(currentImage)
     setImage(e.target.files[0]);
     setShowEditor(true);
+    console.log(divRef.current.clientWidth)
+    if(divRef.current.clientWidth <= 370) {
+      setEditorHeight(divRef.current.clientWidth * 0.6)
+      setEditorWidth(divRef.current.clientWidth * 0.6)
+    } else if (divRef.current.clientWidth > 370 && divRef.current.clientWidth <= 400) {
+      setEditorHeight(divRef.current.clientWidth * 0.5)
+      setEditorWidth(divRef.current.clientWidth * 0.5)
+    } else if (divRef.current.clientWidth > 400 && divRef.current.clientWidth <= 450){
+      setEditorHeight(divRef.current.clientWidth * 0.6)
+      setEditorWidth(divRef.current.clientWidth * 0.6)
+    }
     setActiveImage(currentImage);
     e.target.value = '';
   }
@@ -62,7 +73,7 @@ const FeedbackModal = ({ setShowModal }) => {
   return (
     <>
       <div className={styles.backdrop} onClick={() => setShowModal(false)} />
-      <div className={styles.modal}>
+      <div ref={divRef} className={styles.modal}>
         {success !== '' ? (
           <>
             <div className={styles.success}>{success}</div>
@@ -73,8 +84,8 @@ const FeedbackModal = ({ setShowModal }) => {
               <AvatarEditor
                 ref={editorRef}
                 image={image}
-                width={350}
-                height={350}
+                width={editorWidth}
+                height={editorHeight}
                 border={50}
                 color={[200, 200, 200, 0.6]} // RGBA
                 scale={zoom/8}
