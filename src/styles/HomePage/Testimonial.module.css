@@ -106,12 +106,13 @@
     height: 30vh;
   }
   .imageDiv{
-    width: 100%;
+    width: 50%;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    left: auto;
+    /* position: absolute; */
+    left: 25%;
     bottom: -45%;
   }
 
