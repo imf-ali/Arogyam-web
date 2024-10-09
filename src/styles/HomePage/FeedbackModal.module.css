@@ -1,0 +1,78 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(67, 59, 59, 0.5);
+  z-index: 20;
+}
+
+.modal {
+  position: fixed;
+  z-index: 30;
+  top: 10%;
+  left: 35%;
+  width: 30%;
+  background-color: white;
+  padding: 4vh;
+  border-radius: 15px;
+}
+
+.otherBtnDiv{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.slider{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.modalHeading{
+  color: #003D6F;
+  font-size: 1.7em;
+  margin-bottom: 4vh;
+  font-weight: bold;
+}
+
+.btnDiv{
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+.errorMessage{
+  color: red;;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2vh;
+  font-size: 1em;
+}
+
+.success{
+  padding: 3vh;
+  text-align: center;
+  font-weight: 600;
+}
+
+.fileDiv{
+  margin-top: 2vh;
+  width: 100%;
+}
+
+.imgDiv{
+  width: 60%;
+}
+
+.imgDiv img{
+  width: 100%;
+}
+
+.imgCapture{
+  display: flex;
+  justify-content: center;
+  gap: 1vh;
+}

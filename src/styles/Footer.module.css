@@ -8,11 +8,35 @@
   font-size: 0.9em;
 }
 
-.content{
+.footerContent{
   width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content{
   display: flex;
   gap: 2vh;
   margin: 2vh 0 4vh 0;
+}
+
+.contentTwo{
+  gap: 1vh;
+  margin: 2vh 0 4vh 0;
+}
+
+.contentTwo a{
+  display: flex;
+  text-decoration: none;
+  color: #dadee3;
+}
+
+.contentTwo div{
+  align-content:center;
+}
+
+.content div{
+  align-content: end;
 }
 
 .logoDiv img{

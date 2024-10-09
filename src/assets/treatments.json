@@ -1,0 +1,132 @@
+{
+  "treatments" : [
+    {
+      "id": 1,
+      "name": "Acne",
+      "path": "acne-treatment",
+      "data": {
+        "Introduction": "Allergies are immune system reactions to foreign substances such as pollen, dust, or certain foods. Homeopathy offers a natural and effective approach to managing allergy symptoms by addressing their root causes.",
+        "Causes": [
+          "Genetic predisposition",
+          "Environmental factors like pollen, dust mites, pet dander",
+          "Exposure to specific foods or chemicals",
+          "Seasonal changes and climate variations"
+        ],
+        "Severity Levels": {
+          "Mild": "Sneezing, runny nose, itchy eyes",
+          "Moderate": "Persistent coughing, skin rashes",
+          "Severe": "Anaphylaxis, difficulty breathing"
+        },
+        "Symptoms": [
+          "Sneezing and congestion",
+          "Itchy or watery eyes",
+          "Rash or hives",
+          "Swelling of the face or throat",
+          "Difficulty breathing or wheezing"
+        ],
+        "Foods That May Exacerbate": [
+          "Dairy products",
+          "Gluten-containing foods",
+          "Nuts and shellfish",
+          "Processed and sugary foods"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses underlying causes rather than just symptoms",
+          "Minimal side effects",
+          "Personalized treatment tailored to individual needs",
+          "Supports overall immune system health"
+        ],
+        "Homeopathy Treatment": {
+          "Allium Cepa": "Ideal for allergies with watery discharge and burning sensations.",
+          "Natrum Muriaticum": "Suitable for seasonal allergies with emotional stress factors.",
+          "Arsenicum Album": "Best for allergies accompanied by anxiety and restlessness."
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Allergic Rhinitis",
+      "path": "allergic-rhinitis",
+      "data": {
+        "Introduction": "Allergic rhinitis is an immune system reaction to airborne allergens like pollen, dust, or mold. Homeopathy helps in managing allergic rhinitis by addressing both acute symptoms and underlying immune imbalances.",
+        "Causes": [
+          "Pollen from trees, grass, and weeds",
+          "Dust mites",
+          "Pet dander",
+          "Mold spores"
+        ],
+        "Severity Levels": {
+          "Mild": "Sneezing and runny nose",
+          "Moderate": "Nasal congestion, itchy throat",
+          "Severe": "Sinus infections, breathing difficulties"
+        },
+        "Symptoms": [
+          "Sneezing",
+          "Congestion",
+          "Itchy eyes and throat",
+          "Coughing",
+          "Postnasal drip"
+        ],
+        "Foods That May Exacerbate": [
+          "Dairy products",
+          "Processed foods",
+          "Artificial sweeteners",
+          "Certain fermented foods"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses underlying immune issues",
+          "Safe for long-term use",
+          "No sedative effects like conventional antihistamines",
+          "Helps balance immune response"
+        ],
+        "Homeopathy Treatment": {
+          "Sabadilla": "Ideal for sneezing and runny nose with itchy eyes.",
+          "Nux Vomica": "Suitable for stuffy nose and oversensitivity to strong smells.",
+          "Arsenicum Album": "Best for nasal discharge with anxiety and restlessness."
+        }
+      }      
+    },
+    {
+      "id": 3,
+      "name": "Backache",
+      "path": "backache-treatment",
+      "data": {
+        "Introduction": "Backache is often caused by muscle strain, poor posture, or chronic conditions like arthritis. Homeopathy offers a holistic approach to treating back pain by addressing the root cause and providing long-term relief.",
+        "Causes": [
+          "Muscle strain",
+          "Poor posture",
+          "Arthritis",
+          "Herniated disc"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional stiffness or discomfort",
+          "Moderate": "Persistent ache affecting daily activities",
+          "Severe": "Chronic pain with difficulty moving"
+        },
+        "Symptoms": [
+          "Lower back pain",
+          "Muscle stiffness",
+          "Shooting pain down the leg",
+          "Limited range of motion"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed foods",
+          "Sugary snacks",
+          "Fried foods",
+          "High-fat dairy products"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Reduces inflammation and pain naturally",
+          "Promotes muscle relaxation and healing",
+          "No side effects like conventional painkillers",
+          "Prevents recurrence of pain"
+        ],
+        "Homeopathy Treatment": {
+          "Rhus Toxicodendron": "Effective for stiffness and pain that improves with movement.",
+          "Bryonia Alba": "Suitable for back pain worsened by motion and relieved by rest.",
+          "Arnica Montana": "Best for backache due to injury or overexertion."
+        }
+      }      
+    }
+  ]
+}

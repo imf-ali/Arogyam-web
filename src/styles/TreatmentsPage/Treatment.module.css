@@ -1,0 +1,32 @@
+.treatmentDiv{
+  margin: auto;
+  margin-top: 12vh;
+  width: 80vw;
+}
+.treatmentDiv p{
+  line-height: 1.7em;
+}
+
+.orderedItem{
+  padding-left: 20px;
+}
+
+.orderedItem li{
+  margin: 1vh 0;
+}
+
+.orderedItem a {
+  text-decoration: none;
+}
+
+.treatmentItem{
+  margin: auto;
+  margin-top: 12vh;
+  width: 75vw;
+  font-size: 1.1em;
+  margin-bottom: 5vh;
+}
+
+.treatmentItem h2 {
+  color: #003D6F;
+}

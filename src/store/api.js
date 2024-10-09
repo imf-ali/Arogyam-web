@@ -44,6 +44,25 @@ export const trackStatus = async (name, phone) => {
   }
 }
 
+export const submitFeedback = async (name, desc, beforeImage, afterImage) => {
+  console.log(name, desc, beforeImage, afterImage);
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${backendBaseUrl}/v1/feedbacks`,
+      data: {
+        name,
+        desc,
+        beforeImage,
+        afterImage,
+      }
+    });
+    return res;
+  } catch (err) {
+    return err.response;
+  }
+}
+
 export const signUp = async (name, email, phone, password, key) => {
   try {
     const res = await axios({

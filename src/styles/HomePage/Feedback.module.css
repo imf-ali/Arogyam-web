@@ -1,0 +1,11 @@
+.headingDiv{
+  display: flex;
+  justify-content: center;
+}
+
+.headingDiv div{
+  color: #003D6F;
+  font-size: 1.7em;
+  margin-bottom: 2vh;
+  cursor: pointer;
+}

@@ -5,7 +5,7 @@ import leftArrow from '../../assets/leftArrow.png';
 import rightArrow from '../../assets/rightArrow.png';
 import { useEffect, useState } from 'react';
 
-const Testimonial = ({ name, desc, imageUrl }) => {
+const Testimonial = ({ name, desc, beforeImage, afterImage, frontItem }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [leftImageSrc, setLeftImageSrc] = useState(leftArrow);
 
@@ -43,13 +43,14 @@ const Testimonial = ({ name, desc, imageUrl }) => {
         </div>
       </div>
       <div className={styles.imageDiv}>
-        <img src={imageUrl} alt='testimonial' />
+        <img src={beforeImage} alt='testimonial' />
+        <img src={afterImage} alt='testimonial' />
       </div>
       <div className={styles.arrowDiv}>
-        <div className={styles.leftArrow}>
+        <div className={styles.leftArrow} onClick={() => frontItem(false)}>
           <img src={leftImageSrc} alt='left arrow' />
         </div>
-        <div className={styles.rightArrow}>
+        <div className={styles.rightArrow} onClick={() => frontItem(true)}>
           <img src={rightArrow} alt='right arrow' />
         </div>
       </div>
