@@ -1,5 +1,5 @@
 {
-  "treatments" : [
+  "treatments": [
     {
       "id": 1,
       "name": "Acne",
@@ -46,87 +46,1675 @@
     {
       "id": 2,
       "name": "Allergic Rhinitis",
-      "path": "allergic-rhinitis",
+      "path": "allergic-rhinitis-treatment",
       "data": {
-        "Introduction": "Allergic rhinitis is an immune system reaction to airborne allergens like pollen, dust, or mold. Homeopathy helps in managing allergic rhinitis by addressing both acute symptoms and underlying immune imbalances.",
+        "Introduction": "Allergic rhinitis is an inflammation of the nasal passages caused by an allergic reaction to airborne substances like pollen, dust, or pet dander. Homeopathy offers long-term relief by treating the root causes of these allergic reactions.",
         "Causes": [
-          "Pollen from trees, grass, and weeds",
-          "Dust mites",
-          "Pet dander",
-          "Mold spores"
+          "Environmental triggers like pollen, dust mites, pet dander",
+          "Genetic predisposition to allergies",
+          "Exposure to mold spores or chemicals",
+          "Seasonal allergens (grass, tree, and weed pollens)"
         ],
         "Severity Levels": {
-          "Mild": "Sneezing and runny nose",
-          "Moderate": "Nasal congestion, itchy throat",
-          "Severe": "Sinus infections, breathing difficulties"
+          "Mild": "Occasional sneezing, mild nasal congestion",
+          "Moderate": "Persistent runny nose, watery eyes, itching",
+          "Severe": "Severe nasal congestion, sleep disturbances, difficulty breathing"
         },
         "Symptoms": [
+          "Runny or stuffy nose",
           "Sneezing",
-          "Congestion",
-          "Itchy eyes and throat",
-          "Coughing",
-          "Postnasal drip"
+          "Itchy or watery eyes",
+          "Postnasal drip",
+          "Throat irritation"
         ],
         "Foods That May Exacerbate": [
           "Dairy products",
-          "Processed foods",
-          "Artificial sweeteners",
-          "Certain fermented foods"
+          "Spicy foods",
+          "Alcoholic beverages",
+          "Processed foods high in sugar or preservatives"
         ],
         "Benefits of Using Homeopathy": [
-          "Addresses underlying immune issues",
-          "Safe for long-term use",
-          "No sedative effects like conventional antihistamines",
-          "Helps balance immune response"
+          "Treats the root cause of the allergic response",
+          "No sedation or side effects",
+          "Improves the body’s immune response",
+          "Prevents recurrence of symptoms"
         ],
         "Homeopathy Treatment": {
-          "Sabadilla": "Ideal for sneezing and runny nose with itchy eyes.",
-          "Nux Vomica": "Suitable for stuffy nose and oversensitivity to strong smells.",
-          "Arsenicum Album": "Best for nasal discharge with anxiety and restlessness."
+          "Sabadilla": "Effective for sneezing and watery nasal discharge, especially in hay fever.",
+          "Euphrasia": "Ideal for watery eyes and nasal discharge.",
+          "Arundo": "Best for itching of the nose, ears, and roof of the mouth."
         }
-      }      
+      }
     },
     {
       "id": 3,
-      "name": "Backache",
-      "path": "backache-treatment",
+      "name": "Allergies",
+      "path": "allergies-treatment",
       "data": {
-        "Introduction": "Backache is often caused by muscle strain, poor posture, or chronic conditions like arthritis. Homeopathy offers a holistic approach to treating back pain by addressing the root cause and providing long-term relief.",
+        "Introduction": "Allergies occur when the immune system reacts to substances like pollen, dust, or certain foods. Homeopathy aims to treat allergies by addressing their root causes, offering a natural and holistic approach to relief.",
         "Causes": [
-          "Muscle strain",
-          "Poor posture",
-          "Arthritis",
-          "Herniated disc"
+          "Genetic predisposition",
+          "Environmental factors such as pollen, dust mites, and pet dander",
+          "Exposure to certain foods or chemicals",
+          "Seasonal variations or climate changes"
         ],
         "Severity Levels": {
-          "Mild": "Occasional stiffness or discomfort",
-          "Moderate": "Persistent ache affecting daily activities",
-          "Severe": "Chronic pain with difficulty moving"
+          "Mild": "Sneezing, runny nose, itchy eyes",
+          "Moderate": "Persistent cough, skin rashes",
+          "Severe": "Anaphylaxis, breathing difficulties"
         },
         "Symptoms": [
-          "Lower back pain",
-          "Muscle stiffness",
-          "Shooting pain down the leg",
-          "Limited range of motion"
+          "Sneezing and nasal congestion",
+          "Itchy, watery eyes",
+          "Rash or hives",
+          "Swelling of the face or throat",
+          "Wheezing or shortness of breath"
         ],
         "Foods That May Exacerbate": [
-          "Processed foods",
-          "Sugary snacks",
-          "Fried foods",
-          "High-fat dairy products"
+          "Dairy products",
+          "Gluten-containing foods",
+          "Nuts and shellfish",
+          "Processed and sugary foods"
         ],
         "Benefits of Using Homeopathy": [
-          "Reduces inflammation and pain naturally",
-          "Promotes muscle relaxation and healing",
-          "No side effects like conventional painkillers",
-          "Prevents recurrence of pain"
+          "Targets the underlying causes of allergic reactions",
+          "Minimal to no side effects",
+          "Tailored treatments specific to each individual",
+          "Boosts the overall health of the immune system"
         ],
         "Homeopathy Treatment": {
-          "Rhus Toxicodendron": "Effective for stiffness and pain that improves with movement.",
-          "Bryonia Alba": "Suitable for back pain worsened by motion and relieved by rest.",
-          "Arnica Montana": "Best for backache due to injury or overexertion."
+          "Allium Cepa": "Ideal for allergies with watery eyes and nasal discharge.",
+          "Natrum Muriaticum": "Effective for seasonal allergies, particularly when linked to emotional factors.",
+          "Arsenicum Album": "Best for anxiety-related allergies, accompanied by restlessness and difficulty breathing."
         }
-      }      
+      }
+    },
+    {
+      "id": 4,
+      "name": "Alopecia Areata",
+      "path": "alopecia-areata-treatment",
+      "data": {
+        "Introduction": "Alopecia Areata is an autoimmune condition where the immune system attacks hair follicles, leading to patchy hair loss. Homeopathy offers a gentle and natural approach by addressing underlying immune imbalances and promoting hair regrowth.",
+        "Causes": [
+          "Autoimmune response",
+          "Genetic predisposition",
+          "Stress and emotional factors",
+          "Viral infections or physical trauma"
+        ],
+        "Severity Levels": {
+          "Mild": "Small patches of hair loss on the scalp",
+          "Moderate": "Wider areas of baldness on the scalp",
+          "Severe": "Complete hair loss on the scalp or body (alopecia totalis or universalis)"
+        },
+        "Symptoms": [
+          "Sudden patchy hair loss",
+          "Round, smooth patches of baldness",
+          "Thinning or loss of hair on the scalp, beard, or eyebrows",
+          "Itching or tingling in the affected areas"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed and sugary foods",
+          "Dairy products",
+          "Foods high in unhealthy fats",
+          "Gluten-containing products"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Stimulates natural hair regrowth",
+          "Balances the immune system to prevent further hair loss",
+          "No side effects or dependency on medication",
+          "Treats the emotional and psychological aspects associated with hair loss"
+        ],
+        "Homeopathy Treatment": {
+          "Fluoric Acid": "Useful for hair loss associated with bald patches and slow regrowth.",
+          "Phosphorus": "Beneficial for rapid hair loss due to stress or nervous conditions.",
+          "Silicea": "Promotes healthy hair growth and treats hair loss due to scalp conditions."
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Ankylosing Spondylitis",
+      "path": "ankylosing-spondylitis-treatment",
+      "data": {
+        "Introduction": "Ankylosing Spondylitis (AS) is a chronic inflammatory disease that primarily affects the spine and sacroiliac joints, leading to pain and stiffness. Homeopathy aims to reduce inflammation, relieve pain, and prevent further progression of the condition by addressing the root causes.",
+        "Causes": [
+          "Genetic predisposition, especially the HLA-B27 gene",
+          "Autoimmune response",
+          "Chronic inflammation of the spine and joints",
+          "Environmental triggers like infections"
+        ],
+        "Severity Levels": {
+          "Mild": "Intermittent back pain and stiffness",
+          "Moderate": "Persistent pain with limited flexibility",
+          "Severe": "Fusion of the spine, severely limited mobility, and chronic pain"
+        },
+        "Symptoms": [
+          "Chronic back pain, especially in the lower back and hips",
+          "Morning stiffness that improves with activity",
+          "Reduced flexibility in the spine",
+          "Fatigue and general discomfort",
+          "Inflammation in other joints, such as the shoulders or knees"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed and sugary foods",
+          "High-fat and fried foods",
+          "Excessive dairy consumption",
+          "Gluten-containing foods"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Reduces inflammation and pain without side effects",
+          "Improves flexibility and range of motion",
+          "Supports long-term management of symptoms",
+          "Boosts overall immunity and prevents recurrence of flare-ups"
+        ],
+        "Homeopathy Treatment": {
+          "Rhus Tox": "Effective for stiffness and pain that worsens with rest and improves with movement.",
+          "Aesculus": "Useful for lower back pain and sciatica with associated stiffness.",
+          "Kali Carb": "Beneficial for sharp pain in the back and joints, especially in cold weather."
+        }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Asthma",
+      "path": "asthma-treatment",
+      "data": {
+        "Introduction": "Asthma is a chronic respiratory condition characterized by inflammation and narrowing of the airways, leading to breathing difficulties. Homeopathy aims to reduce the frequency and intensity of asthma attacks by addressing the underlying causes and strengthening the respiratory system.",
+        "Causes": [
+          "Genetic predisposition",
+          "Environmental allergens like pollen, dust mites, mold, and pet dander",
+          "Respiratory infections",
+          "Exposure to air pollutants, smoke, or chemical irritants",
+          "Physical exertion or exercise"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional shortness of breath or wheezing",
+          "Moderate": "Frequent coughing, tightness in the chest",
+          "Severe": "Severe difficulty breathing, frequent asthma attacks, hospitalization may be required"
+        },
+        "Symptoms": [
+          "Wheezing or whistling sound while breathing",
+          "Shortness of breath",
+          "Tightness or pain in the chest",
+          "Chronic coughing, especially at night",
+          "Fatigue during or after physical activity"
+        ],
+        "Foods That May Exacerbate": [
+          "Dairy products",
+          "Processed foods high in preservatives and additives",
+          "Cold or chilled foods",
+          "Acidic foods such as citrus fruits and tomatoes"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Reduces the frequency and severity of asthma attacks",
+          "Strengthens lung function and improves breathing",
+          "No side effects or dependency on inhalers or medications",
+          "Addresses the emotional triggers of asthma"
+        ],
+        "Homeopathy Treatment": {
+          "Arsenicum Album": "Useful for asthma attacks accompanied by anxiety, restlessness, and wheezing.",
+          "Spongia Tosta": "Effective for dry cough and difficulty breathing, especially when lying down.",
+          "Natrum Sulphuricum": "Beneficial for asthma triggered by dampness or cold weather, with a rattling cough."
+        }
+      }
+    },
+    {
+      "id": 7,
+      "name": "Attention Deficit Hyperactivity Disorder (ADHD)",
+      "path": "adhd-treatment",
+      "data": {
+        "Introduction": "ADHD is a neurodevelopmental disorder characterized by symptoms of inattention, hyperactivity, and impulsiveness. Homeopathy offers a natural approach to managing ADHD by focusing on the individual’s emotional and behavioral patterns, helping to improve concentration and calmness.",
+        "Causes": [
+          "Genetic predisposition",
+          "Imbalances in brain chemistry, particularly dopamine",
+          "Environmental factors such as prenatal exposure to tobacco or alcohol",
+          "High levels of stress or emotional trauma during childhood"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional inattentiveness or impulsivity",
+          "Moderate": "Frequent difficulty focusing or controlling behavior",
+          "Severe": "Chronic inattention and hyperactivity that interfere with daily life and relationships"
+        },
+        "Symptoms": [
+          "Inattention and difficulty focusing on tasks",
+          "Restlessness and excessive fidgeting",
+          "Impulsive behavior and poor self-control",
+          "Difficulty organizing tasks and following through on instructions",
+          "Frequent mood swings and emotional outbursts"
+        ],
+        "Foods That May Exacerbate": [
+          "Sugary snacks and beverages",
+          "Foods high in artificial colors and preservatives",
+          "Caffeine and stimulant-containing foods",
+          "Processed foods and fast food"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses emotional and behavioral imbalances naturally",
+          "Improves focus and reduces hyperactivity without side effects",
+          "Personalized treatment based on the individual’s unique symptoms",
+          "Supports long-term behavioral improvement"
+        ],
+        "Homeopathy Treatment": {
+          "Tarentula Hispana": "Effective for hyperactivity and restlessness with difficulty focusing.",
+          "Hyoscyamus": "Helpful for impulsive and erratic behavior, often accompanied by jealousy or aggression.",
+          "Verta Alb": "Beneficial for children who show signs of extreme hyperactivity, with difficulty staying still."
+        }
+      }
+    },
+    {
+      "id": 8,
+      "name": "Autism",
+      "path": "autism-treatment",
+      "data": {
+        "Introduction": "Autism Spectrum Disorder (ASD) is a neurodevelopmental condition characterized by challenges with social interactions, communication, and repetitive behaviors. Homeopathy offers a holistic approach, addressing the unique emotional and behavioral challenges associated with autism, helping improve overall well-being.",
+        "Causes": [
+          "Genetic predisposition",
+          "Abnormal brain development or function",
+          "Environmental factors such as prenatal exposure to certain chemicals",
+          "Immune system imbalances or inflammation in early development"
+        ],
+        "Severity Levels": {
+          "Mild": "Challenges with social interaction and mild repetitive behaviors",
+          "Moderate": "Difficulties with communication, social skills, and increased repetitive behaviors",
+          "Severe": "Significant challenges with communication, understanding, and strong dependence on routines"
+        },
+        "Symptoms": [
+          "Difficulty with social interactions or forming relationships",
+          "Delayed or absent speech development",
+          "Repetitive behaviors like hand-flapping, rocking, or strict routines",
+          "Sensitivity to sensory input such as lights, sounds, or textures",
+          "Difficulty understanding or expressing emotions"
+        ],
+        "Foods That May Exacerbate": [
+          "Dairy products",
+          "Gluten-containing foods",
+          "Processed foods with additives and preservatives",
+          "Sugary snacks and beverages"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Tailored to the child’s specific emotional and behavioral symptoms",
+          "Gentle, non-invasive treatment without side effects",
+          "Improves communication and social interaction skills",
+          "Supports sensory balance and reduces repetitive behaviors"
+        ],
+        "Homeopathy Treatment": {
+          "Carcinosin": "Helpful for children with repetitive behaviors and sensory sensitivities.",
+          "Baryta Carb": "Useful for developmental delays in speech and learning abilities.",
+          "Stramonium": "Effective for managing extreme fear, aggression, or violent outbursts in autistic children."
+        }
+      }
+    },
+    {
+      "id": 9,
+      "name": "Bronchitis",
+      "path": "bronchitis-treatment",
+      "data": {
+        "Introduction": "Bronchitis is an inflammation of the bronchial tubes, typically caused by infections or exposure to irritants. Homeopathy can provide relief from both acute and chronic bronchitis by addressing inflammation and supporting the body's immune response.",
+        "Causes": [
+          "Viral or bacterial infections",
+          "Prolonged exposure to smoke or air pollutants",
+          "Frequent respiratory infections",
+          "Chronic conditions such as asthma or allergies"
+        ],
+        "Severity Levels": {
+          "Mild": "Coughing with minimal sputum production",
+          "Moderate": "Persistent cough, shortness of breath",
+          "Severe": "Severe coughing, chest pain, difficulty breathing"
+        },
+        "Symptoms": [
+          "Persistent cough",
+          "Shortness of breath",
+          "Wheezing",
+          "Chest discomfort",
+          "Fatigue"
+        ],
+        "Foods That May Exacerbate": [
+          "Dairy products",
+          "Fried and greasy foods",
+          "Excessively salty or processed foods",
+          "Foods high in sugar"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Reduces inflammation in the bronchial tubes",
+          "Helps clear mucus from the respiratory tract",
+          "Strengthens the body's natural immune defenses",
+          "Minimal side effects, even with long-term use"
+        ],
+        "Homeopathy Treatment": {
+          "Antimonium Tartaricum": "Effective for persistent coughing and mucus buildup.",
+          "Bryonia": "Best for dry, painful cough with chest discomfort.",
+          "Spongia Tosta": "Useful for dry, barking cough with difficulty breathing."
+        }
+      }
+    },
+    {
+      "id": 10,
+      "name": "Cholecystitis (Gallstones)",
+      "path": "cholecystitis-gallstones-treatment",
+      "data": {
+        "Introduction": "Cholecystitis is the inflammation of the gallbladder, often caused by the presence of gallstones blocking the bile ducts. Homeopathy offers a gentle approach to managing gallstone symptoms, reducing inflammation, and addressing the root cause without surgery.",
+        "Causes": [
+          "Formation of gallstones due to imbalance in bile composition",
+          "Obesity or rapid weight loss",
+          "High cholesterol or triglycerides",
+          "Genetic predisposition",
+          "Infection in the bile duct or gallbladder"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional pain in the upper abdomen, especially after meals",
+          "Moderate": "Frequent pain, nausea, or vomiting with inflammation of the gallbladder",
+          "Severe": "Severe abdominal pain, fever, and risk of complications such as bile duct blockage or infection"
+        },
+        "Symptoms": [
+          "Severe pain in the upper right abdomen or shoulder",
+          "Nausea and vomiting",
+          "Fever and chills",
+          "Jaundice (yellowing of the skin and eyes)",
+          "Digestive problems after eating fatty or fried foods"
+        ],
+        "Foods That May Exacerbate": [
+          "Fried or fatty foods",
+          "High-cholesterol foods",
+          "Sugary or processed foods",
+          "Dairy products"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Helps reduce the frequency and severity of gallbladder attacks",
+          "Supports the natural dissolution of gallstones",
+          "Reduces inflammation and improves digestive health",
+          "Prevents the need for surgery in many cases"
+        ],
+        "Homeopathy Treatment": {
+          "Chelidonium Majus": "Effective for gallbladder pain radiating to the right shoulder, especially after eating fatty foods.",
+          "Lycopodium": "Useful for bloating, flatulence, and digestive discomfort due to gallstones.",
+          "Calcarea Carbonica": "Helps dissolve gallstones, especially in overweight individuals or those with a sedentary lifestyle."
+        }
+      }
+    },
+    {
+      "id": 11,
+      "name": "Constipation",
+      "path": "constipation-treatment",
+      "data": {
+        "Introduction": "Constipation is a common digestive issue where bowel movements become difficult or less frequent. Homeopathy offers a natural approach to stimulate healthy bowel movements by addressing the underlying causes of constipation and promoting digestive health.",
+        "Causes": [
+          "Poor dietary habits, low in fiber",
+          "Dehydration or insufficient water intake",
+          "Sedentary lifestyle",
+          "Use of certain medications like painkillers or antacids",
+          "Hormonal imbalances or pregnancy"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional difficulty in passing stools, bloating",
+          "Moderate": "Straining during bowel movements, infrequent bowel movements",
+          "Severe": "Chronic constipation, abdominal pain, or complications like hemorrhoids"
+        },
+        "Symptoms": [
+          "Infrequent bowel movements (less than three times a week)",
+          "Straining or discomfort during bowel movements",
+          "Hard, dry, or lumpy stools",
+          "Bloating and abdominal discomfort",
+          "A sensation of incomplete evacuation"
+        ],
+        "Foods That May Exacerbate": [
+          "Low-fiber foods like white bread and processed grains",
+          "Fried or fatty foods",
+          "Dairy products like cheese",
+          "Red meat and processed meats"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Gently stimulates natural bowel movements",
+          "Addresses the root cause of constipation",
+          "No harsh side effects or dependency on laxatives",
+          "Improves overall digestive function"
+        ],
+        "Homeopathy Treatment": {
+          "Nux Vomica": "Helpful for constipation caused by sedentary lifestyle, overuse of stimulants, or stress.",
+          "Bryonia": "Effective for dry, hard stools and constipation accompanied by thirst and irritability.",
+          "Alumina": "Used for cases of chronic constipation with no urge to pass stools, especially in the elderly."
+        }
+      }
+    },
+    {
+      "id": 12,
+      "name": "Dandruff (Dermatitis)",
+      "path": "dandruff-dermatitis-treatment",
+      "data": {
+        "Introduction": "Dandruff, also known as seborrheic dermatitis, is a common scalp condition characterized by flaking skin. Homeopathy offers a natural and gentle approach to treating dandruff by targeting the underlying causes and promoting scalp health.",
+        "Causes": [
+          "Oily or irritated skin",
+          "Fungal infection (Malassezia)",
+          "Dry skin",
+          "Sensitivity to hair care products",
+          "Hormonal changes or stress"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional scalp flaking with little to no irritation",
+          "Moderate": "Frequent flaking with mild itchiness and scalp irritation",
+          "Severe": "Excessive flaking, severe itching, and possible inflammation"
+        },
+        "Symptoms": [
+          "White or yellow flakes of skin on the scalp, hair, or shoulders",
+          "Itchy scalp",
+          "Red, irritated, or oily patches of skin",
+          "Scalp sensitivity or soreness"
+        ],
+        "Foods That May Exacerbate": [
+          "Sugary foods and processed snacks",
+          "Dairy products",
+          "Fried and fatty foods",
+          "Alcohol"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root cause of dandruff rather than just alleviating symptoms",
+          "No harsh chemicals or side effects",
+          "Promotes overall scalp health and reduces recurrence",
+          "Customizes treatment to the individual’s specific symptoms"
+        ],
+        "Homeopathy Treatment": {
+          "Sulphur": "Effective for severe itching and flaking with a dry or irritated scalp.",
+          "Graphites": "Useful for dandruff with sticky, yellowish flakes and scalp sensitivity.",
+          "Thuja Occidentalis": "Helpful for oily scalp with excessive dandruff and hair loss."
+        }
+      }
+    },
+    {
+      "id": 13,
+      "name": "Depression",
+      "path": "depression-treatment",
+      "data": {
+        "Introduction": "Depression is a common mental health disorder characterized by persistent feelings of sadness, loss of interest, and a lack of motivation. Homeopathy provides a holistic approach to treating depression, addressing both emotional and physical symptoms to promote overall well-being.",
+        "Causes": [
+          "Genetic predisposition",
+          "Biochemical imbalances in the brain",
+          "Chronic stress or trauma",
+          "Major life changes or losses",
+          "Medical conditions or hormonal changes"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional feelings of sadness or lack of motivation",
+          "Moderate": "Persistent sadness, loss of interest in activities, and difficulty concentrating",
+          "Severe": "Intense feelings of hopelessness, suicidal thoughts, and inability to function in daily life"
+        },
+        "Symptoms": [
+          "Persistent sadness or low mood",
+          "Loss of interest or pleasure in activities once enjoyed",
+          "Changes in appetite or weight",
+          "Sleep disturbances (insomnia or excessive sleeping)",
+          "Fatigue and lack of energy",
+          "Difficulty concentrating or making decisions"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed foods high in sugar and fat",
+          "Caffeine",
+          "Alcohol",
+          "Foods high in refined carbohydrates"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of depression, not just the symptoms",
+          "Gentle and non-invasive treatment with minimal side effects",
+          "Personalized treatment tailored to individual emotional states",
+          "Supports emotional balance and overall mental health"
+        ],
+        "Homeopathy Treatment": {
+          "Natrum Muriaticum": "Helpful for individuals experiencing grief and emotional distress.",
+          "Ignatia Amara": "Effective for acute emotional shocks or grief, especially with mood swings.",
+          "Sepia": "Useful for feelings of indifference, fatigue, and irritability in women, particularly during hormonal changes."
+        }
+      }
+    },
+    {
+      "id": 14,
+      "name": "Diabetes",
+      "path": "diabetes-treatment",
+      "data": {
+        "Introduction": "Diabetes is a chronic condition that occurs when the body is unable to properly use insulin, leading to elevated blood sugar levels. Homeopathy offers a holistic approach to managing diabetes by addressing the underlying causes and supporting overall metabolic health.",
+        "Causes": [
+          "Genetic factors",
+          "Poor diet high in refined sugars and carbohydrates",
+          "Sedentary lifestyle",
+          "Obesity or overweight",
+          "Hormonal imbalances"
+        ],
+        "Severity Levels": {
+          "Mild": "Slightly elevated blood sugar levels with minimal symptoms",
+          "Moderate": "Increased thirst, frequent urination, and fatigue",
+          "Severe": "Complications such as diabetic neuropathy, retinopathy, and cardiovascular issues"
+        },
+        "Symptoms": [
+          "Increased thirst and frequent urination",
+          "Extreme fatigue",
+          "Blurred vision",
+          "Slow healing of wounds or infections",
+          "Unexplained weight loss or gain"
+        ],
+        "Foods That May Exacerbate": [
+          "Sugary beverages and snacks",
+          "White bread and refined grains",
+          "Processed foods high in carbohydrates",
+          "High-fat foods, especially trans fats"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Helps regulate blood sugar levels naturally",
+          "Addresses the root cause of diabetes rather than just symptoms",
+          "Minimal side effects compared to conventional medications",
+          "Supports overall health and well-being"
+        ],
+        "Homeopathy Treatment": {
+          "Syzygium Jambolanum": "Effective for managing blood sugar levels and addressing insulin sensitivity.",
+          "Phosphorus": "Useful for weakness, fatigue, and excessive thirst associated with diabetes.",
+          "Natrum Sulphuricum": "Helpful for diabetic complications such as neuropathy and poor circulation."
+        }
+      }
+    },
+    {
+      "id": 15,
+      "name": "Eczema",
+      "path": "eczema-treatment",
+      "data": {
+        "Introduction": "Eczema, also known as atopic dermatitis, is a chronic skin condition characterized by inflamed, itchy, and red patches of skin. Homeopathy provides a holistic approach to treating eczema by addressing the underlying causes and alleviating symptoms.",
+        "Causes": [
+          "Genetic predisposition to allergic conditions",
+          "Environmental factors such as allergens and irritants",
+          "Dry skin and lack of moisture",
+          "Stress and emotional factors",
+          "Hormonal changes"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional dry patches and itching without significant redness",
+          "Moderate": "Persistent itching and redness with noticeable flare-ups",
+          "Severe": "Intense itching, widespread inflammation, and potential skin infections"
+        },
+        "Symptoms": [
+          "Dry, sensitive skin",
+          "Intense itching, especially at night",
+          "Red or brownish-gray patches",
+          "Thickened, cracked, or scaly skin",
+          "Swelling and inflammation"
+        ],
+        "Foods That May Exacerbate": [
+          "Dairy products",
+          "Eggs",
+          "Nuts and shellfish",
+          "Gluten-containing foods",
+          "Processed foods high in sugar and preservatives"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of eczema, not just the symptoms",
+          "Gentle treatment with minimal side effects",
+          "Personalized approach tailored to individual skin conditions",
+          "Supports overall skin health and hydration"
+        ],
+        "Homeopathy Treatment": {
+          "Arsenicum Album": "Effective for dry, scaly skin that is itchy and burning.",
+          "Graphites": "Useful for cracked, oozing eczema, especially in folds of the skin.",
+          "Rhus Toxicodendron": "Helpful for itchy, blistering eczema, particularly when the skin is improved by warmth."
+        }
+      }
+    },
+    {
+      "id": 16,
+      "name": "Female Pattern Baldness",
+      "path": "female-pattern-baldness-treatment",
+      "data": {
+        "Introduction": "Female pattern baldness, also known as androgenetic alopecia, is a common condition characterized by thinning hair and hair loss in women. Homeopathy offers a gentle and individualized approach to managing this condition, focusing on the root causes and promoting hair health.",
+        "Causes": [
+          "Genetic predisposition",
+          "Hormonal changes, particularly during menopause",
+          "Nutritional deficiencies",
+          "Stress and emotional factors",
+          "Medical conditions such as polycystic ovary syndrome (PCOS)"
+        ],
+        "Severity Levels": {
+          "Mild": "Slight thinning of hair with minimal visible scalp exposure",
+          "Moderate": "Noticeable hair thinning with increased scalp visibility",
+          "Severe": "Significant hair loss leading to bald patches and extensive scalp exposure"
+        },
+        "Symptoms": [
+          "Gradual thinning of hair on the top and crown of the head",
+          "Widening part or increased visibility of the scalp",
+          "Excessive hair shedding or falling out",
+          "Shorter, finer hair strands"
+        ],
+        "Foods That May Exacerbate": [
+          "High-sugar foods and refined carbohydrates",
+          "Trans fats and processed foods",
+          "Excessive caffeine and alcohol",
+          "Low-protein diets"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the underlying causes of hair loss rather than just the symptoms",
+          "Safe and non-invasive treatment options",
+          "Personalized remedies tailored to individual needs",
+          "Supports overall hair and scalp health"
+        ],
+        "Homeopathy Treatment": {
+          "Lycopodium": "Effective for thinning hair with premature graying, particularly in women.",
+          "Silicea": "Helpful for hair that is brittle and prone to breakage.",
+          "Natrum Muriaticum": "Useful for hair loss related to stress or emotional issues."
+        }
+      }
+    },
+    {
+      "id": 17,
+      "name": "Hair Loss",
+      "path": "hair-loss-treatment",
+      "data": {
+        "Introduction": "Hair loss, also known as alopecia, can affect both men and women and may result from a variety of factors, including genetics, hormonal changes, and lifestyle choices. Homeopathy provides a holistic approach to managing hair loss by addressing the underlying causes and promoting hair regrowth.",
+        "Causes": [
+          "Genetic predisposition to hair thinning",
+          "Hormonal changes, such as those during pregnancy or menopause",
+          "Nutritional deficiencies, particularly in vitamins and minerals",
+          "Stress and emotional factors",
+          "Medical conditions like thyroid disorders and autoimmune diseases"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional hair shedding without noticeable thinning",
+          "Moderate": "Increased hair loss leading to thinning patches",
+          "Severe": "Extensive hair loss resulting in bald patches or overall thinning"
+        },
+        "Symptoms": [
+          "Increased hair shedding or falling out",
+          "Thinning hair on the scalp",
+          "Visible scalp in certain areas",
+          "Shorter or finer hair strands"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed and sugary foods",
+          "Excessive caffeine and alcohol",
+          "Low-protein diets",
+          "Trans fats and fried foods"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of hair loss, not just the symptoms",
+          "Gentle and natural treatment options",
+          "Personalized remedies tailored to individual needs",
+          "Promotes overall hair and scalp health"
+        ],
+        "Homeopathy Treatment": {
+          "Ricinus Communis": "Effective for stimulating hair growth and addressing thinning hair.",
+          "Lycopodium": "Useful for hair loss with premature graying and thinning on the crown.",
+          "Silicea": "Helpful for brittle hair that breaks easily, promoting overall strength."
+        }
+      }
+    },
+    {
+      "id": 18,
+      "name": "Hyperthyroidism",
+      "path": "hyperthyroidism-treatment",
+      "data": {
+        "Introduction": "Hyperthyroidism is a condition characterized by an overactive thyroid gland, which produces excessive amounts of thyroid hormones. This can lead to various symptoms and health complications. Homeopathy offers a holistic approach to managing hyperthyroidism by addressing the underlying causes and symptoms.",
+        "Causes": [
+          "Graves' disease (an autoimmune disorder)",
+          "Thyroid nodules",
+          "Excessive iodine intake",
+          "Inflammation of the thyroid (thyroiditis)",
+          "Certain medications that affect thyroid function"
+        ],
+        "Severity Levels": {
+          "Mild": "Mild symptoms such as slight weight loss and increased appetite",
+          "Moderate": "Noticeable symptoms including increased heart rate and anxiety",
+          "Severe": "Severe symptoms leading to complications such as heart problems and thyroid storm"
+        },
+        "Symptoms": [
+          "Increased heart rate or palpitations",
+          "Weight loss despite increased appetite",
+          "Nervousness or anxiety",
+          "Sweating and intolerance to heat",
+          "Tremors in the hands or fingers"
+        ],
+        "Foods That May Exacerbate": [
+          "Caffeinated beverages",
+          "High-iodine foods (such as seaweed and iodized salt)",
+          "Processed foods high in sugar",
+          "Excessive amounts of certain vegetables (like cabbage and broccoli) that can affect thyroid function"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of hyperthyroidism instead of just managing symptoms",
+          "Gentle and safe treatment with minimal side effects",
+          "Personalized remedies tailored to individual health needs",
+          "Supports overall thyroid health and hormonal balance"
+        ],
+        "Homeopathy Treatment": {
+          "Lycopus Virginicus": "Effective for symptoms like palpitations and nervousness associated with hyperthyroidism.",
+          "Natrum Muriaticum": "Useful for emotional symptoms and physical symptoms such as weight loss.",
+          "Thyroidinum": "Helpful for general thyroid support and regulation."
+        }
+      }
+    },
+    {
+      "id": 19,
+      "name": "Hypothyroidism",
+      "path": "hypothyroidism-treatment",
+      "data": {
+        "Introduction": "Hypothyroidism is a condition where the thyroid gland does not produce enough thyroid hormones, leading to a slow metabolism and various health issues. Homeopathy provides a natural approach to managing hypothyroidism by addressing its underlying causes and symptoms.",
+        "Causes": [
+          "Hashimoto's thyroiditis (an autoimmune disorder)",
+          "Iodine deficiency",
+          "Thyroid surgery or radiation therapy",
+          "Medications that affect thyroid function",
+          "Congenital thyroid defects"
+        ],
+        "Severity Levels": {
+          "Mild": "Mild symptoms such as fatigue and weight gain",
+          "Moderate": "Noticeable symptoms including depression and cold intolerance",
+          "Severe": "Severe symptoms leading to myxedema coma, which is a medical emergency"
+        },
+        "Symptoms": [
+          "Fatigue and weakness",
+          "Weight gain despite a normal diet",
+          "Cold intolerance",
+          "Dry skin and hair",
+          "Constipation and menstrual irregularities"
+        ],
+        "Foods That May Exacerbate": [
+          "Soy products",
+          "Cruciferous vegetables (such as cabbage and broccoli) in large quantities",
+          "Gluten-containing foods",
+          "Processed foods high in sugar and unhealthy fats"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the underlying causes rather than just symptoms",
+          "Safe and gentle treatment options",
+          "Personalized remedies tailored to individual health needs",
+          "Supports overall thyroid function and metabolism"
+        ],
+        "Homeopathy Treatment": {
+          "Thyroidinum": "Effective for general thyroid support and regulation of hormone levels.",
+          "Calcarea Carbonica": "Useful for symptoms of fatigue, weight gain, and cold intolerance.",
+          "Natrum Muriaticum": "Helpful for emotional symptoms and overall metabolic support."
+        }
+      }
+    },
+    {
+      "id": 20,
+      "name": "Infertility",
+      "path": "infertility-treatment",
+      "data": {
+        "Introduction": "Infertility is the inability to conceive after one year of regular unprotected intercourse. It can affect both men and women and may result from various factors. Homeopathy offers a holistic approach to treating infertility by addressing the underlying causes and improving overall reproductive health.",
+        "Causes": [
+          "Hormonal imbalances in both men and women",
+          "Ovulatory disorders in women",
+          "Sperm abnormalities in men",
+          "Structural issues in the reproductive system",
+          "Stress and emotional factors"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional difficulty conceiving with no underlying medical issues",
+          "Moderate": "Difficulty conceiving with identifiable factors such as irregular cycles or low sperm count",
+          "Severe": "Chronic infertility requiring medical intervention or assisted reproductive technologies"
+        },
+        "Symptoms": [
+          "Irregular menstrual cycles in women",
+          "Low libido or erectile dysfunction in men",
+          "Unexplained weight changes",
+          "Pain during intercourse",
+          "Multiple miscarriages"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed foods high in sugar and unhealthy fats",
+          "Excessive caffeine and alcohol",
+          "Trans fats and refined carbohydrates",
+          "Low-protein diets"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of infertility rather than just symptoms",
+          "Personalized treatment plans tailored to individual needs",
+          "Safe and natural remedies with minimal side effects",
+          "Supports overall reproductive health and hormonal balance"
+        ],
+        "Homeopathy Treatment": {
+          "Sepia": "Effective for women with hormonal imbalances and emotional stress.",
+          "Lycopodium": "Useful for men with low libido and sperm count issues.",
+          "Pulsatilla": "Helpful for women experiencing irregular cycles and mood swings."
+        }
+      }
+    },
+    {
+      "id": 21,
+      "name": "Irritable Bowel Syndrome",
+      "path": "irritable-bowel-syndrome-treatment",
+      "data": {
+        "Introduction": "Irritable Bowel Syndrome (IBS) is a common gastrointestinal disorder characterized by symptoms such as abdominal pain, bloating, and changes in bowel habits. Homeopathy offers a natural approach to managing IBS by addressing both the physical and emotional factors contributing to the condition.",
+        "Causes": [
+          "Food sensitivities and intolerances",
+          "Stress and anxiety",
+          "Hormonal changes",
+          "Gut microbiome imbalances",
+          "Previous gastrointestinal infections"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional abdominal discomfort and bloating",
+          "Moderate": "Frequent symptoms that affect daily life but are manageable",
+          "Severe": "Chronic symptoms leading to significant lifestyle limitations and distress"
+        },
+        "Symptoms": [
+          "Abdominal pain and cramping",
+          "Bloating and gas",
+          "Diarrhea or constipation (or alternating between both)",
+          "Mucus in the stool",
+          "Feeling of incomplete bowel movements"
+        ],
+        "Foods That May Exacerbate": [
+          "Dairy products",
+          "Gluten-containing foods",
+          "High-fat and fried foods",
+          "Artificial sweeteners and sugar alcohols",
+          "Caffeinated beverages"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of IBS rather than just alleviating symptoms",
+          "Personalized treatment plans based on individual symptoms and health history",
+          "Gentle and natural remedies with minimal side effects",
+          "Supports overall digestive health and emotional well-being"
+        ],
+        "Homeopathy Treatment": {
+          "Nux Vomica": "Effective for symptoms related to stress and overeating.",
+          "Ipecacuanha": "Useful for nausea and vomiting associated with IBS.",
+          "Lycopodium": "Helpful for bloating and gas, especially after eating."
+        }
+      }
+    },
+    {
+      "id": 22,
+      "name": "Leucorrhoea",
+      "path": "leucorrhoea-treatment",
+      "data": {
+        "Introduction": "Leucorrhoea, commonly referred to as vaginal discharge, is a condition characterized by an abnormal increase in vaginal secretions. It can result from various factors, including infections or hormonal changes. Homeopathy offers a gentle and effective approach to managing leucorrhoea by addressing the underlying causes and promoting overall reproductive health.",
+        "Causes": [
+          "Hormonal imbalances",
+          "Infections (bacterial, fungal, or sexually transmitted)",
+          "Poor hygiene",
+          "Irritation from soaps or hygiene products",
+          "Pregnancy and menstrual cycles"
+        ],
+        "Severity Levels": {
+          "Mild": "Slight increase in normal discharge without other symptoms",
+          "Moderate": "Noticeable change in discharge consistency or color with mild discomfort",
+          "Severe": "Significant discharge with itching, burning, or foul odor requiring medical attention"
+        },
+        "Symptoms": [
+          "Increased vaginal discharge",
+          "Itching or irritation in the vaginal area",
+          "Discomfort during intercourse",
+          "Odor associated with discharge",
+          "Changes in discharge color (yellow, green, or gray)"
+        ],
+        "Foods That May Exacerbate": [
+          "Sugary foods and refined carbohydrates",
+          "Dairy products (for some individuals)",
+          "Spicy foods",
+          "Highly processed foods",
+          "Caffeine and alcohol"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes rather than just symptoms",
+          "Gentle and safe treatment options",
+          "Personalized remedies tailored to individual health needs",
+          "Supports overall vaginal health and hormonal balance"
+        ],
+        "Homeopathy Treatment": {
+          "Calcarea Carbonica": "Effective for leucorrhoea with a heavy, dragging sensation.",
+          "Sepia": "Useful for women experiencing hormonal changes and associated discharge.",
+          "Kreosotum": "Helpful for foul-smelling discharge accompanied by irritation."
+        }
+      }
+    },
+    {
+      "id": 23,
+      "name": "Lichen Planus",
+      "path": "lichen-planus-treatment",
+      "data": {
+        "Introduction": "Lichen Planus is a chronic inflammatory skin condition that can affect the skin, mucous membranes, hair, and nails. It is characterized by itchy, flat-topped, purplish lesions. Homeopathy offers a holistic approach to managing Lichen Planus by targeting the underlying causes and providing relief from symptoms.",
+        "Causes": [
+          "Autoimmune responses",
+          "Genetic predisposition",
+          "Allergic reactions to medications or allergens",
+          "Chronic stress",
+          "Hepatitis C virus infection"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional itching and minor skin lesions",
+          "Moderate": "Persistent lesions with significant itching affecting daily activities",
+          "Severe": "Extensive skin involvement and severe discomfort requiring medical intervention"
+        },
+        "Symptoms": [
+          "Flat-topped, purple lesions on the skin",
+          "Intense itching",
+          "White, lacy patches in the mouth",
+          "Nail changes, including thinning or ridging",
+          "Scalp lesions leading to hair loss"
+        ],
+        "Foods That May Exacerbate": [
+          "Spicy foods",
+          "Alcohol",
+          "Citrus fruits",
+          "Dairy products",
+          "Processed and sugary foods"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the underlying causes of Lichen Planus rather than just treating the symptoms",
+          "Safe and natural treatment options with minimal side effects",
+          "Personalized remedies based on individual symptoms and health history",
+          "Supports overall skin health and immune function"
+        ],
+        "Homeopathy Treatment": {
+          "Arsenicum Album": "Effective for itching and burning sensations.",
+          "Graphites": "Useful for dry, itchy lesions and skin cracks.",
+          "Mezereum": "Helpful for intense itching with scaling and crusting."
+        }
+      }
+    },
+    {
+      "id": 24,
+      "name": "Male Infertility",
+      "path": "male-infertility-treatment",
+      "data": {
+        "Introduction": "Male infertility refers to the inability of a man to contribute to conception, often due to issues with sperm production or function. Homeopathy provides a holistic approach to treating male infertility by addressing the underlying causes and improving overall reproductive health.",
+        "Causes": [
+          "Hormonal imbalances affecting sperm production",
+          "Genetic factors or congenital conditions",
+          "Environmental factors (exposure to toxins, heat) ",
+          "Infections affecting the reproductive system",
+          "Lifestyle factors (poor diet, smoking, excessive alcohol consumption)"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional difficulty conceiving without identifiable medical issues",
+          "Moderate": "Low sperm count or motility with some lifestyle or health factors",
+          "Severe": "Complete absence of sperm or significant reproductive health issues requiring medical intervention"
+        },
+        "Symptoms": [
+          "Low libido or sexual dysfunction",
+          "Erectile dysfunction",
+          "Decreased facial or body hair",
+          "Pain or swelling in the testicular area",
+          "History of infertility or recurrent miscarriage in partners"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed foods high in unhealthy fats",
+          "Excessive sugar and refined carbohydrates",
+          "Trans fats and fried foods",
+          "Alcohol and recreational drugs",
+          "High amounts of caffeine"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of male infertility rather than just symptoms",
+          "Personalized treatment plans based on individual health assessments",
+          "Natural remedies with minimal side effects",
+          "Supports overall reproductive health and hormonal balance"
+        ],
+        "Homeopathy Treatment": {
+          "Lycopodium": "Effective for low libido and sperm count issues.",
+          "Agnes Castus": "Useful for hormonal balance and improving sperm quality.",
+          "Sepia": "Helpful for emotional stress affecting fertility."
+        }
+      }
+    },
+    {
+      "id": 25,
+      "name": "Male Pattern Baldness",
+      "path": "male-pattern-baldness-treatment",
+      "data": {
+        "Introduction": "Male Pattern Baldness, also known as androgenetic alopecia, is a common condition characterized by gradual hair loss in men. It typically follows a pattern of receding hairline and thinning on the crown. Homeopathy provides a natural approach to managing this condition by addressing the underlying causes and promoting hair growth.",
+        "Causes": [
+          "Genetic predisposition and family history",
+          "Hormonal changes, particularly dihydrotestosterone (DHT)",
+          "Aging and changes in hair follicle function",
+          "Nutritional deficiencies",
+          "Stress and lifestyle factors"
+        ],
+        "Severity Levels": {
+          "Mild": "Slight thinning of hair and receding hairline",
+          "Moderate": "Noticeable bald patches or thinning areas on the crown",
+          "Severe": "Significant hair loss leading to extensive baldness"
+        },
+        "Symptoms": [
+          "Gradual thinning of hair on the scalp",
+          "Receding hairline",
+          "Bald spots on the crown of the head",
+          "Hair falling out more than usual",
+          "Changes in hair texture and thickness"
+        ],
+        "Foods That May Exacerbate": [
+          "High-sugar foods",
+          "Processed and fast foods",
+          "Trans fats and fried foods",
+          "Excessive caffeine",
+          "Low-protein diets"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of hair loss rather than just the symptoms",
+          "Personalized treatment plans tailored to individual needs",
+          "Natural remedies with minimal side effects",
+          "Supports overall hair and scalp health"
+        ],
+        "Homeopathy Treatment": {
+          "Natrum Muriaticum": "Effective for hair loss associated with emotional stress.",
+          "Silicea": "Useful for promoting hair growth and strengthening hair follicles.",
+          "Phosphorus": "Helpful for thinning hair and improving circulation to the scalp."
+        }
+      }
+    },
+    {
+      "id": 26,
+      "name": "Menopause",
+      "path": "menopause-treatment",
+      "data": {
+        "Introduction": "Menopause marks the end of a woman's reproductive years, typically occurring in their late 40s to early 50s. It is characterized by a decrease in estrogen production, leading to various physical and emotional symptoms. Homeopathy offers a holistic approach to managing menopausal symptoms by addressing hormonal imbalances and improving overall well-being.",
+        "Causes": [
+          "Natural decline of reproductive hormones with age",
+          "Surgical removal of ovaries (oophorectomy)",
+          "Certain medical treatments (chemotherapy, radiation)",
+          "Genetic factors or family history",
+          "Autoimmune disorders affecting ovarian function"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional hot flashes and mild mood swings",
+          "Moderate": "Frequent hot flashes, night sweats, and mood disturbances affecting daily life",
+          "Severe": "Intense symptoms such as debilitating hot flashes, severe insomnia, and significant emotional distress"
+        },
+        "Symptoms": [
+          "Hot flashes and night sweats",
+          "Irregular periods and changes in menstrual flow",
+          "Mood swings and irritability",
+          "Sleep disturbances and insomnia",
+          "Vaginal dryness and discomfort"
+        ],
+        "Foods That May Exacerbate": [
+          "Spicy foods",
+          "Caffeine and alcohol",
+          "Sugary snacks and desserts",
+          "Processed foods high in trans fats",
+          "High-sodium foods"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses hormonal imbalances rather than just symptomatic relief",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment options based on individual experiences",
+          "Supports emotional well-being and overall health"
+        ],
+        "Homeopathy Treatment": {
+          "Sepia": "Effective for mood swings and physical exhaustion.",
+          "Lachesis": "Useful for hot flashes and feelings of irritability.",
+          "Pulsatilla": "Helpful for emotional fluctuations and changes in mood."
+        }
+      }
+    },
+    {
+      "id": 27,
+      "name": "Migraine",
+      "path": "migraine-treatment",
+      "data": {
+        "Introduction": "Migraine is a neurological condition characterized by recurrent, severe headaches often accompanied by other symptoms such as nausea, vomiting, and sensitivity to light or sound. Homeopathy provides a holistic approach to managing migraines by addressing the underlying triggers and improving overall well-being.",
+        "Causes": [
+          "Genetic predisposition and family history",
+          "Hormonal changes (e.g., menstrual cycle, menopause)",
+          "Environmental factors (e.g., weather changes, strong smells)",
+          "Dietary triggers (e.g., certain foods and beverages)",
+          "Stress and emotional factors"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional headaches that can be managed with over-the-counter pain relief",
+          "Moderate": "Frequent headaches that disrupt daily activities but can still be managed",
+          "Severe": "Debilitating headaches that require medical intervention and significantly impact quality of life"
+        },
+        "Symptoms": [
+          "Throbbing or pulsating headache, often on one side of the head",
+          "Nausea and vomiting",
+          "Sensitivity to light, sound, or smells",
+          "Visual disturbances (aura) such as flashes of light or blind spots",
+          "Dizziness or lightheadedness"
+        ],
+        "Foods That May Exacerbate": [
+          "Aged cheeses",
+          "Cured meats",
+          "Caffeinated beverages",
+          "Chocolate",
+          "Alcohol, particularly red wine"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes and triggers of migraines",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual symptoms and triggers",
+          "Supports overall health and well-being"
+        ],
+        "Homeopathy Treatment": {
+          "Belladonna": "Effective for intense headaches with throbbing pain.",
+          "Nux Vomica": "Useful for migraines triggered by stress or overindulgence.",
+          "Iris Versicolor": "Helpful for migraines with visual disturbances and nausea."
+        }
+      }
+    },
+    {
+      "id": 28,
+      "name": "Osteoarthritis",
+      "path": "osteoarthritis-treatment",
+      "data": {
+        "Introduction": "Osteoarthritis is a degenerative joint disease characterized by the breakdown of cartilage, leading to pain, stiffness, and reduced mobility in the affected joints. Homeopathy offers a holistic approach to managing osteoarthritis by addressing the underlying causes and improving joint function.",
+        "Causes": [
+          "Aging and natural wear and tear on joints",
+          "Genetic predisposition",
+          "Obesity and excess weight placing strain on joints",
+          "Joint injuries or repetitive stress",
+          "Overuse of joints in certain occupations or activities"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional joint pain and stiffness, manageable with lifestyle changes",
+          "Moderate": "Frequent pain and stiffness affecting daily activities",
+          "Severe": "Chronic pain and significant loss of mobility requiring medical intervention"
+        },
+        "Symptoms": [
+          "Joint pain and tenderness",
+          "Stiffness, especially in the morning or after periods of inactivity",
+          "Swelling around the joints",
+          "Decreased range of motion",
+          "A grating sensation or popping sound in the joints"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed foods high in trans fats",
+          "Sugary snacks and beverages",
+          "Excessive salt and high-sodium foods",
+          "Red meat and processed meats",
+          "Dairy products in sensitive individuals"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of osteoarthritis rather than just managing symptoms",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall joint health and mobility"
+        ],
+        "Homeopathy Treatment": {
+          "Arnica Montana": "Effective for joint pain and swelling.",
+          "Rhus Toxicodendron": "Useful for stiffness and pain that improve with movement.",
+          "Bryonia": "Helpful for sharp pain that worsens with movement and improves with rest."
+        }
+      }
+    },
+    {
+      "id": 29,
+      "name": "Polycystic Ovarian Syndrome (PCOS)",
+      "path": "pcos-treatment",
+      "data": {
+        "Introduction": "Polycystic Ovarian Syndrome (PCOS) is a hormonal disorder affecting women of reproductive age, characterized by irregular menstrual cycles, excess androgen levels, and polycystic ovaries. Homeopathy provides a holistic approach to managing PCOS by addressing hormonal imbalances and supporting overall reproductive health.",
+        "Causes": [
+          "Genetic predisposition and family history",
+          "Insulin resistance and metabolic syndrome",
+          "Hormonal imbalances, including excess androgens",
+          "Inflammation and oxidative stress",
+          "Lifestyle factors such as obesity and physical inactivity"
+        ],
+        "Severity Levels": {
+          "Mild": "Irregular menstrual cycles with mild symptoms",
+          "Moderate": "Significant symptoms such as weight gain, acne, and hirsutism",
+          "Severe": "Severe hormonal imbalances leading to infertility and metabolic complications"
+        },
+        "Symptoms": [
+          "Irregular or absent menstrual periods",
+          "Excessive hair growth (hirsutism) in unwanted areas",
+          "Acne and oily skin",
+          "Weight gain and difficulty losing weight",
+          "Thinning hair or male-pattern baldness"
+        ],
+        "Foods That May Exacerbate": [
+          "High-sugar foods and beverages",
+          "Refined carbohydrates (e.g., white bread, pastries)",
+          "Processed and fast foods",
+          "Dairy products (in some individuals)",
+          "Trans fats and fried foods"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses hormonal imbalances rather than just managing symptoms",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall reproductive health and well-being"
+        ],
+        "Homeopathy Treatment": {
+          "Pulsatilla": "Effective for emotional symptoms and irregular cycles.",
+          "Sepia": "Useful for hormonal imbalances and symptoms related to menopause.",
+          "Lachesis": "Helpful for symptoms of heat and irritability associated with PCOS."
+        }
+      }
+    },
+    {
+      "id": 30,
+      "name": "Piles",
+      "path": "piles-treatment",
+      "data": {
+        "Introduction": "Piles, or hemorrhoids, are swollen blood vessels in the rectal area that can cause pain, discomfort, and bleeding. Homeopathy offers a natural approach to managing piles by addressing the underlying causes and relieving symptoms.",
+        "Causes": [
+          "Chronic constipation or straining during bowel movements",
+          "Pregnancy and childbirth",
+          "Obesity and sedentary lifestyle",
+          "Prolonged sitting or standing",
+          "Diet low in fiber"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional discomfort or itching without significant pain",
+          "Moderate": "Persistent pain, bleeding during bowel movements, and swelling",
+          "Severe": "Severe pain, large protruding hemorrhoids requiring medical intervention"
+        },
+        "Symptoms": [
+          "Pain and discomfort around the anal area",
+          "Itching or irritation in the anal region",
+          "Bleeding during bowel movements",
+          "Swelling or a lump near the anus",
+          "Mucus discharge from the anus"
+        ],
+        "Foods That May Exacerbate": [
+          "Low-fiber foods (e.g., processed grains, fast food)",
+          "Spicy foods",
+          "Alcohol and caffeine",
+          "Dairy products (in some individuals)",
+          "Refined sugars"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of piles rather than just managing symptoms",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports digestive health and promotes regular bowel movements"
+        ],
+        "Homeopathy Treatment": {
+          "Aesculus Hippocastanum": "Effective for pain and discomfort with a sensation of fullness.",
+          "Hamamelis": "Useful for bleeding and swelling associated with piles.",
+          "Ratanhia": "Helpful for pain during bowel movements and anal itching."
+        }
+      }
+    },
+    {
+      "id": 31,
+      "name": "Psoriasis",
+      "path": "psoriasis-treatment",
+      "data": {
+        "Introduction": "Psoriasis is a chronic autoimmune condition that leads to the rapid growth of skin cells, resulting in thick, red, scaly patches on the skin. Homeopathy offers a holistic approach to managing psoriasis by addressing underlying factors and promoting skin health.",
+        "Causes": [
+          "Genetic predisposition and family history",
+          "Immune system dysfunction",
+          "Environmental triggers such as stress, infections, and skin injuries",
+          "Lifestyle factors like smoking and alcohol consumption",
+          "Obesity and metabolic syndrome"
+        ],
+        "Severity Levels": {
+          "Mild": "Small patches of dry, flaky skin without significant discomfort",
+          "Moderate": "Larger patches affecting more areas of the body, causing itching and discomfort",
+          "Severe": "Extensive areas of skin affected, with significant pain and impact on daily life"
+        },
+        "Symptoms": [
+          "Red patches of skin covered with thick, silvery scales",
+          "Dry, cracked skin that may bleed",
+          "Itching, burning, or soreness",
+          "Thickened or ridged nails",
+          "Swollen and stiff joints (in cases of psoriatic arthritis)"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed foods high in sugar and unhealthy fats",
+          "Alcohol and caffeinated beverages",
+          "Gluten-containing foods (in some individuals)",
+          "Nightshade vegetables (e.g., tomatoes, peppers, potatoes)",
+          "Dairy products (in some individuals)"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the underlying causes of psoriasis rather than just managing symptoms",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall skin health and immune function"
+        ],
+        "Homeopathy Treatment": {
+          "Sulphur": "Effective for dry, scaly skin and intense itching.",
+          "Arsenicum Album": "Useful for dry, itchy skin with a burning sensation.",
+          "Graphites": "Helpful for thickened skin with cracks and oozing."
+        }
+      }
+    },
+    {
+      "id": 32,
+      "name": "Scalp Psoriasis",
+      "path": "scalp-psoriasis-treatment",
+      "data": {
+        "Introduction": "Scalp psoriasis is a common skin condition that causes red, flaky patches on the scalp. It can be itchy and uncomfortable, often leading to embarrassment and distress. Homeopathy offers a natural approach to managing scalp psoriasis by addressing the underlying causes and promoting scalp health.",
+        "Causes": [
+          "Genetic predisposition and family history",
+          "Immune system dysfunction",
+          "Environmental triggers such as stress, infections, and skin injuries",
+          "Hormonal changes",
+          "Weather changes, particularly cold and dry conditions"
+        ],
+        "Severity Levels": {
+          "Mild": "Localized patches of dandruff-like flakes with minimal irritation",
+          "Moderate": "Larger, red, scaly patches with noticeable itching and discomfort",
+          "Severe": "Extensive areas of the scalp affected, leading to significant discomfort and potential hair loss"
+        },
+        "Symptoms": [
+          "Red patches on the scalp covered with thick, silvery scales",
+          "Itching and irritation",
+          "Dryness and flaking",
+          "Soreness or burning sensation",
+          "Potential hair loss in severe cases"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed foods high in sugar and unhealthy fats",
+          "Dairy products (in some individuals)",
+          "Alcohol and caffeine",
+          "Nightshade vegetables (e.g., tomatoes, peppers, potatoes)",
+          "Gluten-containing foods (in some individuals)"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of scalp psoriasis rather than just alleviating symptoms",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall skin and scalp health"
+        ],
+        "Homeopathy Treatment": {
+          "Sulphur": "Effective for dry, itchy scalp with flaky skin.",
+          "Arsenicum Album": "Useful for burning and itching sensations with dry skin.",
+          "Graphites": "Helpful for thickened, crusted areas and oozing from the scalp."
+        }
+      }
+    },
+    {
+      "id": 33,
+      "name": "Rheumatoid Arthritis",
+      "path": "rheumatoid-arthritis-treatment",
+      "data": {
+        "Introduction": "Rheumatoid arthritis (RA) is a chronic autoimmune disorder that primarily affects the joints, leading to inflammation, pain, and potential joint damage. Homeopathy offers a holistic approach to managing RA by addressing underlying factors and promoting overall joint health.",
+        "Causes": [
+          "Genetic predisposition and family history",
+          "Environmental factors such as infections and smoking",
+          "Hormonal changes",
+          "Immune system dysfunction",
+          "Obesity and metabolic syndrome"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional joint pain and stiffness without significant disability",
+          "Moderate": "Frequent joint pain and swelling, affecting daily activities",
+          "Severe": "Persistent pain and inflammation leading to significant joint damage and loss of function"
+        },
+        "Symptoms": [
+          "Joint pain, swelling, and stiffness, especially in the morning",
+          "Fatigue and weakness",
+          "Fever and weight loss",
+          "Deformities in the joints over time",
+          "Symptoms may vary in intensity and can flare up"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed foods high in sugar and unhealthy fats",
+          "Red meat and processed meats",
+          "Dairy products (in some individuals)",
+          "Gluten-containing foods (in some individuals)",
+          "Nightshade vegetables (e.g., tomatoes, peppers, potatoes)"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the underlying causes of rheumatoid arthritis rather than just alleviating symptoms",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall joint health and reduces inflammation"
+        ],
+        "Homeopathy Treatment": {
+          "Bryonia": "Effective for joint pain that worsens with movement and improves with rest.",
+          "Rhus Toxicodendron": "Useful for stiffness and pain that improves with movement.",
+          "Lycopodium": "Helpful for managing joint pain and swelling with a feeling of weakness."
+        }
+      }
+    },
+    {
+      "id": 34,
+      "name": "Tonsillitis",
+      "path": "tonsillitis-treatment",
+      "data": {
+        "Introduction": "Tonsillitis is an inflammation of the tonsils, often caused by viral or bacterial infections. Symptoms typically include a sore throat, difficulty swallowing, and swollen lymph nodes. Homeopathy provides a natural approach to alleviating symptoms and addressing the underlying causes of tonsillitis.",
+        "Causes": [
+          "Viral infections (e.g., common cold, influenza)",
+          "Bacterial infections (e.g., streptococcus)",
+          "Allergies and irritants (e.g., smoke, pollution)",
+          "Weakened immune system",
+          "Close contact with infected individuals"
+        ],
+        "Severity Levels": {
+          "Mild": "Slight sore throat and minor discomfort",
+          "Moderate": "Persistent sore throat with difficulty swallowing and mild fever",
+          "Severe": "Severe pain, high fever, and swollen tonsils leading to difficulty breathing"
+        },
+        "Symptoms": [
+          "Sore throat and difficulty swallowing",
+          "Red, swollen tonsils, sometimes with white patches",
+          "Fever and chills",
+          "Swollen lymph nodes in the neck",
+          "Bad breath and ear pain"
+        ],
+        "Foods That May Exacerbate": [
+          "Spicy and acidic foods",
+          "Hard or crunchy foods that may irritate the throat",
+          "Dairy products (in some individuals)",
+          "Processed and sugary foods"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of tonsillitis rather than just managing symptoms",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall immune function and throat health"
+        ],
+        "Homeopathy Treatment": {
+          "Belladonna": "Effective for sudden onset of severe sore throat with high fever.",
+          "Mercurius Solubilis": "Useful for swollen tonsils with a lot of saliva and bad breath.",
+          "Phytolacca": "Helpful for pain that radiates to the ears and difficulty swallowing."
+        }
+      }
+    },
+    {
+      "id": 35,
+      "name": "Trichotillomania",
+      "path": "trichotillomania-treatment",
+      "data": {
+        "Introduction": "Trichotillomania, also known as hair-pulling disorder, is a mental health condition characterized by the irresistible urge to pull out one's hair, leading to noticeable hair loss and distress. Homeopathy aims to address the underlying emotional and psychological triggers while promoting overall well-being.",
+        "Causes": [
+          "Genetic predisposition and family history",
+          "Psychological factors such as stress, anxiety, or depression",
+          "Environmental triggers, including traumatic experiences or significant life changes",
+          "Behavioral conditioning or learned behaviors",
+          "Co-occurring disorders such as obsessive-compulsive disorder (OCD)"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional hair-pulling with minimal hair loss",
+          "Moderate": "Frequent hair-pulling leading to noticeable thinning or patchy areas",
+          "Severe": "Persistent hair-pulling resulting in significant bald patches and emotional distress"
+        },
+        "Symptoms": [
+          "Repeatedly pulling hair from the scalp, eyebrows, or other areas",
+          "Visible hair loss and bald spots",
+          "Increased tension before pulling hair and relief after pulling",
+          "Feelings of shame, guilt, or embarrassment about the behavior",
+          "May engage in hair manipulation or chewing on pulled hair"
+        ],
+        "Foods That May Exacerbate": [
+          "Sugary and processed foods that can lead to mood swings",
+          "Caffeine and stimulants that may increase anxiety",
+          "High-carb foods that may contribute to emotional eating",
+          "Foods high in artificial additives and preservatives"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the emotional and psychological aspects of trichotillomania",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall mental health and emotional stability"
+        ],
+        "Homeopathy Treatment": {
+          "Ignatia": "Useful for emotional triggers and stress-related hair-pulling.",
+          "Sepia": "Effective for hair-pulling associated with hormonal changes and fatigue.",
+          "Arsenicum Album": "Helpful for anxiety-driven behaviors and restlessness."
+        }
+      }
+    },
+    {
+      "id": 36,
+      "name": "Urinary Tract Infections",
+      "path": "urinary-tract-infections-treatment",
+      "data": {
+        "Introduction": "Urinary Tract Infections (UTIs) are infections that occur in any part of the urinary system, including the kidneys, ureters, bladder, and urethra. They are commonly caused by bacteria and can result in painful and uncomfortable symptoms. Homeopathy offers a natural approach to managing UTIs by targeting both the symptoms and underlying causes.",
+        "Causes": [
+          "Bacterial infections, primarily from Escherichia coli (E. coli)",
+          "Sexual activity that can introduce bacteria into the urinary tract",
+          "Poor hygiene practices",
+          "Dehydration and infrequent urination",
+          "Urinary retention and bladder dysfunction"
+        ],
+        "Severity Levels": {
+          "Mild": "Occasional discomfort during urination with minor symptoms",
+          "Moderate": "Frequent urination, urgency, and noticeable discomfort",
+          "Severe": "Intense pain, fever, and possible complications affecting the kidneys"
+        },
+        "Symptoms": [
+          "Painful or burning sensation during urination",
+          "Frequent urge to urinate, often with little urine output",
+          "Cloudy, dark, or strong-smelling urine",
+          "Pelvic pain and discomfort",
+          "Fever and chills (in severe cases)"
+        ],
+        "Foods That May Exacerbate": [
+          "Caffeine and alcohol, which can irritate the bladder",
+          "Spicy foods that may exacerbate bladder discomfort",
+          "Artificial sweeteners",
+          "Acidic foods (e.g., citrus fruits) that can irritate the urinary tract"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of UTIs rather than just alleviating symptoms",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall urinary tract health and immune function"
+        ],
+        "Homeopathy Treatment": {
+          "Cantharis": "Effective for burning pain during urination with a frequent urge to urinate.",
+          "Berberis Vulgaris": "Useful for pain in the lower back and burning sensation during urination.",
+          "Staphysagria": "Helpful for UTIs associated with emotional stress or after sexual activity."
+        }
+      }
+    },
+    {
+      "id": 37,
+      "name": "Upper Respiratory Tract Infection",
+      "path": "upper-respiratory-tract-infection-treatment",
+      "data": {
+        "Introduction": "Upper Respiratory Tract Infections (URTIs) are infections that affect the nasal passages, throat, and sinuses. They are commonly caused by viruses and can result in symptoms like a runny nose, sore throat, and cough. Homeopathy provides a holistic approach to managing URTIs by addressing both the symptoms and underlying causes.",
+        "Causes": [
+          "Viral infections (e.g., rhinovirus, influenza virus)",
+          "Bacterial infections (e.g., streptococcus)",
+          "Allergies and environmental irritants",
+          "Poor immune function",
+          "Close contact with infected individuals"
+        ],
+        "Severity Levels": {
+          "Mild": "Mild symptoms such as a runny nose and slight cough",
+          "Moderate": "Persistent cough, sore throat, and fatigue",
+          "Severe": "High fever, significant fatigue, and severe respiratory distress"
+        },
+        "Symptoms": [
+          "Runny or stuffy nose",
+          "Sore throat and cough",
+          "Sneezing and congestion",
+          "Fatigue and general malaise",
+          "Mild fever and headache"
+        ],
+        "Foods That May Exacerbate": [
+          "Dairy products, which may increase mucus production",
+          "Sugary foods that can weaken the immune system",
+          "Caffeine, which can lead to dehydration",
+          "Processed foods that may contribute to inflammation"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of URTIs rather than merely managing symptoms",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall respiratory health and immune function"
+        ],
+        "Homeopathy Treatment": {
+          "Aconite": "Useful for the initial stage of URTI with sudden onset and anxiety.",
+          "Belladonna": "Effective for high fever, sore throat, and redness.",
+          "Pulsatilla": "Helpful for symptoms that are changeable and accompanied by a thick yellow-green discharge."
+        }
+      }
+    },
+    {
+      "id": 38,
+      "name": "Vitiligo",
+      "path": "vitiligo-treatment",
+      "data": {
+        "Introduction": "Vitiligo is a skin condition characterized by the loss of pigment, leading to white patches on the skin. This occurs when melanocytes, the cells responsible for skin color, are destroyed. Homeopathy aims to stimulate the body's natural healing processes and restore skin pigmentation.",
+        "Causes": [
+          "Autoimmune response where the body attacks its own melanocytes",
+          "Genetic predisposition and family history",
+          "Environmental factors, such as sunburn or skin trauma",
+          "Stress and emotional factors",
+          "Certain medical conditions, such as thyroid disorders"
+        ],
+        "Severity Levels": {
+          "Mild": "Localized patches on specific areas of the body",
+          "Moderate": "Multiple patches spreading to larger areas",
+          "Severe": "Extensive depigmentation affecting most of the body"
+        },
+        "Symptoms": [
+          "White patches on the skin that may vary in size",
+          "Loss of color in hair, eyebrows, and eyelashes",
+          "Skin that is more sensitive to sunburn",
+          "No physical discomfort associated with the patches"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed foods high in preservatives and additives",
+          "Sugary foods that can contribute to inflammation",
+          "Spicy foods that may trigger skin flare-ups",
+          "Caffeine, which can lead to dehydration and stress"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the underlying causes rather than just the symptoms",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall skin health and boosts confidence"
+        ],
+        "Homeopathy Treatment": {
+          "Arsenicum Album": "Useful for vitiligo with associated skin sensitivity and restlessness.",
+          "Sepia": "Effective for depigmentation related to hormonal changes or stress.",
+          "Natrum Muriaticum": "Helpful for emotional factors contributing to skin conditions."
+        }
+      }
+    },
+    {
+      "id": 39,
+      "name": "Warts",
+      "path": "warts-treatment",
+      "data": {
+        "Introduction": "Warts are benign growths on the skin caused by the human papillomavirus (HPV). They can appear on various parts of the body and often have a rough texture. Homeopathy offers a gentle approach to treating warts by targeting the underlying causes and promoting the body's natural healing process.",
+        "Causes": [
+          "Infection with human papillomavirus (HPV)",
+          "Direct contact with warts from infected individuals",
+          "Weakened immune system that allows viral infections to thrive",
+          "Skin trauma that allows HPV to enter the body"
+        ],
+        "Severity Levels": {
+          "Mild": "Small, single warts that do not cause discomfort",
+          "Moderate": "Multiple warts appearing in clusters, may cause minor irritation",
+          "Severe": "Large or painful warts that interfere with daily activities"
+        },
+        "Symptoms": [
+          "Rough, raised bumps on the skin",
+          "Pain or tenderness in some cases",
+          "Changes in color or texture of the skin",
+          "Warts on sensitive areas may cause discomfort"
+        ],
+        "Foods That May Exacerbate": [
+          "Processed foods high in sugar and preservatives",
+          "Dairy products, which may contribute to skin issues for some individuals",
+          "Highly acidic foods that can irritate the skin",
+          "Caffeine and alcohol that may weaken the immune system"
+        ],
+        "Benefits of Using Homeopathy": [
+          "Addresses the root causes of warts rather than just removing them",
+          "Natural remedies with minimal side effects",
+          "Personalized treatment plans tailored to individual needs",
+          "Supports overall skin health and immune function"
+        ],
+        "Homeopathy Treatment": {
+          "Thuja Occidentalis": "Commonly used for the treatment of warts, especially if they are rough and appear in clusters.",
+          "Causticum": "Effective for warts that are painful or sensitive.",
+          "Antimonium Crudum": "Helpful for warts that are hard and dry, especially on the soles of the feet."
+        }
+      }
     }
   ]
 }
