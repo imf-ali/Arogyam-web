@@ -10,7 +10,7 @@ const ContactUs = () => {
         <div>Nearby ICICI Bank Manpur</div>
         <div>P.S. - Muffasil</div>
         <div>Pin - 823003</div>
-        <p><b>Mobile no. - 6203646558</b></p>
+        <p><b>Mobile no. - 8809194289</b></p>
         <p><b>Email - arogyambihar@gmail.com</b></p>
       </div>
       <Map />
