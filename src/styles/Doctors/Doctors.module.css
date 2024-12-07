@@ -1,0 +1,75 @@
+.DoctorDiv{
+  margin: auto;
+  margin-top: 12vh;
+  width: 75vw;
+}
+
+.heading{
+  text-align: center;
+}
+
+.secondPara h2 {
+  color: #003d6f;
+}
+
+.DoctorDiv h2{
+  color: #003d6f;
+}
+
+.mainPara{
+  display: flex;
+  gap: 5vh;
+  background-color:#ddeffd;
+  padding: 4vh;
+  /* width: 70%; */
+}
+
+.crop {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #003d6f;
+}
+
+.firstDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dataDiv{
+  gap: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title{
+  color: #003d6f;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  gap: 1vh;
+  height: 5vh;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px){
+  .mainPara {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  .secondPara h2 {
+    text-align: center;
+  }
+
+  .dataDiv{
+    gap: 2vh;
+  }
+}
+

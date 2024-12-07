@@ -17,6 +17,7 @@ import Treatment from "./pages/Treatment";
 import TreatmentItem from "./components/TreatmentPage/TreatmentItem";
 import NotFound from "./components/NotFound";
 import ContactUs from "./pages/ContactUs";
+import Doctors from "./pages/Doctors";
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
               <Route path="patient/:patientId" element={<Patient />} />
             </Route>
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/doctors" element={<Doctors />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

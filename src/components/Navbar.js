@@ -36,7 +36,7 @@ const NavBar = () => {
         <Link to="/" className={styles.linkItem} onClick={handleShowNavbar}>HOME</Link>
         <Link className={styles.linkItem} onClick={handleShowNavbar}>ABOUT</Link>
         <Link to="/treatments" className={styles.linkItem} onClick={handleShowNavbar}>TREATMENTS</Link>
-        <Link className={styles.linkItem} onClick={handleShowNavbar}>DOCTORS</Link>
+        <Link to="/doctors" className={styles.linkItem} onClick={handleShowNavbar}>DOCTORS</Link>
         <Link to="/patient-portal" className={styles.linkItem} onClick={handleShowNavbar}>PATIENT PORTAL</Link>
         <Link to="/contact" className={styles.linkItem} onClick={handleShowNavbar}>CONTACT US</Link>
         {isLoggedIn && <Link className={styles.linkItem} onClick={handleLogout}>LOGOUT</Link>}
