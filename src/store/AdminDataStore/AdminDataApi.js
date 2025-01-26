@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setData, setDeleteFeedbackData, setUpdateFeedbackData } from "../WebDataStore/WebDataContext";
 import axios from "axios";
-import { setAppointments, setCurrentPatient, setFeedbacks, setLogin } from "./AdminDataContext";
+import { setAppointments, setCurrentPatient, setDiagnosisJsonConfig, setFeedbacks, setLogin } from "./AdminDataContext";
 
 const backendBaseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -159,6 +159,21 @@ export const getPatientData = createAsyncThunk('api/getPatientData', async (arg,
       }
     });
     thunkApi.dispatch(setCurrentPatient(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
+export const getJsonConfig = createAsyncThunk('api/getJsonConfig', async (arg, thunkApi) => {
+  try {
+    const res = await axios({
+      method: 'GET',
+      url: `${backendBaseUrl}/v1/admin/diagnosis-json`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      }
+    });
+    thunkApi.dispatch(setDiagnosisJsonConfig(res.data));
   } catch (err) {
     console.log('Something went wrong', err);
   }

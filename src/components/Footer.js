@@ -1,5 +1,5 @@
 import styles from '../styles/Footer.module.css';
-import logo from '../assets/iconNew.jpg';
+import logo from '../assets/logoMain.png';
 import { FaFacebook } from "react-icons/fa6";
 import { GrInstagram } from "react-icons/gr";
 import { SiYoutube } from "react-icons/si";

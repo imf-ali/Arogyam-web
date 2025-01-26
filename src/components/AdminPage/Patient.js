@@ -12,7 +12,7 @@ const Patient = () => {
   const { patientId } = useParams();
   const dispatch = useDispatch();
   const { currentPatient } = useSelector(adminState);
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
 
   useEffect(() => {
     dispatch(getPatientData({ patientId }));

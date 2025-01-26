@@ -8,6 +8,7 @@ const admin = createSlice({
     feedbacks: [],
     appointments: [],
     currentPatient: null,
+    diagnosisJsonConfig: null,
   },
   reducers: {
     loginAdmin: (state, action) => {
@@ -42,9 +43,13 @@ const admin = createSlice({
       const { payload } = action;
       state.currentPatient = payload.patient;
     },
+    setDiagnosisJsonConfig: (state, action) => {
+      const { payload } = action;
+      state.diagnosisJsonConfig = payload.data;
+    },
   },
 });
 
 export const adminReducer = admin.reducer;
-export const { loginAdmin, logoutAdmin, setLogin, setFeedbacks, setAppointments, setCurrentPatient } = admin.actions;
+export const { loginAdmin, logoutAdmin, setLogin, setFeedbacks, setAppointments, setCurrentPatient, setDiagnosisJsonConfig } = admin.actions;
 export const adminState = state => state.adminReducer;

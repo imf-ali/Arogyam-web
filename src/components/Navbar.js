@@ -1,5 +1,5 @@
 import styles from '../styles/Navbar.module.css';
-import icon from '../assets/icon.png';
+import icon from '../assets/logoLight.png';
 import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { useState } from 'react';
@@ -34,7 +34,6 @@ const NavBar = () => {
       </div>
       <div className={`${styles.itemDiv} ${showNavbar && styles.show}`}>
         <Link to="/" className={styles.linkItem} onClick={handleShowNavbar}>HOME</Link>
-        <Link className={styles.linkItem} onClick={handleShowNavbar}>ABOUT</Link>
         <Link to="/treatments" className={styles.linkItem} onClick={handleShowNavbar}>TREATMENTS</Link>
         <Link to="/doctors" className={styles.linkItem} onClick={handleShowNavbar}>DOCTOR</Link>
         <Link to="/patient-portal" className={styles.linkItem} onClick={handleShowNavbar}>PATIENT PORTAL</Link>

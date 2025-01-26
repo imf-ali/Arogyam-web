@@ -17,6 +17,10 @@
   padding: 2vw;
 }
 
+.imgDiv img{
+  height: 10vh;
+}
+
 .itemDiv{
   width: 90%;
   display: flex;
