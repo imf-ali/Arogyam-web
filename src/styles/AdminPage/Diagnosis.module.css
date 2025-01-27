@@ -1,0 +1,43 @@
+.inputBoxDiv{
+  display: flex;
+  flex-direction: row;
+  margin: 2vh 2vh;
+}
+
+.labelDiv{
+  width: 50%;
+}
+
+.inputDiv {
+  width: 50%;
+}
+
+.inputDiv input[type="text"], select{
+  width: 100%;
+  padding: 1vh 0vh;
+}
+
+.nestedInputBoxDiv{
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.nestedLabelDiv{
+  width: 20%;
+}
+
+.nestedInputDiv {
+  width: 80%;
+}
+
+.heading {
+  margin: 2vh 2vh;;
+}
+
+.submitDiv {
+  margin: 4vh 0;
+  display: flex;
+  justify-content: center;
+}

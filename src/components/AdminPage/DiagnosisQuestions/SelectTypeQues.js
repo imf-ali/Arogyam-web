@@ -1,4 +1,3 @@
-import OtherOptions from "./OtherOptions";
 import SelectWithOptions from "./SelectWithOptions";
 
 const SelectTypeQues = ({ sectionId, question, formData, handleChange }) => {
@@ -10,14 +9,6 @@ const SelectTypeQues = ({ sectionId, question, formData, handleChange }) => {
         formData={formData}
         handleChange={handleChange} 
       />
-      {question.otherOption && (
-        <OtherOptions 
-          sectionId={sectionId} 
-          question={question}
-          formData={formData}
-          handleChange={handleChange}
-        />
-      )}
     </div>
   )
 }

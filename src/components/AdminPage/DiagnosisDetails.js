@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getJsonConfig } from "../../store/AdminDataStore/AdminDataApi";
 import { adminState } from "../../store/AdminDataStore/AdminDataContext";
 import Sections from "./DiagnosisQuestions/Sections";
+import Button from "../../utils/Button";
+import styles from '../../styles/AdminPage/Diagnosis.module.css';
 
 const DiagnosisDetails = () => {
   const dispatch = useDispatch();
@@ -30,12 +32,13 @@ const DiagnosisDetails = () => {
         handleChange={handleChange} 
         formData={formData} 
       />
-      <div>
-        <button
-          onClick={() => console.log("Form Data:", formData)}
-        >
-          Submit
-        </button>
+      <div className={styles.submitDiv}>
+        <Button
+          text="Save Details"
+          backgroundColor='#3c6b3d'
+          width='15%'
+          handleClick={() => console.log('form Data')}
+        />
       </div>
     </div>
   );

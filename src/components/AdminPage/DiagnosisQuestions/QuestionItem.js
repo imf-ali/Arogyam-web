@@ -1,4 +1,4 @@
-import InputFieldNew from "../../../utils/InputFieldNew";
+import TextInputField from "../../CustomComponents/TextInputField";
 import SegmentedSelect from "./SegmentedSelect";
 import SelectTypeQues from "./SelectTypeQues";
 
@@ -6,9 +6,8 @@ const QuestionItem = ({ sectionId, question, formData, handleChange }) => {
   return (
     <div key={question.id} >
       {question.type === "text" && (
-        <InputFieldNew 
+        <TextInputField 
           labelName={question.question} 
-          inputType="text" 
           value={formData[sectionId]?.[question.id] || ""}
           onChange={(e) =>
             handleChange(sectionId, question.id, e.target.value)

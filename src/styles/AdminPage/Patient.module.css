@@ -2,6 +2,11 @@
   width: 83%;
   height: 100%;
   overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.captureData::-webkit-scrollbar {
+  display: none;
 }
 
 .patientDetails{
