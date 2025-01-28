@@ -30,6 +30,9 @@
   background: linear-gradient(145deg, #f6f8ea, #cce5ab);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card h3 {
@@ -43,11 +46,14 @@
   margin-bottom: 16px;
   font-size: 0.95em;
   color: #555;
+  flex-grow: 1;
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-width: 1mm;
+  border-color: #003d6f;
 }
 
 .moreButton {
@@ -62,10 +68,12 @@
   text-decoration: none;
   text-align: center;
   transition: background-color 0.3s, transform 0.2s;
+  margin-top: auto;
+  margin-bottom: 12px;
 }
 
 .moreButton:hover {
-  background-color: #5ea3ed;
+  background-color: #007BFF;
   transform: translateY(-3px);
 }
 
@@ -75,15 +83,114 @@
   width: 75vw;
   font-size: 1.1em;
   margin-bottom: 5vh;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.watermarkContainer {
+  position: relative;
+}
+
+.watermarkContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    var(--watermark);
+  background-repeat: repeat;
+  background-size: 10%;
+  opacity: 0.08;
+  /* transform: rotate(-25deg); */
+  z-index: -1;
 }
 
 .treatmentItem h2 {
   color: #003d6f;
   font-size: 2em;
   margin-bottom: 20px;
+  border-left: 5px solid #003d6f;
+  padding-left: 10px;
 }
 
- .card:hover {
-  border-width: 1mm;
-  border-color: #003d6f;
+.treatmentItem p {
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #007BFF;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.treatmentItem ul {
+  list-style: none;
+  padding: 0;
+}
+
+.treatmentItem ul li {
+  padding: 8px 0;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.treatmentItem ul li::before {
+  content: '✔';
+  font-size: 1.2em;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.severity-box {
+  background: #eef5ff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+}
+
+.severity-box strong {
+  color: #003d6f;
+  font-size: 1.1em;
+}
+
+.benefits {
+  background: linear-gradient(145deg, #f6f8ea, #cce5ab);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.foods-box {
+  background: #ffefef;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.watermarkTreatmentContainer {
+  position: relative;
+}
+
+.watermarkTreatmentContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    var(--watermark);
+  background-repeat: repeat;
+  background-size: 5%;
+  opacity: 0.05;
+  /* transform: rotate(-25deg); */
+  z-index: -1;
 }
