@@ -1,75 +1,156 @@
-.DoctorDiv{
+/* Doctor Container */
+.doctorContainer {
   margin: auto;
-  margin-top: 12vh;
-  width: 75vw;
+  margin-top: 10vh;
+  width: 80%;
+  max-width: 900px;
+  background: #f0f8ff;
+  padding: 3vh;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
-.heading{
-  text-align: center;
+/* Doctor Card */
+.doctorCard {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 2vh;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.secondPara h2 {
-  color: #003d6f;
-}
-
-.DoctorDiv h2{
-  color: #003d6f;
-}
-
-.mainPara{
+/* Image and Info Flex Container */
+.imageAndInfo {
   display: flex;
-  gap: 5vh;
-  background-color:#ddeffd;
-  padding: 4vh;
-  /* width: 70%; */
+  align-items: center;
+  gap: 20px;
+  background-color: #e6f7ff;
+  padding: 2vh;
+  border-radius: 8px;
 }
 
-.crop {
+/* Doctor Image */
+.doctorImage {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   border: 3px solid #003d6f;
+  object-fit: cover;
 }
 
-.firstDiv{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Doctor Details */
+.doctorDetails {
+  width: 100%;
 }
 
-.dataDiv{
-  gap: 5vh;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.title{
+.doctorDetails h1 {
   color: #003d6f;
+  font-size: 1.8em;
   font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.doctorDetails h3 {
+  margin: 0;
   font-size: 1.1em;
 }
 
-.row{
+.doctorDetails h3 span {
+  font-weight: normal;
+  color: #555;
+}
+
+.doctorInfo {
+  margin-top: 10px;
+}
+
+/* Doctor Info Items */
+.infoItem {
   display: flex;
-  flex-direction: row;
-  gap: 1vh;
-  height: 5vh;
   align-items: center;
+  gap: 10px;
+  margin-bottom: 7.5px;
 }
 
-@media screen and (max-width: 900px){
-  .mainPara {
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-  }
-
-  .secondPara h2 {
-    text-align: center;
-  }
-
-  .dataDiv{
-    gap: 2vh;
-  }
+.icon {
+  width: 20px;
+  height: 20px;
+  color: #003d6f;
 }
 
+/* Expertise List */
+.expertiseList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.expertiseList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.checkIcon {
+  color: #28a745;
+}
+ 
+/* Specialties Section */
+.specialties {
+  list-style-type: none;
+  padding: 0;
+}
+
+.specialties li {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #003d6f;
+}
+
+/* Success Stories List */
+.successStories {
+  list-style-type: none;
+  padding: 0;
+}
+
+.successStories li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Vision List */
+.visionList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.visionList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+
+/* CTA Section */
+.cta {
+  margin-top: 20px;
+  color: #28a745;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.cta span {
+  font-weight: bold;
+}
+
+/* Change color of all h2 tags */
+h2 {
+  color: #003d6f;
+}
