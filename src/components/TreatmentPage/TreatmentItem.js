@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import treatmentData from '../../assets/treatments.json';
 import styles from '../../styles/TreatmentsPage/Treatment.module.css';
 import NotFound from '../NotFound';
@@ -7,6 +8,10 @@ import watermark from '../../assets/logoLight.png';
 const TreatmentItem = () => {
   const { name } = useParams();
   const treatment = treatmentData.treatments.find((item) => item.path === name);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={styles.watermarkContainer} style={{ '--watermark': `url(${watermark})` }}>
