@@ -18,6 +18,9 @@ import TreatmentItem from "./components/TreatmentPage/TreatmentItem";
 import NotFound from "./components/NotFound";
 import ContactUs from "./pages/ContactUs";
 import Doctors from "./pages/Doctors";
+import TnC from "./pages/TnC";
+import Privacy from "./pages/Privacy";
+import LegalCenter from "./pages/LegalCenter";
 
 function App() {
 
@@ -47,6 +50,9 @@ function App() {
             </Route>
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/doctors" element={<Doctors />} />
+            <Route path="/terms-and-condition" element={<TnC />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/legal-center" element={<LegalCenter />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
