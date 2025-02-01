@@ -41,7 +41,7 @@ const admin = createSlice({
     },
     setCurrentPatient: (state, action) => {
       const { payload } = action;
-      state.currentPatient = payload.patient;
+      state.currentPatient = payload;
     },
     setDiagnosisJsonConfig: (state, action) => {
       const { payload } = action;

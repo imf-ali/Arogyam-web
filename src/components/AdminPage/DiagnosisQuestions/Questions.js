@@ -5,6 +5,7 @@ const Questions = ({ section, handleChange, formData }) => {
     <>
       {section.questions.map((question) => (
         <QuestionItem 
+          key={question.questionId}
           sectionId={section.sectionId}
           question={question} 
           formData={formData} 

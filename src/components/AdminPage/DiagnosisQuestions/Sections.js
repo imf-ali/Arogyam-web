@@ -5,6 +5,7 @@ const Sections = ({ diagnosisJsonConfig, handleChange, formData }) => {
     <div>
       {diagnosisJsonConfig?.sections.map((section) => (
         <SectionItem 
+          key={section.sectionId}
           section={section}
           handleChange={handleChange} 
           formData={formData} 

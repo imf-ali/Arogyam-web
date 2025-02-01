@@ -14,7 +14,9 @@
 
 .inputDiv input[type="text"], select{
   width: 100%;
-  padding: 1vh 0vh;
+  padding: 0.8vh;
+  padding-right: 0vh;
+  font-size: 1em;
 }
 
 .nestedInputBoxDiv{
@@ -26,6 +28,7 @@
 
 .nestedLabelDiv{
   width: 20%;
+  font-size: 0.9em;
 }
 
 .nestedInputDiv {

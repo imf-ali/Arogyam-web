@@ -17,3 +17,23 @@
   display: flex;
   justify-content: center;
 }
+
+.inputField label {
+  margin-left: 1vh;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.inputField select {
+  margin-top: 1vh;
+  border: none;
+  border-bottom: 1px solid #000; /* Adjust the color and thickness as needed */
+  background: none;
+  padding: 5px 0; /* Adjust padding as needed */
+  font-size: 1em; /* Adjust font size as needed */
+}
+
+.inputField select:focus {
+  outline: none;
+}
+

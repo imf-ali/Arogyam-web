@@ -45,30 +45,31 @@ const BasicDetails = ({ patient }) => {
     name: '',
     gender: '',
     phone: '',
-    patientId: '',
+    patientId: patient.patientId,
     age: '',
     weight: '',
     height: '',
     bmi: '',
     bp: '',
     address: '',
-  }), []);
+  }), [patient]);
 
   const [state, dispatchReducer] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    dispatchReducer({ type: 'RESET', payload: patient || initialState });
+    dispatchReducer({ type: 'RESET', payload: patient.patient || initialState });
   }, [patient, initialState]);
 
   const handleInputChange = (field, value) => {
     dispatchReducer({ type: 'SET_FIELD', field, value });
   };
 
+
   const handleSaveDetails = () => {
-    if (!patient || patient.diagnosis.length) {
+    if (!patient || !patient.diagnosis) {
       dispatch(savePrescriptionData({ patient: state }));
     } else {
-      dispatch(updatePrescriptionData({ id: patient.id, patient: state }));
+      dispatch(updatePrescriptionData({ id: patient._id, patient: state }));
     }
   };
 
@@ -88,12 +89,17 @@ const BasicDetails = ({ patient }) => {
             value={state.phone}
             onChange={(e) => handleInputChange('phone', e.target.value)}
           />
-          <InputFieldNew
-            labelName="Gender"
-            placeholderText="Enter the gender"
-            value={state.gender}
-            onChange={(e) => handleInputChange('gender', e.target.value)}
-          />
+          <div className={styles.inputField}>
+            <label>Gender</label>
+            <select
+              value={state.gender}
+              onChange={(e) => handleInputChange('gender', e.target.value)}
+            >
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
           <InputFieldNew
             labelName="Age"
             placeholderText="Enter the age"
@@ -103,13 +109,13 @@ const BasicDetails = ({ patient }) => {
         </div>
         <div className={styles.rowDiv}>
           <InputFieldNew
-            labelName="Weight"
+            labelName="Weight (in kg)"
             placeholderText="Enter the weight"
             value={state.weight}
             onChange={(e) => handleInputChange('weight', e.target.value)}
           />
           <InputFieldNew
-            labelName="Height"
+            labelName="Height (in cm)"
             placeholderText="Enter the height"
             value={state.height}
             onChange={(e) => handleInputChange('height', e.target.value)}
