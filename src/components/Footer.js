@@ -11,25 +11,30 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.content}>
-          <div>Legal Center</div>
-          <div>Privacy</div>
-          <div>Terms of Service</div>
-          <FaFacebook size={25} />
-          <GrInstagram size={25} />
-          <SiYoutube size={25} />
+          <div className={styles.legalLinks}>
+            <Link to="/terms-and-condition">Terms and Conditons</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/disclaimer">Disclaimer</Link>
+          </div>
+
+          <div className={styles.socialIcons}>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook size={25} /></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><GrInstagram size={25} /></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><SiYoutube size={25} /></a>
+          </div>
+
         </div>
         <div className={styles.contentTwo}>
           <Link to="/contact">
             <div>
-              Locate Our Clinic 
+              <FaLocationDot size={20} /> Find Us Here
             </div>
-            <FaLocationDot size={25} />
           </Link>
         </div>
       </div>
       <div className={styles.logoDiv}>
         <img src={logo} alt='logo' />
-        <div>© 2024 Arogyam Bihar</div>
+        <p>© 2025 Arogyam Bihar | All Rights Reserved</p>
       </div>
     </div>
   )
