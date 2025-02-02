@@ -29,7 +29,18 @@
   display: flex;
   text-decoration: none;
   color: #dadee3;
+  font-weight: 600;
 }
+
+.contentTwo a:hover {
+  color: #28a745;
+}
+
+.contentTwo a svg { 
+  position: relative;
+  top: 4px;
+}
+
 
 .contentTwo div{
   align-content:center;
@@ -61,4 +72,56 @@
   .logoDiv img{
     width: 30%;
   }
+}
+
+.legalLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  align-items: center;
+}
+
+@media screen and (min-width: 750px) {
+  .legalLinks {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vw;
+  }
+}
+
+.legalLinks a {
+  text-decoration: none;
+  color: #dadee3;
+  font-size: 1em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.legalLinks a:hover {
+  color: #28a745;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1.5vh;
+  align-items: center;
+}
+
+.socialIcons a {
+  text-decoration: none;
+  color: #dadee3;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.socialIcons a:nth-child(1):hover {
+  color: #1877F2;
+}
+
+.socialIcons a:nth-child(2):hover {
+  color: #E4405F;
+}
+
+.socialIcons a:nth-child(3):hover {
+  color: #FF0000;
 }
