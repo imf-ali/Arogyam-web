@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from '../styles/utils/DynamicInput.module.css';
 
 const DynamicInput = ({ labelName }) => {
   const [values, setValues] = useState([""]);
@@ -14,7 +15,7 @@ const DynamicInput = ({ labelName }) => {
   };
 
   return (
-    <div>
+    <div className={styles.dynamicInput}>
       <label>{labelName}</label>
       {values.map((value, index) => (
         <input 

@@ -3,6 +3,7 @@ import InputFieldNew from "../../utils/InputFieldNew";
 import DynamicInput from "../../utils/DynamicInput";
 import InputField from "../../utils/InputField";
 import DynamicObjectInput from "../../utils/DynamicObjectInput";
+import styles from '../../styles/AdminPage/Prescription.module.css';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -33,15 +34,17 @@ const Prescription = () => {
   };
   
   return (
-    <div>
+    <div className={styles.parentDiv}>
       <InputFieldNew
         labelName="Diagnosis"
         placeholderText="Enter the diagnosis"
         value={state.diagnosis}
         onChange={(e) => handleInputChange('diagnosis', e.target.value)}
       />
-      <DynamicInput labelName="Complaints" />
-      <DynamicInput labelName="Findings" />
+      <div className={styles.multiInput}>
+        <DynamicInput labelName="Complaints" />
+        <DynamicInput labelName="Findings" />
+      </div>
       <DynamicObjectInput labelName="Prescription" medicineKeys={['drugName', 'potency', 'dosage', 'repetition', 'qty', 'period', 'remarks']} />
       <DynamicInput labelName="Advice" />
       <InputField

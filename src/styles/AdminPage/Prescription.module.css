@@ -1,0 +1,11 @@
+.parentDiv {
+  margin: 1.5vh;
+}
+
+.multiInput {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1vh;
+  gap: 20%;
+}
+

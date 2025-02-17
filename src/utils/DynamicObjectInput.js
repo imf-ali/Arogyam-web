@@ -1,41 +1,53 @@
 import React, { useState } from 'react';
-import PrescriptionItem from '../components/AdminPage/PrescriptionItem';
+import styles from '../styles/utils/DynamicObjectInput.module.css';
 
 const DynamicObjectInput = ({ labelName, medicineKeys }) => {
-
   const initialObject = medicineKeys.reduce((acc, key) => {
     acc[key] = '';
     return acc;
   }, {});
 
-  const [totalObjects, setTotalObjects] = useState([initialObject]);
+  const [inputs, setInputs] = useState([initialObject]);
 
   const handleInputChange = (index, key, value) => {
-    const newInputs = [...totalObjects];
+    const newInputs = [...inputs];
     newInputs[index][key] = value;
-    setTotalObjects(newInputs);
+    setInputs(newInputs);
   };
 
   const addMoreFields = () => {
-    setTotalObjects(prevState => [...prevState, initialObject]);
+    setInputs(prevState => [...prevState, initialObject]);
   };
 
   return (
-    <>
+    <div className={styles.mainDiv}>
       <label>{labelName}</label>
-      {totalObjects.map((object, index) => {
-        return (
-          <PrescriptionItem
-            state={object}
-            key={index}
-            index={index}
-            medicineKeys={medicineKeys}
-            handleInputChange={handleInputChange}
-          />
-        );
-      })}
+      <table>
+        <thead>
+          <tr>
+            {medicineKeys.map((key) => (
+              <th key={key}>{key}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {inputs.map((input, index) => (
+            <tr key={index}>
+              {medicineKeys.map((key) => (
+                <td key={key}>
+                  <input
+                    type="text"
+                    value={input[key]}
+                    onChange={(e) => handleInputChange(index, key, e.target.value)}
+                  />
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <button onClick={addMoreFields}>Add More</button>
-    </>
+    </div>
   );
 };
 

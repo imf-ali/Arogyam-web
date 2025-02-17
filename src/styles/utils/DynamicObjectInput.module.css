@@ -1,0 +1,11 @@
+.mainDiv{
+  display: flex;
+  flex-direction: column;
+  margin-top: 4vh;
+}
+
+.mainDiv label{
+  margin-left: 1vh;
+  font-size: 1.3em;
+  font-weight: 600;
+}
