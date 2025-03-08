@@ -32,14 +32,16 @@ const NavBar = () => {
       <div className={styles.barNav} onClick={handleShowNavbar}>
         <FaBars style={{ fontSize: "2em" }} />
       </div>
-      <div className={`${styles.itemDiv} ${showNavbar && styles.show}`}>
-        <Link to="/" className={styles.linkItem} onClick={handleShowNavbar}>HOME</Link>
-        <Link to="/treatments" className={styles.linkItem} onClick={handleShowNavbar}>TREATMENTS</Link>
-        <Link to="/doctors" className={styles.linkItem} onClick={handleShowNavbar}>DOCTOR</Link>
-        <Link to="/patient-portal" className={styles.linkItem} onClick={handleShowNavbar}>PATIENT PORTAL</Link>
-        <Link to="/contact" className={styles.linkItem} onClick={handleShowNavbar}>CONTACT US</Link>
-        {isLoggedIn && <Link className={styles.linkItem} onClick={handleLogout}>LOGOUT</Link>}
-      </div>
+      {showNavbar && (
+        <div className={`${styles.itemDiv} ${showNavbar && styles.show}`}>
+          <Link to="/" className={styles.linkItem} onClick={handleShowNavbar}>HOME</Link>
+          <Link to="/treatments" className={styles.linkItem} onClick={handleShowNavbar}>TREATMENTS</Link>
+          <Link to="/doctors" className={styles.linkItem} onClick={handleShowNavbar}>DOCTOR</Link>
+          <Link to="/patient-portal" className={styles.linkItem} onClick={handleShowNavbar}>PATIENT PORTAL</Link>
+          <Link to="/contact" className={styles.linkItem} onClick={handleShowNavbar}>CONTACT US</Link>
+          {isLoggedIn && <Link className={styles.linkItem} onClick={handleLogout}>LOGOUT</Link>}
+        </div>
+      )}
     </nav>
   );
 }
