@@ -20,34 +20,37 @@ const DynamicObjectInput = ({ labelName, medicineKeys }) => {
   };
 
   return (
-    <div className={styles.mainDiv}>
-      <label>{labelName}</label>
-      <table>
-        <thead>
-          <tr>
-            {medicineKeys.map((key) => (
-              <th key={key}>{key}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {inputs.map((input, index) => (
-            <tr key={index}>
+    <>
+      <div className={styles.mainDiv}>
+        <label>{labelName}</label>
+        <table className={styles.tableDiv}>
+          <thead>
+            <tr>
               {medicineKeys.map((key) => (
-                <td key={key}>
-                  <input
-                    type="text"
-                    value={input[key]}
-                    onChange={(e) => handleInputChange(index, key, e.target.value)}
-                  />
-                </td>
+                <th key={key}>{key}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <button onClick={addMoreFields}>Add More</button>
-    </div>
+          </thead>
+          <tbody>
+            {inputs.map((input, index) => (
+              <tr key={index}>
+                {medicineKeys.map((key) => (
+                  <td key={key}>
+                    <input
+                      className={styles.inputField}
+                      type="text"
+                      value={input[key]}
+                      onChange={(e) => handleInputChange(index, key, e.target.value)}
+                    />
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <button className={styles.btn} onClick={addMoreFields}>Add More</button>
+    </>
   );
 };
 

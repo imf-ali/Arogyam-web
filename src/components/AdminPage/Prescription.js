@@ -47,13 +47,15 @@ const Prescription = () => {
       </div>
       <DynamicObjectInput labelName="Prescription" medicineKeys={['drugName', 'potency', 'dosage', 'repetition', 'qty', 'period', 'remarks']} />
       <DynamicInput labelName="Advice" />
-      <InputField
-        inputType='date' 
-        placeholderText='Follow up date' 
-        labelName='Follow up date' 
-        value={date}
-        setText={setDate}
-      />
+      <div className={styles.followUp}>
+        <InputField
+          inputType='date' 
+          placeholderText='Follow up date' 
+          labelName='Follow up date' 
+          value={date}
+          setText={setDate}
+        />
+      </div>
     </div>
   )
 }

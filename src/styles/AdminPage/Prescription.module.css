@@ -9,3 +9,17 @@
   gap: 20%;
 }
 
+.followUp{
+  margin-top: 2vh;
+}
+
+.followUp label {
+  margin-left: 1vh;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.followUp input {
+  width: 20vh;
+  margin-left: 1vh;
+}
