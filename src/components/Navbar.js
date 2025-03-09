@@ -2,7 +2,7 @@ import styles from '../styles/Navbar.module.css';
 import icon from '../assets/logoLight.png';
 import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { adminState, logoutAdmin } from '../store/AdminDataStore/AdminDataContext';
 import { logout } from '../store/api';
@@ -23,6 +23,25 @@ const NavBar = () => {
       window.location.href = '/';
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth > 1200) {
+        setShowNavbar(true);
+      } else {
+        setShowNavbar(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <nav className={styles.navBar}>

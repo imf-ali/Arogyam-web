@@ -13,7 +13,7 @@ const CurrentAppointments = ({ active, appointments }) => {
   const handleClick = (appointment) => {
     const { _id, patientId, status } = appointment;
     if (status === 'BOOKED') {
-      dispatch(updateAppointment({ appointmentId: _id, status: 'INPROGRESS' }))
+      dispatch(updateAppointment({ appointmentId: _id, status: 'WAITING' }))
     }
     navigate(`/admin/patient/${patientId}`);
   }

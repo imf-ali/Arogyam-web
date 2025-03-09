@@ -3,7 +3,7 @@ import InputFieldNew from "../../utils/InputFieldNew";
 import styles from '../../styles/AdminPage/PatientDetails.module.css';
 import Button from "../../utils/Button";
 import { useDispatch } from "react-redux";
-import { savePrescriptionData, updatePrescriptionData } from "../../store/AdminDataStore/AdminDataApi";
+import { savePrescriptionData, updateAppointment, updatePrescriptionData } from "../../store/AdminDataStore/AdminDataApi";
 
 const calculateBMI = (action, weight, heightInCm) => {
   let bmi;
@@ -70,6 +70,12 @@ const BasicDetails = ({ patient }) => {
       dispatch(savePrescriptionData({ patient: state }));
     } else {
       dispatch(updatePrescriptionData({ id: patient._id, patient: state }));
+    }
+  };
+
+  const handleDiagnosis = () => {
+    if (patient.appointmentStatus === 'WAITING') {
+      dispatch(updateAppointment({ appointmentId: patient.appointmentId, status: 'INPROGRESS' }))
     }
   };
 
@@ -144,6 +150,7 @@ const BasicDetails = ({ patient }) => {
       </div>
       <div className={styles.btnDiv}>
         <Button width='15%' text='Save details' handleClick={handleSaveDetails} />
+        <Button width='15%' text='Take diagnosis' handleClick={handleDiagnosis} />
       </div>
     </div>
   );
