@@ -1,6 +1,6 @@
 import styles from '../../../styles/AdminPage/Diagnosis.module.css';
 
-const OtherOptions = ({ sectionId, question, formData, handleChange }) => {
+const OtherOptions = ({ sectionId, sectionTitle, question, formData, handleChange }) => {
   return (
     <div className={styles.nestedInputBoxDiv}>
       <div className={styles.nestedLabelDiv}>
@@ -10,13 +10,16 @@ const OtherOptions = ({ sectionId, question, formData, handleChange }) => {
         <input
           type={question.otherOption.type}
           value={
-            formData[sectionId]?.[`${question.id}_other`] || ""
+            formData.find(data => data.sectionId === sectionId)?.questions.find(ques => ques.id === question.id)?.otherOption?.answer || ""
           }
           onChange={(e) =>
             handleChange(
               sectionId,
-              `${question.id}_other`,
-              e.target.value
+              sectionTitle,
+              question.id,
+              question.otherOption.label,
+              e.target.value,
+              true
             )
           }
         />

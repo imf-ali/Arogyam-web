@@ -7,6 +7,7 @@ const Questions = ({ section, handleChange, formData }) => {
         <QuestionItem 
           key={ind}
           sectionId={section.sectionId}
+          sectionTitle={section.sectionTitle}
           question={question} 
           formData={formData} 
           handleChange={handleChange}

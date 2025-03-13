@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from '../../../styles/AdminPage/Diagnosis.module.css';
 
-const SegmentedSelect = ({ sectionId, question, formData, handleChange  }) => {
+const SegmentedSelect = ({ sectionId, sectionTitle, question, formData, handleChange  }) => {
   const [segment, setSegment]  = useState("")
   const [subSegment, setSubSegment]  = useState("")
   const [subSubsegment, setSubSubSegment]  = useState("")
@@ -15,9 +15,10 @@ const SegmentedSelect = ({ sectionId, question, formData, handleChange  }) => {
         <div className={styles.inputDiv} >
           <select
             value={segment}
-            onChange={(e) =>
-              setSegment(e.target.value)
-            }
+            onChange={(e) => {
+                setSegment(e.target.value)
+                handleChange(sectionId, sectionTitle, question.id, question.question, e.target.value)
+            }}
             required={question.isRequired}
           >
             <option value="">Select an option</option>
@@ -37,7 +38,10 @@ const SegmentedSelect = ({ sectionId, question, formData, handleChange  }) => {
           <div className={styles.inputDiv}>
             <select
               value={subSegment}
-              onChange={(e) => setSubSegment(e.target.value)}
+              onChange={(e) => {
+                setSubSegment(e.target.value)
+                handleChange(sectionId, sectionTitle, `${question.id}-sub`, question.sub_segment.question, e.target.value)
+              }}
             >
               <option value="">Select a sub-segment</option>
               {question.sub_segment.options[segment].map((option, index) => (
@@ -57,7 +61,10 @@ const SegmentedSelect = ({ sectionId, question, formData, handleChange  }) => {
           <div className={styles.inputDiv}>
             <select
               value={subSubsegment}
-              onChange={(e) => setSubSubSegment(e.target.value)}
+              onChange={(e) => {
+                setSubSubSegment(e.target.value)
+                handleChange(sectionId, sectionTitle, `${question.id}-sub-sub`, question.sub_sub_segment.question, e.target.value)
+              }}
             >
               <option value="">Select a sub-sub-segment</option>
               {question.sub_sub_segment.options[subSegment].map((option, index) => (

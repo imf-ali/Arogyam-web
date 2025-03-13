@@ -179,6 +179,26 @@ export const getJsonConfig = createAsyncThunk('api/getJsonConfig', async (arg, t
   }
 });
 
+export const saveDiagnosisData = createAsyncThunk('api/saveDiagnosisData', async (arg, thunkApi) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${backendBaseUrl}/v1/admin/diagnosis`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      data: {
+        patientId: arg.patientId,
+        sections: arg.sections,
+      }
+    });
+    console.log(res.data);
+    // thunkApi.dispatch(setDiagnosisJsonConfig(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
 export const savePrescriptionData = createAsyncThunk('api/savePrescriptionData', async (arg, thunkApi) => {
   try {
     const res = await axios({
