@@ -1,7 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setData, setDeleteFeedbackData, setUpdateFeedbackData } from "../WebDataStore/WebDataContext";
 import axios from "axios";
-import { setAppointments, setCurrentPatient, setDiagnosisJsonConfig, setFeedbacks, setLogin } from "./AdminDataContext";
+import { setAppointments, setCurrentPatient, setDiagnosisJsonConfig, setFeedbacks, setLogin, setPdfBuffer } from "./AdminDataContext";
+import { showToast } from "../ToastStore/ToastContext";
 
 const backendBaseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -132,7 +133,7 @@ export const getAllAppointments = createAsyncThunk('api/getAllAppointments', asy
 export const updateAppointment = createAsyncThunk('api/updateAppointment', async (arg, thunkApi) => {
   try {
     const { appointmentId, status } = arg;
-    await axios({
+    const res = await axios({
       method: 'PUT',
       url: `${backendBaseUrl}/v1/admin/appointments/${appointmentId}`,
       headers: {
@@ -142,6 +143,7 @@ export const updateAppointment = createAsyncThunk('api/updateAppointment', async
         status,
       },
     });
+    thunkApi.dispatch(showToast(res.data.message));
   } catch (err) {
     console.log('Something went wrong', err);
   }
@@ -191,8 +193,7 @@ export const saveDiagnosisData = createAsyncThunk('api/saveDiagnosisData', async
         sections: arg.sections,
       }
     });
-    console.log(res.data);
-    // thunkApi.dispatch(setDiagnosisJsonConfig(res.data));
+    thunkApi.dispatch(showToast(res.data.message));
   } catch (err) {
     console.log('Something went wrong', err);
   }
@@ -219,7 +220,6 @@ export const savePrescriptionData = createAsyncThunk('api/savePrescriptionData',
 export const updatePrescriptionData = createAsyncThunk('api/updatePrescriptionData', async (arg, thunkApi) => {
   try {
     const { id, ...otherArg } = arg;
-    console.log(arg, otherArg);
     const res = await axios({
       method: 'PUT',
       url: `${backendBaseUrl}/v1/admin/prescriptions/${id}`,
@@ -230,6 +230,7 @@ export const updatePrescriptionData = createAsyncThunk('api/updatePrescriptionDa
         ...otherArg,
       }
     });
+    thunkApi.dispatch(showToast(res.data.message));
     thunkApi.dispatch(setCurrentPatient(res.data));
   } catch (err) {
     console.log('Something went wrong', err);
@@ -240,10 +241,13 @@ export const generatePrescription = createAsyncThunk('api/generatePrescriptionDa
   try {
     const { patientId } = arg;
     const res = await axios({
-      method: 'GET',
-      url: `${backendBaseUrl}/v1/admin/generate-prescription/${patientId}`,
+      method: 'POST',
+      url: `${backendBaseUrl}/v1/admin/prescriptions/pdf`,
       headers: {
         Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      data: {
+        patientId,
       }
     });
     console.log(res.data);
@@ -252,5 +256,23 @@ export const generatePrescription = createAsyncThunk('api/generatePrescriptionDa
   }
 });
 
+export const downloadPrescription = createAsyncThunk('api/downloadPrescription', async (arg, thunkApi) => {
+  try {
+    const { patientId } = arg;
+    const res = await axios({
+      method: 'GET',
+      url: `${backendBaseUrl}/v1/admin/prescriptions/pdf/download`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      params: {
+        patientId,
+      }
+    });
+    thunkApi.dispatch(setPdfBuffer(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
 
 

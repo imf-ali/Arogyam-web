@@ -8,7 +8,7 @@ import styles from '../../styles/AdminPage/Diagnosis.module.css';
 
 const DiagnosisDetails = () => {
   const dispatch = useDispatch();
-  const { diagnosisJsonConfig } = useSelector(adminState);
+  const { diagnosisJsonConfig, currentPatient } = useSelector(adminState);
   const [formData, setFormData] = useState([]);
 
   const handleChange = (sectionId, sectionTitle, questionId, question, answer, isOtherOption = false) => {
@@ -94,7 +94,7 @@ const DiagnosisDetails = () => {
   const handleSave = (e) => {
     e.preventDefault();
     dispatch(saveDiagnosisData({ 
-      patientId: 'PT-OYTD48', 
+      patientId: currentPatient.data.patient.patientId, 
       sections: formData 
     }));
   };

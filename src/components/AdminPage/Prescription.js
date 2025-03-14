@@ -5,7 +5,7 @@ import DynamicObjectInput from "../../utils/DynamicObjectInput";
 import styles from '../../styles/AdminPage/Prescription.module.css';
 import Button from "../../utils/Button";
 import { useDispatch } from "react-redux";
-import { updateAppointment, updatePrescriptionData } from "../../store/AdminDataStore/AdminDataApi";
+import { generatePrescription, updateAppointment, updatePrescriptionData } from "../../store/AdminDataStore/AdminDataApi";
 import { convertFromISOIST, convertToISOIST } from "../../utils/Helper";
 
 const reducer = (state, action) => {
@@ -78,8 +78,8 @@ const Prescription = ({ patient }) => {
     }
   }
 
-  const generatePrescription = () => {
-    
+  const handleGeneratePrescription = () => {
+    dispatch(generatePrescription({ patientId: patient.patient.patientId }));
   }
   
   return (
@@ -142,7 +142,7 @@ const Prescription = ({ patient }) => {
           text="Generate Prescription"
           backgroundColor='#9e2e22'
           width='20%'
-          handleClick={handleCompleted}
+          handleClick={handleGeneratePrescription}
         />
       </div>
     </div>

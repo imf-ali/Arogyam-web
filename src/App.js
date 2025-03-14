@@ -21,6 +21,7 @@ import Doctors from "./pages/Doctors";
 import TnC from "./pages/TnC";
 import Privacy from "./pages/Privacy";
 import LegalCenter from "./pages/LegalCenter";
+import Toast from "./utils/Toast";
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
       <Router>
         <div className={styles.app}>
           <NavBar />
+          <Toast />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/patient-portal" element={<PatientPortal />} />
