@@ -1,0 +1,35 @@
+.mainDiv{
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4vh;
+}
+
+.mainDiv label{
+  margin-left: 1vh;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.inputField {
+  border: 0;
+  font-size: 1.1em;
+}
+
+.inputField:focus {
+  outline: none;
+  background: none;
+}
+
+.tableDiv{
+  width: 100vh;
+  border-collapse: collapse;
+}
+
+.btn{
+  margin-left: 1vh;
+  margin-top: 1vh;
+  font-size: 1.1em;
+  width: 10vw;
+  padding: 0.5vh;
+}

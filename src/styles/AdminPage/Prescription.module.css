@@ -1,0 +1,33 @@
+.parentDiv {
+  margin: 1.5vh;
+}
+
+.btnDiv{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5vh;
+  margin: 3vh;
+}
+
+.multiInput {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1vh;
+  gap: 20%;
+}
+
+.followUp{
+  margin-top: 2vh;
+}
+
+.followUp label {
+  margin-left: 1vh;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.followUp input {
+  width: 20vh;
+  margin-left: 1vh;
+}

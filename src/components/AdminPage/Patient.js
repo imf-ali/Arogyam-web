@@ -6,6 +6,7 @@ import { getPatientData } from "../../store/AdminDataStore/AdminDataApi";
 import styles from '../../styles/AdminPage/Patient.module.css';
 import BasicDetails from "./BasicDetails";
 import DiagnosisDetails from "./DiagnosisDetails";
+import Prescription from "./Prescription";
 
 const Patient = () => {
 
@@ -27,9 +28,11 @@ const Patient = () => {
       <div className={styles.diagnosis}>
         <div className={`${styles.diagnosisItem} ${activeTab === 0 && styles.activeTab}`} onClick={() => setActiveTab(0)}>Basic Details</div>
         <div className={`${styles.diagnosisItem} ${activeTab === 1 && styles.activeTab}`} onClick={() => setActiveTab(1)}>Diagnosis</div>
+        <div className={`${styles.diagnosisItem} ${activeTab === 2 && styles.activeTab}`} onClick={() => setActiveTab(2)}>Prescription</div>
       </div>
-      {activeTab === 0 && <BasicDetails patient={{...currentPatient, patientId}} />}
+      {activeTab === 0 && <BasicDetails patient={{...currentPatient?.data, patientId}} />}
       {activeTab === 1 && <DiagnosisDetails />}
+      {activeTab === 2 && <Prescription patient={{...currentPatient?.data, patientId}} />}
     </div>
   )
 }

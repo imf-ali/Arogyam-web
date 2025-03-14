@@ -28,6 +28,7 @@ const Appointments = () => {
         />
         <div className={styles.statusTab}>
           <span className={`${active === 'BOOKED' && styles.active}`} onClick={() => setActive('BOOKED')}>BOOKED</span>
+          <span className={`${active === 'WAITING' && styles.active}`} onClick={() => setActive('WAITING')}>WAITING</span>
           <span className={`${active === 'INPROGRESS' && styles.active}`} onClick={() => setActive('INPROGRESS')}>INPROGRESS</span>
           <span className={`${active === 'VISITED' && styles.active}`} onClick={() => setActive('VISITED')}>VISITED</span>
         </div>

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Button from '../../utils/Button';
 import { confirmSlotData, fetchSlotsData } from '../../store/api';
 import moment from 'moment';
+import { convertToISOIST } from '../../utils/Helper';
 
 const generateTimeSlotsWithDisplay = (startHour, endHour, selectedTimes) => {
   const times = [];
@@ -14,19 +15,6 @@ const generateTimeSlotsWithDisplay = (startHour, endHour, selectedTimes) => {
     });
   }
   return times;
-}
-
-const convertToISO = (date, time) => {
-  let [timePart, period] = time.split(' ');
-  let [hour, minute] = timePart.split(':').map(Number);
-
-  if (period === 'PM' && hour !== 12) {
-    hour += 12;
-  } else if (period === 'AM' && hour === 12) {
-    hour = 0;
-  }
-  const isoString = new Date(`${date}T${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00.000+00:00`).toISOString();
-  return isoString;
 }
 
 const SlotModal = ({ name, email, phone, setName, setEmail, setPhone, setShowModal }) => {
@@ -53,12 +41,12 @@ const SlotModal = ({ name, email, phone, setName, setEmail, setPhone, setShowMod
       alert('Please select a slot');
       return;
     }
-    const appointmentTime = convertToISO(selectedDate, selectedTime[selectedSlotInd].time);
+    const appointmentTime = convertToISOIST(selectedDate, selectedTime[selectedSlotInd].time);
     const res = await confirmSlotData(name, phone, appointmentTime);
     if (res.status === 400)
       setErrorMessage(res.data.message);
     else if (res.status === 201) {
-      setSuccess(`Slot booked successfully on ${moment(appointmentTime).format('MMMM Do YYYY, h:mm:ss a')}`);
+      setSuccess(`Slot booked successfully on ${moment(appointmentTime).utc(true).format('MMMM Do YYYY, h:mm:ss a')}`);
       // backDropClick();
     }
   }

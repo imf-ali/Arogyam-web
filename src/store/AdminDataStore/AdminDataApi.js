@@ -1,7 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setData, setDeleteFeedbackData, setUpdateFeedbackData } from "../WebDataStore/WebDataContext";
 import axios from "axios";
-import { setAppointments, setCurrentPatient, setDiagnosisJsonConfig, setFeedbacks, setLogin } from "./AdminDataContext";
+import { setAppointments, setCurrentPatient, setDiagnosisJsonConfig, setFeedbacks, setLogin, setPdfBuffer } from "./AdminDataContext";
+import { showToast } from "../ToastStore/ToastContext";
 
 const backendBaseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -17,7 +18,6 @@ export const validateUser = createAsyncThunk('api/valiidateUser', async (arg, th
     });
     thunkApi.dispatch(setLogin({ status: res.status, token }));
   } catch (err) {
-    console.log('Something went wrong', err);
     thunkApi.dispatch(setLogin({ status: err.response.status}));
   }
 });
@@ -133,7 +133,7 @@ export const getAllAppointments = createAsyncThunk('api/getAllAppointments', asy
 export const updateAppointment = createAsyncThunk('api/updateAppointment', async (arg, thunkApi) => {
   try {
     const { appointmentId, status } = arg;
-    await axios({
+    const res = await axios({
       method: 'PUT',
       url: `${backendBaseUrl}/v1/admin/appointments/${appointmentId}`,
       headers: {
@@ -143,6 +143,7 @@ export const updateAppointment = createAsyncThunk('api/updateAppointment', async
         status,
       },
     });
+    thunkApi.dispatch(showToast(res.data.message));
   } catch (err) {
     console.log('Something went wrong', err);
   }
@@ -179,6 +180,25 @@ export const getJsonConfig = createAsyncThunk('api/getJsonConfig', async (arg, t
   }
 });
 
+export const saveDiagnosisData = createAsyncThunk('api/saveDiagnosisData', async (arg, thunkApi) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${backendBaseUrl}/v1/admin/diagnosis`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      data: {
+        patientId: arg.patientId,
+        sections: arg.sections,
+      }
+    });
+    thunkApi.dispatch(showToast(res.data.message));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
 export const savePrescriptionData = createAsyncThunk('api/savePrescriptionData', async (arg, thunkApi) => {
   try {
     const res = await axios({
@@ -191,7 +211,7 @@ export const savePrescriptionData = createAsyncThunk('api/savePrescriptionData',
         ...arg
       }
     });
-    thunkApi.dispatch(setCurrentPatient(res.data.patient));
+    thunkApi.dispatch(setCurrentPatient(res.data));
   } catch (err) {
     console.log('Something went wrong', err);
   }
@@ -210,11 +230,49 @@ export const updatePrescriptionData = createAsyncThunk('api/updatePrescriptionDa
         ...otherArg,
       }
     });
-    thunkApi.dispatch(setCurrentPatient(res.data.data));
+    thunkApi.dispatch(showToast(res.data.message));
+    thunkApi.dispatch(setCurrentPatient(res.data));
   } catch (err) {
     console.log('Something went wrong', err);
   }
 });
 
+export const generatePrescription = createAsyncThunk('api/generatePrescriptionData', async (arg, thunkApi) => {
+  try {
+    const { patientId } = arg;
+    const res = await axios({
+      method: 'POST',
+      url: `${backendBaseUrl}/v1/admin/prescriptions/pdf`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      data: {
+        patientId,
+      }
+    });
+    console.log(res.data);
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
+export const downloadPrescription = createAsyncThunk('api/downloadPrescription', async (arg, thunkApi) => {
+  try {
+    const { patientId } = arg;
+    const res = await axios({
+      method: 'GET',
+      url: `${backendBaseUrl}/v1/admin/prescriptions/pdf/download`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      params: {
+        patientId,
+      }
+    });
+    thunkApi.dispatch(setPdfBuffer(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
 
 
