@@ -3,10 +3,11 @@ import QuestionItem from "./QuestionItem";
 const Questions = ({ section, handleChange, formData }) => {
   return (
     <>
-      {section.questions.map((question) => (
+      {section.questions.map((question, ind) => (
         <QuestionItem 
-          key={question.questionId}
+          key={ind}
           sectionId={section.sectionId}
+          sectionTitle={section.sectionTitle}
           question={question} 
           formData={formData} 
           handleChange={handleChange}

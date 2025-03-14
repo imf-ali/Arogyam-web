@@ -3,6 +3,7 @@ version: '3.8'
 services:
   arogyam-server:
     image: ali2722f/arogyam-backend:latest
+    platform: linux/amd64 
     container_name: arogyam-server
     ports:
       - "8080:8080"  

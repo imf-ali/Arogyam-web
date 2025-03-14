@@ -1,7 +1,7 @@
 import styles from '../../../styles/AdminPage/Diagnosis.module.css';
 import OtherOptions from './OtherOptions';
 
-const SelectWithOptions = ({ sectionId, question, formData, handleChange }) => {
+const SelectWithOptions = ({ sectionId, sectionTitle, question, formData, handleChange }) => {
   return (
     <div className={styles.inputBoxDiv}>
       <div className={styles.labelDiv}>
@@ -13,9 +13,11 @@ const SelectWithOptions = ({ sectionId, question, formData, handleChange }) => {
       <div className={styles.inputDiv}>
         <div>
           <select
-            value={formData[sectionId]?.[question.id] || ""}
+            value={
+              formData.find(data => data.sectionId === sectionId)?.questions.find(ques => ques.id === question.id)?.answer || ""
+            }
             onChange={(e) =>
-              handleChange(sectionId, question.id, e.target.value)
+              handleChange(sectionId, sectionTitle, question.id, question.question, e.target.value)
             }
             required={question.isRequired}
           >
@@ -30,6 +32,7 @@ const SelectWithOptions = ({ sectionId, question, formData, handleChange }) => {
         {question.otherOption && (
         <OtherOptions
           sectionId={sectionId} 
+          sectionTitle={sectionTitle}
           question={question}
           formData={formData}
           handleChange={handleChange}

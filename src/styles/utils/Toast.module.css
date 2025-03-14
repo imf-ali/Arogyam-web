@@ -1,0 +1,18 @@
+.toastContainer {
+  position: fixed;
+  top: 4vh;
+  right: 20px;
+  background-color: #323232;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 1;
+  transform: translateY(-20px);
+  transition: opacity 0.5s, transform 0.5s;
+  z-index: 100;
+}
+
+.toastContainer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
