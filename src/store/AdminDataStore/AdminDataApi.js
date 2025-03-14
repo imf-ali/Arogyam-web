@@ -211,7 +211,7 @@ export const savePrescriptionData = createAsyncThunk('api/savePrescriptionData',
         ...arg
       }
     });
-    thunkApi.dispatch(setCurrentPatient(res.data.patient));
+    thunkApi.dispatch(setCurrentPatient(res.data));
   } catch (err) {
     console.log('Something went wrong', err);
   }
@@ -230,7 +230,7 @@ export const updatePrescriptionData = createAsyncThunk('api/updatePrescriptionDa
         ...otherArg,
       }
     });
-    thunkApi.dispatch(setCurrentPatient(res.data.data));
+    thunkApi.dispatch(setCurrentPatient(res.data));
   } catch (err) {
     console.log('Something went wrong', err);
   }

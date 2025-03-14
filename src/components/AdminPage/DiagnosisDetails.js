@@ -11,8 +11,6 @@ const DiagnosisDetails = () => {
   const { diagnosisJsonConfig } = useSelector(adminState);
   const [formData, setFormData] = useState([]);
 
-  console.log(formData);
-
   const handleChange = (sectionId, sectionTitle, questionId, question, answer, isOtherOption = false) => {
     
     if (isOtherOption) {

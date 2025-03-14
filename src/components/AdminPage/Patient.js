@@ -15,6 +15,8 @@ const Patient = () => {
   const { currentPatient } = useSelector(adminState);
   const [activeTab, setActiveTab] = useState(0);
 
+  console.log(currentPatient)
+
   useEffect(() => {
     dispatch(getPatientData({ patientId }));
   }, [dispatch, patientId]);
@@ -30,9 +32,9 @@ const Patient = () => {
         <div className={`${styles.diagnosisItem} ${activeTab === 1 && styles.activeTab}`} onClick={() => setActiveTab(1)}>Diagnosis</div>
         <div className={`${styles.diagnosisItem} ${activeTab === 2 && styles.activeTab}`} onClick={() => setActiveTab(2)}>Prescription</div>
       </div>
-      {activeTab === 0 && <BasicDetails patient={{...currentPatient, patientId}} />}
+      {activeTab === 0 && <BasicDetails patient={{...currentPatient?.data, patientId}} />}
       {activeTab === 1 && <DiagnosisDetails />}
-      {activeTab === 2 && <Prescription />}
+      {activeTab === 2 && <Prescription patient={{...currentPatient?.data, patientId}} />}
     </div>
   )
 }

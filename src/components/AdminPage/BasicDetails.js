@@ -66,10 +66,10 @@ const BasicDetails = ({ patient }) => {
 
 
   const handleSaveDetails = () => {
-    if (!patient || !patient.diagnosis) {
+    if (!patient || patient.patientCode === 'NEW_PATIENT' || patient.patientCode === 'FOLLOW_UP_PATIENT') {
       dispatch(savePrescriptionData({ patient: state }));
     } else {
-      dispatch(updatePrescriptionData({ id: patient._id, patient: state }));
+      dispatch(updatePrescriptionData({ id: patient.prescriptionId, patient: state }));
     }
   };
 

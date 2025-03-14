@@ -1,9 +1,11 @@
-import { useMemo, useReducer, useState } from "react";
-import InputFieldNew from "../../utils/InputFieldNew";
+import { useEffect, useMemo, useReducer, useState } from "react";
 import DynamicInput from "../../utils/DynamicInput";
 import InputField from "../../utils/InputField";
 import DynamicObjectInput from "../../utils/DynamicObjectInput";
 import styles from '../../styles/AdminPage/Prescription.module.css';
+import Button from "../../utils/Button";
+import { useDispatch } from "react-redux";
+import { updatePrescriptionData } from "../../store/AdminDataStore/AdminDataApi";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -19,34 +21,72 @@ const reducer = (state, action) => {
   }
 };
 
-const Prescription = () => {
+const Prescription = ({ patient }) => {
 
+  const dispatch = useDispatch();
   const [date, setDate] = useState('');
 
   const initialState = useMemo(() => ({
-      diagnosis: '',
-  }), []);
+      patient: patient.patient,
+      diagnosis: [''],
+      complaints: [''],
+      findings: [''],
+      prescriptionItems: [],
+      advice: [''],
+      followUp: null,
+  }), [patient]);
 
   const [state, dispatchReducer] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    dispatchReducer({ type: 'RESET', payload: {
+        patient: patient.patient,
+        diagnosis: patient.diagnosis || initialState.diagnosis,
+        complaints: patient.complaints || initialState.complaints,
+        findings: patient.findings || initialState.findings,
+        prescriptionItems: patient.prescriptionItems || initialState.prescriptionItems,
+        advice: patient.advice || initialState.advice,
+        followUp: patient.followUp || initialState.followUp,
+      } 
+    });
+  }, [patient, initialState]);
 
   const handleInputChange = (field, value) => {
     dispatchReducer({ type: 'SET_FIELD', field, value });
   };
+
+  const handleSaveDetails = () => {
+    console.log(patient);
+    dispatch(updatePrescriptionData({ id: patient.prescriptionId, ...state }));
+  };
   
   return (
     <div className={styles.parentDiv}>
-      <InputFieldNew
-        labelName="Diagnosis"
-        placeholderText="Enter the diagnosis"
-        value={state.diagnosis}
-        onChange={(e) => handleInputChange('diagnosis', e.target.value)}
-      />
       <div className={styles.multiInput}>
-        <DynamicInput labelName="Complaints" />
-        <DynamicInput labelName="Findings" />
+        <DynamicInput 
+          labelName="Diagnosis" 
+          values={state?.diagnosis} 
+          handleInputChange={handleInputChange} 
+        />
+      </div>
+      <div className={styles.multiInput}>
+        <DynamicInput 
+          labelName="Complaints" 
+          values={state?.complaints} 
+          handleInputChange={handleInputChange} 
+        />
+        <DynamicInput 
+          labelName="Findings" 
+          values={state?.findings} 
+          handleInputChange={handleInputChange} 
+        />
       </div>
       <DynamicObjectInput labelName="Prescription" medicineKeys={['drugName', 'potency', 'dosage', 'repetition', 'qty', 'period', 'remarks']} />
-      <DynamicInput labelName="Advice" />
+      <DynamicInput 
+        labelName="Advice" 
+        values={state?.advice} 
+        handleInputChange={handleInputChange} 
+      />
       <div className={styles.followUp}>
         <InputField
           inputType='date' 
@@ -55,6 +95,9 @@ const Prescription = () => {
           value={date}
           setText={setDate}
         />
+      </div>
+      <div className={styles.btnDiv}>
+        <Button width='15%' text='Save Prescription' handleClick={handleSaveDetails} />
       </div>
     </div>
   )
