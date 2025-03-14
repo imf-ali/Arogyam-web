@@ -149,8 +149,18 @@ const BasicDetails = ({ patient }) => {
         </div>
       </div>
       <div className={styles.btnDiv}>
-        <Button width='15%' text='Save details' handleClick={handleSaveDetails} />
-        <Button width='15%' text='Take diagnosis' handleClick={handleDiagnosis} />
+        <Button 
+          width='15%' 
+          text='Save details' 
+          handleClick={handleSaveDetails} 
+          backgroundColor='#3C6B3D'
+        />
+        <Button 
+          width='15%' 
+          text='Take diagnosis' 
+          handleClick={handleDiagnosis} 
+          backgroundColor='#3C6B3D'
+        />
       </div>
     </div>
   );

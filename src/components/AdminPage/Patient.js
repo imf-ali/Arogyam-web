@@ -15,8 +15,6 @@ const Patient = () => {
   const { currentPatient } = useSelector(adminState);
   const [activeTab, setActiveTab] = useState(0);
 
-  console.log(currentPatient)
-
   useEffect(() => {
     dispatch(getPatientData({ patientId }));
   }, [dispatch, patientId]);

@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/utils/DynamicObjectInput.module.css';
 
-const DynamicObjectInput = ({ labelName, medicineKeys }) => {
-  const initialObject = medicineKeys.reduce((acc, key) => {
+const DynamicObjectInput = ({ labelName, objectKeys, values, target, handleInputChange }) => {
+
+  const initialObject = objectKeys.reduce((acc, key) => {
     acc[key] = '';
     return acc;
   }, {});
 
-  const [inputs, setInputs] = useState([initialObject]);
-
-  const handleInputChange = (index, key, value) => {
-    const newInputs = [...inputs];
+  const handleChange = (index, key, value) => {
+    const newInputs = [...values];
     newInputs[index][key] = value;
-    setInputs(newInputs);
+    handleInputChange(newInputs, target);
   };
 
   const addMoreFields = () => {
-    setInputs(prevState => [...prevState, initialObject]);
+    const newInputs = [...values, initialObject];
+    handleInputChange(newInputs, target);
   };
 
   return (
@@ -26,21 +26,21 @@ const DynamicObjectInput = ({ labelName, medicineKeys }) => {
         <table className={styles.tableDiv}>
           <thead>
             <tr>
-              {medicineKeys.map((key) => (
+              {objectKeys.map((key) => (
                 <th key={key}>{key}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {inputs.map((input, index) => (
+            {values.map((input, index) => (
               <tr key={index}>
-                {medicineKeys.map((key) => (
+                {objectKeys.map((key) => (
                   <td key={key}>
                     <input
                       className={styles.inputField}
                       type="text"
                       value={input[key]}
-                      onChange={(e) => handleInputChange(index, key, e.target.value)}
+                      onChange={(e) => handleChange(index, key, e.target.value)}
                     />
                   </td>
                 ))}

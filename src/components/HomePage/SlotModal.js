@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Button from '../../utils/Button';
 import { confirmSlotData, fetchSlotsData } from '../../store/api';
 import moment from 'moment';
+import { convertToISOIST } from '../../utils/Helper';
 
 const generateTimeSlotsWithDisplay = (startHour, endHour, selectedTimes) => {
   const times = [];
@@ -15,23 +16,6 @@ const generateTimeSlotsWithDisplay = (startHour, endHour, selectedTimes) => {
   }
   return times;
 }
-
-const convertToISOIST = (date, time) => {
-  let [timePart, period] = time.split(' ');
-  let [hour, minute] = timePart.split(':').map(Number);
-
-  if (period === 'PM' && hour !== 12) {
-    hour += 12;
-  } else if (period === 'AM' && hour === 12) {
-    hour = 0;
-  }
-
-  const year = date.split('-')[0];
-  const month = date.split('-')[1];
-  const day = date.split('-')[2];
-
-  return `${year}-${month}-${day}T${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00.000+05:30`;
-};
 
 const SlotModal = ({ name, email, phone, setName, setEmail, setPhone, setShowModal }) => {
 

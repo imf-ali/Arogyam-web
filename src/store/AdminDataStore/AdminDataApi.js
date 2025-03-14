@@ -17,7 +17,6 @@ export const validateUser = createAsyncThunk('api/valiidateUser', async (arg, th
     });
     thunkApi.dispatch(setLogin({ status: res.status, token }));
   } catch (err) {
-    console.log('Something went wrong', err);
     thunkApi.dispatch(setLogin({ status: err.response.status}));
   }
 });
@@ -220,6 +219,7 @@ export const savePrescriptionData = createAsyncThunk('api/savePrescriptionData',
 export const updatePrescriptionData = createAsyncThunk('api/updatePrescriptionData', async (arg, thunkApi) => {
   try {
     const { id, ...otherArg } = arg;
+    console.log(arg, otherArg);
     const res = await axios({
       method: 'PUT',
       url: `${backendBaseUrl}/v1/admin/prescriptions/${id}`,
@@ -231,6 +231,22 @@ export const updatePrescriptionData = createAsyncThunk('api/updatePrescriptionDa
       }
     });
     thunkApi.dispatch(setCurrentPatient(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
+export const generatePrescription = createAsyncThunk('api/generatePrescriptionData', async (arg, thunkApi) => {
+  try {
+    const { patientId } = arg;
+    const res = await axios({
+      method: 'GET',
+      url: `${backendBaseUrl}/v1/admin/generate-prescription/${patientId}`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      }
+    });
+    console.log(res.data);
   } catch (err) {
     console.log('Something went wrong', err);
   }

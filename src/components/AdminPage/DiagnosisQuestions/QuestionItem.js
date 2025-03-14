@@ -1,6 +1,7 @@
 import TextInputField from "../../CustomComponents/TextInputField";
 import SegmentedSelect from "./SegmentedSelect";
 import SelectTypeQues from "./SelectTypeQues";
+import styles from '../../../styles/AdminPage/Diagnosis.module.css';
 
 const QuestionItem = ({ sectionId, sectionTitle, question, formData, handleChange }) => {
   return (
@@ -34,6 +35,21 @@ const QuestionItem = ({ sectionId, sectionTitle, question, formData, handleChang
           formData={formData} 
           handleChange={handleChange} 
         />
+      )}
+      {question.type === "multiSelect" && (
+        <>
+          <label className={styles.multiSelectLabel}>{question.question}</label>
+          {question.followUp.map((ques, ind) => (
+            <QuestionItem 
+              key={ind}
+              sectionId={sectionId}
+              sectionTitle={sectionTitle}
+              question={ques} 
+              formData={formData} 
+              handleChange={handleChange}
+            />
+          ))}
+        </>
       )}
     </div>
   ) 

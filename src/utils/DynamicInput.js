@@ -5,12 +5,12 @@ const DynamicInput = ({ labelName, values, handleInputChange }) => {
   const handleChange = (index, event) => {
     const newValues = [...values];
     newValues[index] = event.target.value;
-    handleInputChange(labelName.toLowerCase(), newValues);
+    handleInputChange(newValues, labelName.toLowerCase());
   };
 
   const addInput = () => {
     const newValues = [...values, ""];
-    handleInputChange(labelName.toLowerCase(), newValues);
+    handleInputChange(newValues, labelName.toLowerCase());
   };
 
   return (
