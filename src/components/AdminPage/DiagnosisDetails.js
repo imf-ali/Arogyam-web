@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getJsonConfig, saveDiagnosisData } from "../../store/AdminDataStore/AdminDataApi";
+import { getJsonConfig, getPatientDiagnosis, saveDiagnosisData, updateDiagnosisData } from "../../store/AdminDataStore/AdminDataApi";
 import { adminState } from "../../store/AdminDataStore/AdminDataContext";
 import Sections from "./DiagnosisQuestions/Sections";
 import Button from "../../utils/Button";
@@ -8,7 +8,7 @@ import styles from '../../styles/AdminPage/Diagnosis.module.css';
 
 const DiagnosisDetails = () => {
   const dispatch = useDispatch();
-  const { diagnosisJsonConfig, currentPatient } = useSelector(adminState);
+  const { diagnosisJsonConfig, currentPatient, patientDiagnosisData } = useSelector(adminState);
   const [formData, setFormData] = useState([]);
 
   const handleChange = (sectionId, sectionTitle, questionId, question, answer, isOtherOption = false) => {
@@ -93,6 +93,13 @@ const DiagnosisDetails = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
+    if (patientDiagnosisData) {
+      dispatch(updateDiagnosisData({
+        patientId: currentPatient.data.patient.patientId,
+        sections: formData
+      }))
+      return;
+    }
     dispatch(saveDiagnosisData({ 
       patientId: currentPatient.data.patient.patientId, 
       sections: formData 
@@ -101,7 +108,14 @@ const DiagnosisDetails = () => {
 
   useEffect(() => {
     dispatch(getJsonConfig());
-  }, [dispatch])
+    dispatch(getPatientDiagnosis({ patientId: currentPatient.data.patient.patientId }));
+  }, [dispatch, currentPatient])
+
+  useEffect(() => {
+    if (patientDiagnosisData && patientDiagnosisData.sections) {
+      setFormData(patientDiagnosisData.sections)
+    }
+  }, [patientDiagnosisData])
 
   return (
     <div>
