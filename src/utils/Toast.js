@@ -2,26 +2,26 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { hideToast, toastState } from "../store/ToastStore/ToastContext";
 import styles from '../styles/utils/Toast.module.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Toast = () => {
   const dispatch = useDispatch();
   const { message, isVisible } = useSelector(toastState);
 
-  console.log('toast', message, isVisible);
-
   useEffect(() => {
     if (isVisible) {
-      const timer = setTimeout(() => {
-        dispatch(hideToast());
-      }, 3000);
-      return () => clearTimeout(timer);
+      dispatch(hideToast());
     }
-  }, [isVisible, dispatch]);
+    if (message) {
+      toast(message, {
+        autoClose: 3000,
+        className: styles.fontUpdate,
+      });
+    }
+  }, [isVisible, message, dispatch]);
 
-  if (!isVisible) return null;
-
-  return <div className={styles.toastContainer}>{message}</div>;
+  return <ToastContainer />;
 };
 
 export default Toast;

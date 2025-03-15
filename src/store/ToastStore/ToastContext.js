@@ -12,6 +12,7 @@ const toastSlice = createSlice({
       state.isVisible = true;
     },
     hideToast: (state) => {
+      state.message = null;
       state.isVisible = false;
     },
   },

@@ -16,3 +16,8 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.fontUpdate {
+  font-weight: bold;
+  color: #323232;
+}
