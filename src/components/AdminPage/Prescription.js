@@ -49,11 +49,11 @@ const Prescription = ({ patient }) => {
   useEffect(() => {
     dispatchReducer({ type: 'RESET', payload: {
         patient: patient.patient,
-        diagnosis: patient.diagnosis.length ? patient.diagnosis : initialState.diagnosis,
-        complaints: patient.complaints.length ? patient.complaints : initialState.complaints,
-        findings: patient.findings.length ? patient.findings : initialState.findings,
-        prescriptionItems: patient.prescriptionItems.length ? patient.prescriptionItems : initialState.prescriptionItems,
-        advice: patient.advice.length ? patient.advice : initialState.advice,
+        diagnosis: (patient.diagnosis && patient.diagnosis.length) ? patient.diagnosis : initialState.diagnosis,
+        complaints: (patient.complaints && patient.complaints.length) ? patient.complaints : initialState.complaints,
+        findings: (patient.findings && patient.findings.length) ? patient.findings : initialState.findings,
+        prescriptionItems: (patient.prescriptionItems && patient.prescriptionItems.length) ? patient.prescriptionItems : initialState.prescriptionItems,
+        advice: (patient.advice && patient.advice.length) ? patient.advice : initialState.advice,
         followUpDate: patient.followUpDate ? convertFromISOIST(patient.followUpDate).date : initialState.followUpDate,
       } 
     });
