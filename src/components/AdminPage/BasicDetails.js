@@ -37,7 +37,7 @@ const reducer = (state, action) => {
   }
 };
 
-const BasicDetails = ({ patient }) => {
+const BasicDetails = ({ patient, setActiveTab }) => {
 
   const dispatch = useDispatch();
 
@@ -66,6 +66,7 @@ const BasicDetails = ({ patient }) => {
 
 
   const handleSaveDetails = () => {
+    console.log('save details', patient)
     if (!patient || patient.patientCode === 'NEW_PATIENT' || patient.patientCode === 'FOLLOW_UP_PATIENT') {
       dispatch(savePrescriptionData({ patient: state }));
     } else {
@@ -74,8 +75,10 @@ const BasicDetails = ({ patient }) => {
   };
 
   const handleDiagnosis = () => {
+    console.log('save diagnosis', patient)
     if (patient.appointmentStatus === 'WAITING') {
       dispatch(updateAppointment({ appointmentId: patient.appointmentId, status: 'INPROGRESS' }))
+      setActiveTab(1);
     }
   };
 

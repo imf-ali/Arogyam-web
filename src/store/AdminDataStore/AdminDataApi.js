@@ -1,8 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setData, setDeleteFeedbackData, setUpdateFeedbackData } from "../WebDataStore/WebDataContext";
 import axios from "axios";
-import { setAppointments, setCurrentPatient, setDiagnosisJsonConfig, setFeedbacks, setLogin, setPdfBuffer } from "./AdminDataContext";
+import { setAppointments, setCurrentPatient, setDiagnosisJsonConfig, setFeedbacks, setLogin, setPatientDiagnosisData, setPdfBuffer } from "./AdminDataContext";
 import { showToast } from "../ToastStore/ToastContext";
+import { toast } from "react-toastify";
 
 const backendBaseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -194,6 +195,43 @@ export const saveDiagnosisData = createAsyncThunk('api/saveDiagnosisData', async
       }
     });
     thunkApi.dispatch(showToast(res.data.message));
+    thunkApi.dispatch(setPatientDiagnosisData(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
+export const updateDiagnosisData = createAsyncThunk('api/saveDiagnosisData', async (arg, thunkApi) => {
+  try {
+    const res = await axios({
+      method: 'PUT',
+      url: `${backendBaseUrl}/v1/admin/diagnosis`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      },
+      data: {
+        patientId: arg.patientId,
+        sections: arg.sections,
+      }
+    });
+    thunkApi.dispatch(showToast(res.data.message));
+    thunkApi.dispatch(setPatientDiagnosisData(res.data));
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
+});
+
+export const getPatientDiagnosis = createAsyncThunk('api/getPatientDiagnosis', async (arg, thunkApi) => {
+  try {
+    const { patientId } = arg;
+    const res = await axios({
+      method: 'GET',
+      url: `${backendBaseUrl}/v1/admin/diagnosis/${patientId}`,
+      headers: {
+        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+      }
+    });
+    thunkApi.dispatch(setPatientDiagnosisData(res.data));
   } catch (err) {
     console.log('Something went wrong', err);
   }
@@ -211,6 +249,7 @@ export const savePrescriptionData = createAsyncThunk('api/savePrescriptionData',
         ...arg
       }
     });
+    thunkApi.dispatch(showToast(res.data.message));
     thunkApi.dispatch(setCurrentPatient(res.data));
   } catch (err) {
     console.log('Something went wrong', err);
@@ -240,17 +279,22 @@ export const updatePrescriptionData = createAsyncThunk('api/updatePrescriptionDa
 export const generatePrescription = createAsyncThunk('api/generatePrescriptionData', async (arg, thunkApi) => {
   try {
     const { patientId } = arg;
-    const res = await axios({
-      method: 'POST',
-      url: `${backendBaseUrl}/v1/admin/prescriptions/pdf`,
-      headers: {
-        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
-      },
-      data: {
-        patientId,
+    toast.promise(
+      axios({
+        method: 'POST',
+        url: `${backendBaseUrl}/v1/admin/prescriptions/pdf`,
+        headers: {
+          Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+        },
+        data: {
+          patientId,
+        }
+      }), {
+        pending: 'Generating prescription',
+        success: 'Prescription generated successfully',
+        error: 'Something went wrong generating prescription'
       }
-    });
-    console.log(res.data);
+    );
   } catch (err) {
     console.log('Something went wrong', err);
   }
@@ -259,17 +303,26 @@ export const generatePrescription = createAsyncThunk('api/generatePrescriptionDa
 export const downloadPrescription = createAsyncThunk('api/downloadPrescription', async (arg, thunkApi) => {
   try {
     const { patientId } = arg;
-    const res = await axios({
-      method: 'GET',
-      url: `${backendBaseUrl}/v1/admin/prescriptions/pdf/download`,
-      headers: {
-        Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
-      },
-      params: {
-        patientId,
+    toast.promise(
+      axios({
+        method: 'GET',
+        url: `${backendBaseUrl}/v1/admin/prescriptions/pdf/download`,
+        headers: {
+          Authorization: `Bearer ${thunkApi.getState().adminReducer.token}`,
+        },
+        params: {
+          patientId,
+        }
+      })
+      .then((response) => {
+        thunkApi.dispatch(setPdfBuffer(response.data));
+      }), 
+      {
+        pending: 'Downloading prescription',
+        success: 'Prescription downloaded',
+        error: 'Something went wrong downloading prescription'
       }
-    });
-    thunkApi.dispatch(setPdfBuffer(res.data));
+    );
   } catch (err) {
     console.log('Something went wrong', err);
   }

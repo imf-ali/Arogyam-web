@@ -75,11 +75,8 @@ const Prescription = ({ patient }) => {
     e.preventDefault();
     if (patient.appointmentStatus === 'INPROGRESS') {
       dispatch(updateAppointment({ appointmentId: patient.appointmentId, status: 'VISITED' }))
+      dispatch(generatePrescription({ patientId: patient.patient.patientId }));
     }
-  }
-
-  const handleGeneratePrescription = () => {
-    dispatch(generatePrescription({ patientId: patient.patient.patientId }));
   }
   
   return (
@@ -137,12 +134,6 @@ const Prescription = ({ patient }) => {
           backgroundColor='#3c6b3d'
           width='20%'
           handleClick={handleCompleted}
-        />
-        <Button
-          text="Generate Prescription"
-          backgroundColor='#9e2e22'
-          width='20%'
-          handleClick={handleGeneratePrescription}
         />
       </div>
     </div>
