@@ -73,7 +73,7 @@ const CurrentAppointments = ({ active, appointments }) => {
           <div className={styles.name}>{appointment.name}</div>
           <div className={styles.phone}>{appointment.phone}</div>
           <div className={styles.paid}>{appointment.isPaid ? 'YES' : 'NO'}</div>
-          <div className={styles.appointmentTime}>{moment(appointment.appointmentTime).subtract(11, 'hours').format('LT')}</div>
+          <div className={styles.appointmentTime}>{moment(appointment.appointmentTime).format('LT')}</div>
           {active === 'VISITED' && <div className={styles.download} onClick={() => handleDownload(appointment)}><FaDownload size={17} /></div>}
         </div>
       ))}
