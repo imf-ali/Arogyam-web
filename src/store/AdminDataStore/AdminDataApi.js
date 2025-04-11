@@ -9,7 +9,7 @@ const backendBaseUrl = process.env.REACT_APP_BACKEND_URL;
 
 export const validateUser = createAsyncThunk('api/valiidateUser', async (arg, thunkApi) => {
   try {
-    const { token } = arg;
+    const { token, isDoctor } = arg;
     const res = await axios({
       method: 'POST',
       url: `${backendBaseUrl}/v1/admin/jwtValidate`,
@@ -17,7 +17,7 @@ export const validateUser = createAsyncThunk('api/valiidateUser', async (arg, th
         Authorization: `Bearer ${token}`,
       }
     });
-    thunkApi.dispatch(setLogin({ status: res.status, token }));
+    thunkApi.dispatch(setLogin({ status: res.status, token, isDoctor }));
   } catch (err) {
     thunkApi.dispatch(setLogin({ status: err.response.status}));
   }

@@ -5,13 +5,20 @@ import { confirmSlotData, fetchSlotsData } from '../../store/api';
 import moment from 'moment';
 import { convertToISOIST } from '../../utils/Helper';
 
-const generateTimeSlotsWithDisplay = (startHour, endHour, selectedTimes) => {
+const generateTimeSlotsWithDisplay = (startHour, endHour, slotTimes) => {
   const times = [];
   for (let hour = startHour; hour <= endHour; hour++) {
     const formattedHour = String(hour).padStart(2, '0') + ":00";
+    if (hour === 12) {
+      times.push({
+        time: `${formattedHour} PM`,
+        display: slotTimes.includes(formattedHour + ":00"),
+      });
+      continue;
+    }
     times.push({
       time: hour > 12 ? `${String(hour - 12).padStart(2, '0') + ":00"} PM` : `${formattedHour} AM`,
-      display: selectedTimes.includes(formattedHour + ":00"),
+      display: slotTimes.includes(formattedHour + ":00"),
     });
   }
   return times;
@@ -27,7 +34,7 @@ const SlotModal = ({ name, email, phone, setName, setEmail, setPhone, setShowMod
   const [success, setSuccess] = useState('');
 
   useEffect(() => {
-    setSelectedTime(generateTimeSlotsWithDisplay(9, 20, slots))
+    setSelectedTime(generateTimeSlotsWithDisplay(9, 17, slots))
   }, [slots])
 
   const handleDate = async (e) => {

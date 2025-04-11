@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const Toast = () => {
   const dispatch = useDispatch();
-  const { message, isVisible } = useSelector(toastState);
+  const { message, error, isVisible } = useSelector(toastState);
 
   useEffect(() => {
     if (isVisible) {
@@ -19,7 +19,13 @@ const Toast = () => {
         className: styles.fontUpdate,
       });
     }
-  }, [isVisible, message, dispatch]);
+    if (error) {
+      toast.error(error, {
+        autoClose: 3000,
+        className: styles.fontUpdate,
+      });
+    }
+  }, [isVisible, message, error, dispatch]);
 
   return <ToastContainer />;
 };

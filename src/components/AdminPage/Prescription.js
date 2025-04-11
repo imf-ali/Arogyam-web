@@ -4,9 +4,11 @@ import InputField from "../../utils/InputField";
 import DynamicObjectInput from "../../utils/DynamicObjectInput";
 import styles from '../../styles/AdminPage/Prescription.module.css';
 import Button from "../../utils/Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { generatePrescription, updateAppointment, updatePrescriptionData } from "../../store/AdminDataStore/AdminDataApi";
 import { convertFromISOIST, convertToISOIST } from "../../utils/Helper";
+import { adminState } from "../../store/AdminDataStore/AdminDataContext";
+import { showError } from "../../store/ToastStore/ToastContext";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -24,6 +26,7 @@ const reducer = (state, action) => {
 
 const Prescription = ({ patient }) => {
 
+  const { isDoctor } = useSelector(adminState);
   const dispatch = useDispatch();
 
   const initialState = useMemo(() => ({
@@ -59,11 +62,21 @@ const Prescription = ({ patient }) => {
     });
   }, [patient, initialState]);
 
+  useEffect(() => {
+    if (patient.appointmentStatus !== 'INPROGRESS') {
+      dispatch(showError('Move the patient to INPROGRESS'));
+    }
+  }, [patient, dispatch])
+
   const handleInputChange = (value, field) => {
     dispatchReducer({ type: 'SET_FIELD', field, value });
   };
 
   const handleSaveDetails = () => {
+    if (patient.appointmentStatus !== 'INPROGRESS') {
+      dispatch(showError('Move the patient to INPROGRESS'));
+      return;
+    }
     var followUpDate = null;
     if (state.followUpDate != null) {
       followUpDate = convertToISOIST(state.followUpDate, '00:00 AM');
@@ -73,10 +86,20 @@ const Prescription = ({ patient }) => {
 
   const handleCompleted = (e) => {
     e.preventDefault();
-    if (patient.appointmentStatus === 'INPROGRESS') {
-      dispatch(updateAppointment({ appointmentId: patient.appointmentId, status: 'VISITED' }))
-      dispatch(generatePrescription({ patientId: patient.patient.patientId }));
+    if (patient.appointmentStatus !== 'INPROGRESS') {
+      dispatch(showError('Move the patient to INPROGRESS'));
+      return;
     }
+    dispatch(updateAppointment({ appointmentId: patient.appointmentId, status: 'VISITED' }))
+    dispatch(generatePrescription({ patientId: patient.patient.patientId }));
+  }
+
+  if (!isDoctor) {
+    return (
+      <div className={styles.notAuthorized}>
+        <h2>You are not allowed to view or edit this page</h2>
+      </div>
+    )
   }
   
   return (
