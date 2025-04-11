@@ -5,10 +5,11 @@ import { adminState } from "../../store/AdminDataStore/AdminDataContext";
 import Sections from "./DiagnosisQuestions/Sections";
 import Button from "../../utils/Button";
 import styles from '../../styles/AdminPage/Diagnosis.module.css';
+import { showError } from "../../store/ToastStore/ToastContext";
 
-const DiagnosisDetails = () => {
+const DiagnosisDetails = ({ appointmentStatus }) => {
   const dispatch = useDispatch();
-  const { diagnosisJsonConfig, currentPatient, patientDiagnosisData } = useSelector(adminState);
+  const { diagnosisJsonConfig, currentPatient, patientDiagnosisData, isDoctor } = useSelector(adminState);
   const [formData, setFormData] = useState([]);
 
   const handleChange = (sectionId, sectionTitle, questionId, question, answer, isOtherOption = false) => {
@@ -93,6 +94,11 @@ const DiagnosisDetails = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
+
+    if (appointmentStatus !== 'INPROGRESS') {
+      dispatch(showError('Move the patient to INPROGRESS'));
+      return;
+    }
     if (patientDiagnosisData) {
       dispatch(updateDiagnosisData({
         patientId: currentPatient.data.patient.patientId,
@@ -107,15 +113,31 @@ const DiagnosisDetails = () => {
   };
 
   useEffect(() => {
-    dispatch(getJsonConfig());
-    dispatch(getPatientDiagnosis({ patientId: currentPatient.data.patient.patientId }));
-  }, [dispatch, currentPatient])
+    if (isDoctor) {
+      dispatch(getJsonConfig());
+      dispatch(getPatientDiagnosis({ patientId: currentPatient.data.patient.patientId }));
+    }
+  }, [dispatch, currentPatient, isDoctor])
 
   useEffect(() => {
-    if (patientDiagnosisData && patientDiagnosisData.sections) {
+    if (isDoctor && patientDiagnosisData && patientDiagnosisData.sections) {
       setFormData(patientDiagnosisData.sections)
     }
-  }, [patientDiagnosisData])
+  }, [patientDiagnosisData, isDoctor])
+
+  useEffect(() => {
+    if (isDoctor && appointmentStatus !== 'INPROGRESS') {
+      dispatch(showError('Move the patient to INPROGRESS'));
+    }
+  }, [dispatch, appointmentStatus, isDoctor]);
+
+  if (!isDoctor) {
+    return (
+      <div className={styles.notAuthorized}>
+        <h2>You are not allowed to view or edit this page</h2>
+      </div>
+    );
+  }
 
   return (
     <div>

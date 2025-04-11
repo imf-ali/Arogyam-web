@@ -3,7 +3,8 @@ import styles from '../styles/PatientPortal/portal.module.css';
 import Button from '../utils/Button';
 import InputField from '../utils/InputField';
 import { loginPatientPortal } from '../store/api';
-import MessageCard from '../utils/MessageCard';
+import { useDispatch } from 'react-redux';
+import { showError } from '../store/ToastStore/ToastContext';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -21,11 +22,12 @@ const reducer = (state, action) => {
 
 const PatientPortal = () => {
 
+  const dispatchAction = useDispatch();
+
   const [state, dispatch] = useReducer(reducer, {
     patientId: '',
     phone: ''
   })
-  const [error, setError] = useState(undefined);
   const [patient, setPatient] = useState();
 
   const handleInputChange = (value, field) => {
@@ -37,9 +39,9 @@ const PatientPortal = () => {
 
     const res = await loginPatientPortal(state.patientId, state.phone);
     if (res.status !== 200)
-      setError(res.data.message);
+      dispatchAction(showError(res.data.message));
     else {
-      setError(undefined);
+      dispatchAction(showError(null));
       setPatient(res.data);
     }
   }
@@ -48,7 +50,6 @@ const PatientPortal = () => {
     <>
       {!patient && (
         <div className={styles.patientPortal}>
-          {error && <MessageCard isError={true} message={error} />}
           <div className={styles.header}>Patient Portal</div>
           <InputField
             labelName="Patient-Id"
