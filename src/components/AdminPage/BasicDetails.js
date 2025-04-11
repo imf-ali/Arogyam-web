@@ -2,8 +2,9 @@ import React, { useEffect, useMemo, useReducer } from "react";
 import InputFieldNew from "../../utils/InputFieldNew";
 import styles from '../../styles/AdminPage/PatientDetails.module.css';
 import Button from "../../utils/Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { savePrescriptionData, updateAppointment, updatePrescriptionData } from "../../store/AdminDataStore/AdminDataApi";
+import { adminState } from "../../store/AdminDataStore/AdminDataContext";
 
 const calculateBMI = (action, weight, heightInCm) => {
   let bmi;
@@ -38,6 +39,8 @@ const reducer = (state, action) => {
 };
 
 const BasicDetails = ({ patient, setActiveTab }) => {
+
+  const { isDoctor } = useSelector(adminState);
 
   const dispatch = useDispatch();
 
@@ -158,12 +161,14 @@ const BasicDetails = ({ patient, setActiveTab }) => {
           handleClick={handleSaveDetails} 
           backgroundColor='#3C6B3D'
         />
-        <Button 
-          width='15%' 
-          text='Take diagnosis' 
-          handleClick={handleDiagnosis} 
-          backgroundColor='#3C6B3D'
-        />
+        {isDoctor && (
+          <Button 
+            width='15%' 
+            text='Take diagnosis' 
+            handleClick={handleDiagnosis} 
+            backgroundColor='#3C6B3D'
+          />
+        )}
       </div>
     </div>
   );

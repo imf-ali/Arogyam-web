@@ -31,3 +31,13 @@
   width: 20vh;
   margin-left: 1vh;
 }
+
+.notAuthorized {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notAuthorized h2 {
+  color: black;
+}

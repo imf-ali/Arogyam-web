@@ -11,26 +11,32 @@ const admin = createSlice({
     diagnosisJsonConfig: null,
     pdfBuffer: null,
     patientDiagnosisData: null,
+    isDoctor: false,
   },
   reducers: {
     loginAdmin: (state, action) => {
       const { payload } = action;
       state.isLoggedIn = true;
       state.token = payload.token;
+      state.isDoctor = payload.admin.isDoctor;
       localStorage.setItem('adminToken', payload.token);
+      localStorage.setItem('isDoctor', payload.admin.isDoctor);
     },
     logoutAdmin: (state) => {
       state.isLoggedIn = false;
       state.token = '';
       localStorage.removeItem('adminToken');
+      localStorage.removeItem('isDoctor');
     },
     setLogin: (state, action) => {
       const { payload } = action;
       if(payload.status === 200){
         state.isLoggedIn = true;
         state.token = payload.token;
+        state.isDoctor = payload.isDoctor;
       } else {
         localStorage.removeItem('adminToken');
+        localStorage.removeItem('isDoctor');
       }
     },
     setFeedbacks: (state, action) => {

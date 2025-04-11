@@ -15,7 +15,10 @@ const Admin = () => {
   const [visibleComponent, setVisibleComponent] = useState(0);
 
   useEffect(() => {
-    dispatch(validateUser({ token: localStorage.getItem('adminToken') }));
+    dispatch(validateUser({ 
+      token: localStorage.getItem('adminToken'),
+      isDoctor: localStorage.getItem('isDoctor') === 'true' ? true : false
+    }));
   }, [dispatch])
 
   return (

@@ -1,9 +1,10 @@
 import styles from '../styles/utils/Button.module.css';
 
-const Button = ({ text, backgroundColor, width, handleClick }) => {
+const Button = ({ text, backgroundColor, width, handleClick, disabled = false }) => {
   return (
     <button 
       className={styles.submitBtn} 
+      disabled={disabled}
       style={
         { 
           backgroundColor,

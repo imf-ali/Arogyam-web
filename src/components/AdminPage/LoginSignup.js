@@ -3,9 +3,9 @@ import InputField from "../../utils/InputField";
 import Button from "../../utils/Button";
 import styles from '../../styles/AdminPage/Login.module.css';
 import { login, signUp } from "../../store/api";
-import MessageCard from "../../utils/MessageCard";
 import { useDispatch } from "react-redux";
 import { loginAdmin } from "../../store/AdminDataStore/AdminDataContext";
+import { showError } from "../../store/ToastStore/ToastContext";
 
 const LoginSignup = () => {
   const dispatch = useDispatch();
@@ -16,19 +16,18 @@ const LoginSignup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [adminKey, setAdminKey] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
 
   const handleClick = async (e) => {
     e.preventDefault();
     let res;
     if (!showLogin) {  
       if(password !== confirmPassword) {
-        setErrorMessage('Passwords do not match');
+        dispatch(showError('Passwords do not match'));
         return;
       }
       res = await signUp(name, email, phone, password, adminKey);
       if(res.status === 400 || res.status === 500 || res.status === 409){
-        setErrorMessage(res.data.message);
+        dispatch(showError(res.data.message));
         return;
       }
       if(res.status === 201) {
@@ -37,7 +36,7 @@ const LoginSignup = () => {
     } else {
       res = await login(email, password);
       if(res.status === 400 || res.status === 500 || res.status === 409 || res.status === 401){
-        setErrorMessage(res.data.message);
+        dispatch(showError(res.data.message));
         return;
       }
       if(res.status === 200) {
@@ -47,7 +46,6 @@ const LoginSignup = () => {
   }
   return (
     <div className={styles.parentDiv}>
-      {errorMessage.length !== 0 && <MessageCard message={errorMessage} isError={true} />}
       <div className={styles.heading}>{showLogin ? 'Login' : 'Signup'}</div>
       {!showLogin && (
         <InputField
