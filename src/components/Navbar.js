@@ -1,5 +1,6 @@
 import styles from '../styles/Navbar.module.css';
 import icon from '../assets/logoLight.png';
+import smallIcon from '../assets/logoMain.png';
 import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { useEffect, useState } from 'react';
@@ -18,7 +19,7 @@ const NavBar = () => {
 
   const handleLogout = async () => {
     const res = await logout(token);
-    if(res.status === 200){
+    if (res.status === 200) {
       dispatch(logoutAdmin());
       window.location.href = '/';
     }
@@ -44,24 +45,33 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav className={styles.navBar}>
-      <div className={styles.imgDiv}>
-        <img src={icon} alt='icon' />
-      </div>
-      <div className={styles.barNav} onClick={handleShowNavbar}>
-        <FaBars style={{ fontSize: "2em" }} />
-      </div>
-      {showNavbar && (
-        <div className={`${styles.itemDiv} ${showNavbar && styles.show}`}>
-          <Link to="/" className={styles.linkItem} onClick={handleShowNavbar}>HOME</Link>
-          <Link to="/treatments" className={styles.linkItem} onClick={handleShowNavbar}>TREATMENTS</Link>
-          <Link to="/doctors" className={styles.linkItem} onClick={handleShowNavbar}>DOCTOR</Link>
-          <Link to="/patient-portal" className={styles.linkItem} onClick={handleShowNavbar}>PATIENT PORTAL</Link>
-          <Link to="/contact" className={styles.linkItem} onClick={handleShowNavbar}>CONTACT US</Link>
-          {isLoggedIn && <Link className={styles.linkItem} onClick={handleLogout}>LOGOUT</Link>}
+    <div>
+      <nav className={styles.navBar}>
+        <div className={styles.imgDiv}>
+          <img src={icon} alt='icon' />
         </div>
-      )}
-    </nav>
+        <div className={styles.barNav} onClick={handleShowNavbar}>
+          <FaBars style={{ fontSize: "2em" }} />
+        </div>
+        {showNavbar && (
+          <div className={`${styles.itemDiv} ${showNavbar && styles.show}`}>
+            <Link to="/" className={styles.linkItem} onClick={handleShowNavbar}>HOME</Link>
+            <Link to="/treatments" className={styles.linkItem} onClick={handleShowNavbar}>TREATMENTS</Link>
+            <Link to="/doctors" className={styles.linkItem} onClick={handleShowNavbar}>DOCTOR</Link>
+            <Link to="/patient-portal" className={styles.linkItem} onClick={handleShowNavbar}>PATIENT PORTAL</Link>
+            <Link to="/contact" className={styles.linkItem} onClick={handleShowNavbar}>CONTACT US</Link>
+            {isLoggedIn && <Link className={styles.linkItem} onClick={handleLogout}>LOGOUT</Link>}
+          </div>
+        )}
+      </nav>
+      <nav className={styles.navBar2}>
+        <div className={styles.itemDiv2}>
+          <img src={smallIcon} alt='leftIcon' className={styles.icon} />
+          <Link to="/" className={styles.linkItem2} onClick={handleShowNavbar}>BOOK APPOINTMENT</Link>
+          <img src={smallIcon} alt='rightIcon' className={styles.icon} />
+        </div>
+      </nav>
+    </div>
   );
 }
 
