@@ -73,3 +73,33 @@
     height: 8%;
   }
 }
+
+.navBar2 {
+  height: 5vh;
+  background-color: #003D6F;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 8vh;
+  width: 100%;
+  z-index: 99;
+}
+
+.itemDiv2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.linkItem2 {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.icon {
+  height: 4vh;
+}

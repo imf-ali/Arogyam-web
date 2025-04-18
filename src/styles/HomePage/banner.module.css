@@ -1,6 +1,8 @@
 .bannerDiv{
   width: 100%;
   padding-top: 8vh;
+  margin: auto;
+  margin-top: 5vh;
 }
 
 .bannerDiv img{
