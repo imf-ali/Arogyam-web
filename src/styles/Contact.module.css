@@ -1,6 +1,6 @@
 .contactUs{
   margin: auto;
-  margin-top: 10vh;
+  margin-top: 12vh;
   width: 90%;
   display: flex;
   gap: 2vw;
@@ -13,6 +13,11 @@
 .mapDiv{
   width: 50%;
   margin-top: 1vh;
+}
+
+.link{
+  color: #003D6F;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 800px) {
