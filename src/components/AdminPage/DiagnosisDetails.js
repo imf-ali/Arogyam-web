@@ -140,7 +140,7 @@ const DiagnosisDetails = ({ appointmentStatus }) => {
   }
 
   return (
-    <div>
+    <div className={styles.jsonDiv}>
       <Sections 
         diagnosisJsonConfig={diagnosisJsonConfig} 
         handleChange={handleChange} 

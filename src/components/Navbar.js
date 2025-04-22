@@ -14,6 +14,10 @@ const NavBar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
 
   const handleShowNavbar = () => {
+    if (window.innerWidth > 1200) {
+      setShowNavbar(true);
+      return;
+    }
     setShowNavbar(!showNavbar);
   };
 
@@ -67,7 +71,7 @@ const NavBar = () => {
       <nav className={styles.navBar2}>
         <div className={styles.itemDiv2}>
           <img src={smallIcon} alt='leftIcon' className={styles.icon} />
-          <Link to="/" className={styles.linkItem2} onClick={handleShowNavbar}>BOOK APPOINTMENT</Link>
+          <Link to="/" className={styles.linkItem2}>BOOK APPOINTMENT</Link>
           <img src={smallIcon} alt='rightIcon' className={styles.icon} />
         </div>
       </nav>
