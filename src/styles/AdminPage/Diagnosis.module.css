@@ -4,6 +4,10 @@
   margin: 2vh 2vh;
 }
 
+.jsonDiv{
+  margin-top: 2vh;
+}
+
 .multiSelectLabel {
   font-size: 1.2em;
   font-weight: bold;
